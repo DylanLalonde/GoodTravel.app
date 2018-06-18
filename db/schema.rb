@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_18_134614) do
+ActiveRecord::Schema.define(version: 2018_06_18_151508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 2018_06_18_134614) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "location_id"
+    t.index ["referral_code"], name: "index_referrer_infos_on_referral_code"
     t.index ["user_id"], name: "index_referrer_infos_on_user_id"
   end
 
