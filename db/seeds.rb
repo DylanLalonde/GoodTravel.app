@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+Booking.destroy_all
+Experience.destroy_all
+NgoLocation.destroy_all
+Location.destroy_all
+Ngo.destroy_all
+ReferrerInfo.destroy_all
+TravellerInfo.destroy_all
+HostInfo.destroy_all
+User.destroy_all
+
+
+amsterdam = Location.create!(name:"amsterdam")
+
+redcross = Ngo.create!(name:"red cross")
+
+redcrosslocation = NgoLocation.create!(location: amsterdam, ngo: redcross)
+
+carla = User.create!(first_name:"carla", last_name:"smith", photo:"", email:"carla@test.com", password:"123456")
+
+joe = User.create!(first_name:"joe", last_name:"smith", photo:"", email:"joe@test.com", password:"123456")
+
+barbara = User.create!(first_name:"barbara", last_name:"smith", photo:"", email:"barbara@test.com", password:"123456")
+
+travellercarla = TravellerInfo.create!(user: carla)
+
+hostjoe = HostInfo.create!(name:"Joe", description:"canal tour provider", user: joe)
+
+referrerbarbara = ReferrerInfo.create!(user: barbara, referral_code: "00001")
+
+canaltour = Experience.create!(name: "Joes Canal Tour", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam)
+
+carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount:"1", ngo: redcross, experience: canaltour)
+
