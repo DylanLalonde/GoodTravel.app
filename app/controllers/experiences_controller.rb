@@ -13,6 +13,6 @@ class ExperiencesController < ApplicationController
   end
 
   def set_experience
-    @drone = Drone.find(params[:id])
+    @drone = Experience.find(params[:id])
   end
 end
