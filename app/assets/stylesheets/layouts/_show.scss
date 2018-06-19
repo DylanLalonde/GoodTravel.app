@@ -1,4 +1,10 @@
-.row {
+.col {
     margin-left: 0px !important;
     margin-right: 0px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    #map {
+        max-height: 300px;
+    }
 }

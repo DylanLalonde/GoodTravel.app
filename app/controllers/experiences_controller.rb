@@ -20,6 +20,7 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @ngo = Ngo.find(@experience.featured_ngo)
+    @markers = { lat: @experience.latitude, lng: @experience.longitude}
   end
 
   def set_experience
