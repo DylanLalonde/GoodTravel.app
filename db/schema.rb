@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_123015) do
 
   create_table "experiences", force: :cascade do |t|
     t.string "name"
+    t.string "category"
     t.string "description"
     t.integer "price"
     t.bigint "host_info_id"
@@ -74,6 +75,8 @@ ActiveRecord::Schema.define(version: 2018_06_19_123015) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "description"
   end
 
   create_table "referrer_infos", force: :cascade do |t|

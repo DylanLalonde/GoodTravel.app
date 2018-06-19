@@ -1,2 +1,79 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-color: #75e83b">
+  <div class="banner-content">
+    <h1>GoodTravel</h1>
+    <p>Fix travel with local commission distribution</p>
+    <a class="btn btn-success btn-lg">Book an Experience</a>
+  </div>
+</div>
+
+<div class="cards-main-container">
+  <div class="cards-container">
+    <div class="row">
+      <h2>Popular NGOs in this area:
+        <h2>
+          <% @ngos.each do |ngo| %>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="card-wrapper">
+                <div class="card-image">
+                  <div class="card-category">
+                    <%= ngo.category %>
+                  </div>
+                </div>
+                <div class="card-description">
+                  <h2>
+                    <%= ngo.name %>
+                  </h2>
+                  <h5>
+                  <!-- ngo.location -->
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <% end %>
+    </div>
+  </div>
+
+  <div class="cards-container">
+    <div class="row">
+      <h2> Popular experiences in this area:
+        <h2>
+          <% @experiences.each do |experience| %>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="card-wrapper">
+                <div class="card-image">
+                  <div class="card-category">
+                    <%= experience.category %>
+                  </div>
+                </div>
+                <div class="card-description">
+                  <h2>
+                    <%= experience.name %>
+                  </h2>
+                  <h5>
+                    <!-- experience.location -->
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <% end %>
+    </div>
+    <div class="cards-container">
+      <div class="row">
+        <h2> Successful referrers in this area:
+          <h2>
+            <% @referrers.each do |referrer| %>
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="card-wrapper">
+                  <div class="card-image">
+                  </div>
+                  <div class="card-description">
+                    <h2>
+                      <%= referrer.user.first_name  %>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+      </div>
+  </div>
+</div>

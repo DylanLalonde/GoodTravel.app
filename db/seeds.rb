@@ -1,4 +1,5 @@
 
+puts "Uprooting"
 Booking.destroy_all
 Experience.destroy_all
 NgoLocation.destroy_all
@@ -9,6 +10,7 @@ TravellerInfo.destroy_all
 HostInfo.destroy_all
 User.destroy_all
 
+puts "Planting Seeds"
 
 amsterdam = Location.create!(name:"amsterdam")
 
@@ -28,11 +30,12 @@ hostjoe = HostInfo.create!(name:"Joe", description:"canal tour provider", user: 
 
 referrerbarbara = ReferrerInfo.create!(user: barbara, referral_code: "00001")
 
-canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address:"16 rue gaudelet, paris", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-canaltours = Experience.create!(name: "B Canal Tour", price:"40", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address:"16 rue gaudelet, paris", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-canaltourrrrr = Experience.create!(name: "H Canal Tour", price:"30", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address:"16 rue gaudelet, paris",photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-
-
+canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"such water, much wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+cyclingtour = Experience.create!(name: "Joes Cycling Tour", price:"25", description:"much cycle, very pain!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+historicaltour = Experience.create!(name: "Historical Tour", price:"40", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
 
 carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount:"1", ngo: redcross, experience: canaltour)
 
+puts "Process Completed"

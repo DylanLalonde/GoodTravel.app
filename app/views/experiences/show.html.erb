@@ -1,0 +1,16 @@
+<div class="show-container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+        <%= image_tag 'http://via.placeholder.com/425x300' %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6" style="height: 300px; width: 425px;"> 
+         <p> <%= @experience.name %> </p>
+         <p> <%= @experience.description %> <p>
+         <p> <%= @experience.price %> </p>
+        </div>
+    </div>
+    <div id="map" data-markers="<%= @markers.to_json %>" style="height: 300px; width: 425px;">
+  </div>
+</div>
