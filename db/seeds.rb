@@ -1,4 +1,5 @@
 
+puts "Uprooting"
 Booking.destroy_all
 Experience.destroy_all
 NgoLocation.destroy_all
@@ -9,6 +10,7 @@ TravellerInfo.destroy_all
 HostInfo.destroy_all
 User.destroy_all
 
+puts "Planting Seeds"
 
 amsterdam = Location.create!(name:"amsterdam")
 
@@ -32,3 +34,4 @@ canaltour = Experience.create!(name: "Joes Canal Tour", description:"much tour, 
 
 carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount:"1", ngo: redcross, experience: canaltour)
 
+puts "Process Completed"
