@@ -5,7 +5,7 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show]
 
   def index
-    @experience = Experience.all
+    @experiences = Experience.all
   end
 
   def show
