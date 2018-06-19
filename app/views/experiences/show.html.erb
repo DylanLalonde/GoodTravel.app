@@ -1,16 +1,40 @@
 <div class="show-container">
     <div class="row">
-        <div class="col-xs-12 col-md-6">
-        <%= image_tag 'http://via.placeholder.com/425x300' %>
+
+        <div class="col-xs-12 col-md-6" style="height: 300px; width: 420px;">
+            Bootstrap Carosel of Tour Images
+            <%= image_tag @experience.photo, size: "392x250"%>
+        </div>
+        <div class="col-xs-12 col-md-6" style="height: 250px; width: 420px;">
+            Experience Name:
+            <p>
+                <%= @experience.name %>
+            </p>
+            Experience Description:
+            <p>
+                <%= @experience.description %>
+                    <p>
+                        <p>$
+                            <%= @experience.price %>
+                        </p>
+                        Booking a spot on this tour will donate $$$ to this ngo
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-6" style="height: 300px; width: 425px;"> 
-         <p> <%= @experience.name %> </p>
-         <p> <%= @experience.description %> <p>
-         <p> <%= @experience.price %> </p>
+        <div class="col-xs-12 col-md-6" style="height: 300px; width: 420px;">
+            Map
+            <%= image_tag 'http://via.placeholder.com/392x200' %>
+        </div>
+        <div class="col-xs-12 col-md-6" style="height: 200px; width: 420px;">
+            #this tour has contributed this much Recommended NGO:
+            <%= @ngo.name %>
         </div>
     </div>
-    <div id="map" data-markers="<%= @markers.to_json %>" style="height: 300px; width: 425px;">
-  </div>
-</div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6" style="height: 200px; width: 420px;">
+            <div class="reviews">
+                reviews
+            </div>
+        </div>
+
+    </div>

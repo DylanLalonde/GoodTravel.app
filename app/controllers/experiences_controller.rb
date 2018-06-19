@@ -10,9 +10,10 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @ngo = Ngo.find(@experience.featured_ngo)
   end
 
   def set_experience
-    @drone = Experience.find(params[:id])
+    @experience = Experience.find(params[:id])
   end
 end
