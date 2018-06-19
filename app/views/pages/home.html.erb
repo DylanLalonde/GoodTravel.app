@@ -2,7 +2,12 @@
   <div class="banner-content">
     <h1>GoodTravel</h1>
     <p>Fix travel with local commission distribution</p>
-    <a class="btn btn-success btn-lg">Book an Experience</a>
+    <div class="search-container">
+        <%= form_tag(experiences_path, method: :get) do %>
+          <%= text_field_tag :query, nil, placeholder: "What kind of experience?" %>
+          <%= submit_tag "Book an experience", class: "banner-button btn btn-success btn-mg"%>
+        <% end %>
+    </div>
   </div>
 </div>
 
