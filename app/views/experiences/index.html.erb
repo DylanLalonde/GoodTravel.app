@@ -1,7 +1,8 @@
 <h1> index pages </h1>
 
-<div class="index-wrapper">
-  <div class="index-container">
+
+<div class="index-content">
+
     <div class="index-row">
       <div class="index-search-bar">
         <%= form_tag(experiences_path, method: :get) do %>
@@ -10,34 +11,41 @@
         <% end %>
       </div>
     </div>
-<br>
+    <br>
+  <div class="index-container">
+
+
+
     <div class="index-row">
       <% @experiences.each do |experience| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="index-card-wrapper">
-          <div class="index-card-image" style = "background-image: url(<%=experience.photo%>);">
-            <img src='https://kitt.lewagon.com/placeholder/users/eventlessdrop' class="index-avatar-large"/>
-            <!-- image in css -->
-<!--             <div class="index-card-category">
- -->              <%#= experience.category %>
-              <%#= experience.name %>
-              <!-- need experience-type in model, will put here. -->
-           <!-- div -->
-          </div>
-          <div class="index-card-description">
-            <h2> <i class="fas fa-globe"></i> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
-            <h5> <i class="fas fa-user"></i> <%= experience.host_info.name %> </h5>
-            <h5> <i class="fas fa-map-marker"></i>  <%= experience.location.name %> </h5>
-            <h6> <%= experience.price %> <i class="fas fa-euro-sign"></i> </h6>
-
-          </div>
-        </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="index-card-image" style = "background-image: url(<%=experience.photo%>);">
+          <img src='https://kitt.lewagon.com/placeholder/users/eventlessdrop' class="index-avatar-large"/>
+          <!-- image in css -->
+        <!--             <div class="index-card-category">
+        -->              <%#= experience.category %>
+        <%#= experience.name %>
+        <!-- need experience-type in model, will put here. -->
+        <!-- div -->
       </div>
-      <% end %>
+      <div class="index-card-description">
+        <h2> <i class="fas fa-globe"></i> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
+        <h4> <%= experience.description %></h4>
+        <h5> <i class="fas fa-user"></i> <%= experience.host_info.name %> </h5>
+        <h5> <i class="fas fa-map-marker"></i>  <%= experience.location.name %> </h5>
+        <h6> <%= experience.price %> <i class="fas fa-euro-sign"></i> </h6>
+
+      </div>
     </div>
+    <% end %>
+
+  </div>
+      <div id="map"; data-markers="<%= @markers.to_json %>">
+    </div>
+</div>
 
 
-<!--   </div>
-  <div id="map" data-markers="<%= @markers.to_json %>">
-  </div> -->
+
+
+
 </div>

@@ -28,9 +28,9 @@ hostjoe = HostInfo.create!(name:"Joe", description:"canal tour provider", user: 
 
 referrerbarbara = ReferrerInfo.create!(user: barbara, referral_code: "00001")
 
-canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-canaltours = Experience.create!(name: "B Canal Tour", price:"40", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-canaltourrrrr = Experience.create!(name: "H Canal Tour", price:"30", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address:"16 rue gaudelet, paris", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+canaltours = Experience.create!(name: "B Canal Tour", price:"40", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address:"16 rue gaudelet, paris", photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
+canaltourrrrr = Experience.create!(name: "H Canal Tour", price:"30", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address:"16 rue gaudelet, paris",photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
 
 
 
