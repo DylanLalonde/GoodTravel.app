@@ -1,7 +1,18 @@
 # frozen_string_literal: true
 
 class ExperiencesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_experience, only: [:show]
+
   def index
     @experience = Experience.all
+  end
+
+  def show
+    @experience = Experience.find(params[:id])
+  end
+
+  def set_experience
+    @drone = Drone.find(params[:id])
   end
 end
