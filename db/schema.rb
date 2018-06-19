@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_06_19_131405) do
+=======
+ActiveRecord::Schema.define(version: 2018_06_19_123015) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_131405) do
 
   create_table "experiences", force: :cascade do |t|
     t.string "name"
+    t.string "category"
     t.string "description"
     t.integer "price"
     t.bigint "host_info_id"
@@ -40,6 +45,9 @@ ActiveRecord::Schema.define(version: 2018_06_19_131405) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.integer "featured_ngo"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
@@ -72,6 +80,8 @@ ActiveRecord::Schema.define(version: 2018_06_19_131405) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "description"
   end
 
   create_table "referrer_infos", force: :cascade do |t|
