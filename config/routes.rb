@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :experiences, only: [:index, :show, :new, :create] do
     resources :bookings,  only: [:show, :create]
   end
+
+  resources :ngos, only: [:index]
 end
