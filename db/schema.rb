@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_18_160227) do
+ActiveRecord::Schema.define(version: 2018_06_19_090740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_06_18_160227) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
