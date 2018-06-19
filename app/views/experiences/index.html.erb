@@ -15,106 +15,25 @@
       <% @experiences.each do |experience| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card-wrapper">
-          <div class="card-image" style = "background-image: url('https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg');">
+          <div class="card-image" style = "background-image: url(<%=experience.photo%>);">
             <!-- image in css -->
             <div class="card-category">
+              <%#= experience.category %>
               <%= experience.name %>
               <!-- need experience-type in model, will put here. -->
             </div>
           </div>
           <div class="card-description">
             <h2>   <%= link_to experience.name, experience_path(experience), class: "link-text" %></h2>
-            <h5>   <%= experience.location.name %></h5>
-            <h6> $ <%= experience.price %> per day</h6>
+            <h4> by <%= experience.host_info.name %> </h4>
+            <h5>   <%= experience.location.name %> </h5>
+            <h6> <%= experience.price %> eur </h6>
+
           </div>
         </div>
       </div>
       <% end %>
     </div>
-
-<!-- Card deck -->
-<div class="card-deck">
-
-  <!-- Card -->
-  <div class="card mb-4">
-
-    <!--Card image-->
-    <div class="view overlay">
-      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-
-    <!--Card content-->
-    <div class="card-body">
-
-      <!--Title-->
-      <h4 class="card-title">Card title</h4>
-      <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-    </div>
-
-  </div>
-  <!-- Card -->
-
-  <!-- Card -->
-  <div class="card mb-4">
-
-    <!--Card image-->
-    <div class="view overlay">
-      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg" alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-
-    <!--Card content-->
-    <div class="card-body">
-
-      <!--Title-->
-      <h4 class="card-title">Card title</h4>
-      <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-    </div>
-
-  </div>
-  <!-- Card -->
-
-  <!-- Card -->
-  <div class="card mb-4">
-
-    <!--Card image-->
-    <div class="view overlay">
-      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-
-    <!--Card content-->
-    <div class="card-body">
-
-      <!--Title-->
-      <h4 class="card-title">Card title</h4>
-      <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-    </div>
-
-  </div>
-  <!-- Card -->
-
-</div>
-<!-- Card deck -->
 
 
   </div>
