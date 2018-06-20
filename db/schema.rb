@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2018_06_20_104906) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.string "description"
+    t.string "photo"
+    t.string "address"
   end
 
   create_table "referrer_infos", force: :cascade do |t|
