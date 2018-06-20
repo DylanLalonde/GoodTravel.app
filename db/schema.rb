@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_06_20_104906) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
