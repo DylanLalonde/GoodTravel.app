@@ -11,7 +11,7 @@ class ExperiencesController < ApplicationController
     @markers = @experiences.map do |experience|
       {
         lat: experience.latitude,
-        lng: experience.longitude#,
+        lng: experience.longitude,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
@@ -20,7 +20,7 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @ngo = Ngo.find(@experience.featured_ngo)
-    @markers = { lat: @experience.latitude, lng: @experience.longitude}
+    @markers = [ { lat: @experience.latitude, lng: @experience.longitude} ]
   end
 
   def set_experience
