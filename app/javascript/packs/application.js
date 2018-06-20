@@ -11,3 +11,4 @@
 
 // import "bootstrap";
 import "../plugins/flatpickr"
+import "../plugins/coverr"
