@@ -1,8 +1,8 @@
 <div class="show-container">
+        
     <div class="col-xs-12 col-sm-6">
         Bootstrap Carosel of Tour Images
-        <%= image_tag @experience.photo, size: "392x250"%>
-
+        <%= image_tag @experience.photo , class:"show-image"%>
 
             Experience Name:
             <p>
@@ -21,11 +21,12 @@
         <div id="map" ; data-markers="<%= @markers.to_json %>">
         </div>
     </div>
-    <div class="col-xs-12 col-sm-6" style="height: 200px; width: 420px;">
-        #this tour has contributed this much Recommended NGO:
+    
+    <div class="col-xs-12 col-sm-6">
+    #this tour has contributed this much Recommended NGO:
         <%= @ngo.name %>
     </div>
-    <div class="col-xs-12 col-sm-6" style="height: 200px; width: 420px;">
+    <div class="col-xs-12 col-sm-6">
         <div class="reviews">
             reviews
         </div>

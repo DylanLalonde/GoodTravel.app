@@ -7,4 +7,13 @@
     #map {
         max-height: 300px;
     }
+    .show-image {
+        width: 90vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .show-image {
+        width: 49vw;
+    }
 }
