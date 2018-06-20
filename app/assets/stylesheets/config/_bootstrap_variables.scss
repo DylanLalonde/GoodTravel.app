@@ -10,9 +10,9 @@ $body-bg:                 $white;
 $font-size-base: 18px;
 
 // Colors
-$gray-base:       $gray;
-$brand-primary:   $green;
-$brand-success:   $scarlet;
+$gray-base:       $black;
+$brand-primary:   $sunset;
+$brand-success:   $black;
 $brand-info:      $white;
 $brand-danger:    $black;
 
@@ -28,14 +28,14 @@ $border-radius-small: 8px;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: $scarlet;
+  color: $black;
 }
 
 .was-validated .form-control:invalid,
 .form-control.is-invalid,
 .was-validated .custom-select:invalid,
 .custom-select.is-invalid {
-  border-color: $scarlet;
+  border-color: $black;
 }
 
 .was-validated .form-control:invalid ~ .invalid-feedback,
