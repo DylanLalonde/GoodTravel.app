@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
 
-before_action :set_booking, only: [ :new, :show, :create,]
+  before_action :set_booking, only: [ :new, :show, :create,]
 
   def show
   end
@@ -16,12 +16,19 @@ before_action :set_booking, only: [ :new, :show, :create,]
     @user = current_user
     @booking.user = @user
     @booking.experiences = @experiences
+    @booking.amount = update_total
+
     if @booking.save
       redirect_to dashboard_path
     else
       render "experiences"
     end
   end
+
+  def update_total
+    total = @booking.number_travellers * @booking.experience.price
+  end
+
 
   def destroy
     @booking = Booking.find(params[:id])
