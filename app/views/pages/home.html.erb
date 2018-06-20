@@ -19,9 +19,11 @@
       <% @ngos.each do |ngo| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card-wrapper">
-          <div class="card-image">
+          <div class="card-image" style = "background-image: url(<%=ngo.photo%>);">
+              <img src='https://kitt.lewagon.com/placeholder/users/eventlessdrop' class="index-avatar-large"/>
             <div class="card-category">
               <%= ngo.category %>
+              
             </div>
           </div>
           <div class="card-description">

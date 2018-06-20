@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2018_06_20_104906) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.string "photo"
+    t.integer "featured_ngo"
+    t.string "category"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
