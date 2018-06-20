@@ -39,11 +39,10 @@ amsterdam = Location.create!(name:"amsterdam")
 
 #end
 
-binding.pry
 
 #travellers_user
-    carla = User.create!(first_name:"Carla", last_name:"Smith", email:"carla@test.com", password:"123456", credit:500, photo: File.open(File.join(Rails.root, "/app/assets/images/ngologos/Carla.jpg")))
-    feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", email:"feiko@test.com", password:"123456", credit:500, photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/the-fiek.jpg")))
+    carla = User.create!(first_name:"Carla", last_name:"Smith", email:"carla@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508838/goodtravel.app/Carla.png")
+    feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", email:"feiko@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/the-fiek.png")
 #end
 
 #traveller
@@ -52,8 +51,8 @@ binding.pry
 #end
 
 #tourhost_user
-    jennifer = User.create!(first_name:"Jennifer", last_name:"Rodrigez", photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/Jennifer.jpg")), email:"jennifer@test.com", password:"123456")
-    jad = User.create!(first_name:"Jad", last_name:"Joubran", photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/jad.jpg")), email:"jad@test.com", password:"123456")
+    jennifer = User.create!(first_name:"Jennifer", last_name:"Rodrigez", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/Jennifer.png", email:"jennifer@test.com", password:"123456")
+    jad = User.create!(first_name:"Jad", last_name:"Joubran", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508844/goodtravel.app/jad.png", email:"jad@test.com", password:"123456")
 #end
 
 #tourhoster
@@ -62,8 +61,8 @@ binding.pry
 #end
 
 #referrer_user
-    barbara = User.create!(first_name:"Barbara", last_name:"Samantha", photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/Barbara.jpg")), email:"barbara@test.com", password:"123456")
-    bob = User.create!(first_name:"Bob", last_name:"Bobbonius", photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/bob.jpg")), email:"bob@test.com", password:"123456")
+    barbara = User.create!(first_name:"Barbara", last_name:"Samantha", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508836/goodtravel.app/Barbara.png", email:"barbara@test.com", password:"123456")
+    bob = User.create!(first_name:"Bob", last_name:"Bobbonius", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508837/goodtravel.app/bob.png", email:"bob@test.com", password:"123456")
 #end
 
 #Referrer_code
@@ -72,17 +71,17 @@ binding.pry
 #end
 
 #tours
-    canaltour = Experience.create!(name: "Canal Tour", price:"50", description:"such water, much wow!", host_info:hostjennifer, location: amsterdam, address: "Binnenkant 1, 1011 BG Amsterdam", featured_ngo: peta.id, photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/canal_tour.png")))
+    canaltour = Experience.create!(name: "Canal Tour", price:"50", description:"such water, much wow!", host_info:hostjennifer, location: amsterdam, address: "Binnenkant 1, 1011 BG Amsterdam", featured_ngo: peta.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508839/goodtravel.app/canal_tour.png")
 
-    cyclingtour = Experience.create!(name: "Cycling Tour", price:"25", description:"much cycle, very pain!", host_info:hostjad, location: amsterdam, address: "Nieuwezijds Kolk 29, 1012 PV Amsterdam", featured_ngo: sea_sheperd.id, photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/cycling_tour.png")))
+    cyclingtour = Experience.create!(name: "Cycling Tour", price:"25", description:"much cycle, very pain!", host_info:hostjad, location: amsterdam, address: "Nieuwezijds Kolk 29, 1012 PV Amsterdam", featured_ngo: sea_sheperd.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/cycling_tour.png")
 
-    Beertour = Experience.create!(name: "Craft Beer Tour", price:"50", description:"Just one beer!", host_info:hostjad, location: amsterdam, address: "Funenkade 7, 1018 AL Amsterdam", featured_ngo: pax_for_peace.id, photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/Beer_tour.png")))
+    Beertour = Experience.create!(name: "Craft Beer Tour", price:"50", description:"Just one beer!", host_info:hostjad, location: amsterdam, address: "Funenkade 7, 1018 AL Amsterdam", featured_ngo: pax_for_peace.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/Beer_tour.png")
 
-    historicaltour = Experience.create!(name: "Historical Tour", price:"40", description:"much tour, very wow!", host_info:hostjennifer, location: amsterdam, address: "Dam 3, 1012 JS Amsterdam", featured_ngo: world_animal_protection.id,photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/Historical_Tour.png")))
+    historicaltour = Experience.create!(name: "Historical Tour", price:"40", description:"much tour, very wow!", host_info:hostjennifer, location: amsterdam, address: "Dam 3, 1012 JS Amsterdam", featured_ngo: world_animal_protection.id,photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/Historical_Tour.png")
 
-    cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", description:"much tour, very wow!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: war_child.id,  photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/cathedral_tour.png")))
+    cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", description:"much tour, very wow!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: war_child.id,  photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508841/goodtravel.app/cathedral_tour.png")
 
-    cheesetour = Experience.create!(name: "Cheese Tour", price:"30", description:"Such yellow, very cheese!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: slow_food.id,  photo:File.open(File.join(Rails.root, "/app/assets/images/ngologos/cheese_tour.png")))
+    cheesetour = Experience.create!(name: "Cheese Tour", price:"30", description:"Such yellow, very cheese!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: slow_food.id,  photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508841/goodtravel.app/cheese_tour.png")
 
     #Redlightdistricttour
     #klompenday
