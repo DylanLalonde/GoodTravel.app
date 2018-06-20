@@ -1,84 +1,82 @@
-<div class="banner" style="background-color: #75e83b">
-  <div class="banner-content">
-    <h1>GoodTravel</h1>
-    <p>Fix travel with local commission distribution</p>
-    <div class="search-container">
-        <%= form_tag(experiences_path, method: :get) do %>
-          <%= text_field_tag :query, nil, placeholder: "What kind of experience?" %>
-          <%= submit_tag "Book an experience", class: "banner-button btn btn-success btn-mg"%>
-        <% end %>
+
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488646/goodtravel/The--Truck.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488381/goodtravel/The-Truck.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="https://res.cloudinary.com/dylanlalonde/image/upload/v1529489412/goodtravel/The---Truck.jpg" alt="">
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="cards-main-container">
   <div class="cards-container">
     <div class="row">
-      <h2>Popular NGOs in this area:
-        <h2>
-          <% @ngos.each do |ngo| %>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="card-wrapper">
-                <div class="card-image">
-                  <div class="card-category">
-                    <%= ngo.category %>
-                  </div>
-                </div>
-                <div class="card-description">
-                  <h2>
-                    <%= ngo.name %>
-                  </h2>
-                  <h5>
-                  <!-- ngo.location -->
-                  </h5>
-                </div>
-              </div>
+      <h2>Popular NGOs in this area: </h2>
+      <% @ngos.each do |ngo| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card-wrapper">
+          <div class="card-image">
+            <div class="card-category">
+              <%= ngo.category %>
             </div>
-            <% end %>
+          </div>
+          <div class="card-description">
+            <h2>
+              <%= ngo.name %>
+            </h2>
+            <h5>
+              <%= ngo.description %>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 
-  <div class="cards-container">
-    <div class="row">
-      <h2> Popular experiences in this area:
-        <h2>
-          <% @experiences.each do |experience| %>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="card-wrapper">
-                <div class="card-image">
-                  <div class="card-category">
-                    <%= experience.category %>
-                  </div>
-                </div>
-                <div class="card-description">
-                  <h2>
-                    <%= experience.name %>
-                  </h2>
-                  <h5>
-                    <!-- experience.location -->
-                  </h5>
-                </div>
-              </div>
-            </div>
-            <% end %>
-    </div>
     <div class="cards-container">
       <div class="row">
-        <h2> Successful referrers in this area:
-          <h2>
-            <% @referrers.each do |referrer| %>
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card-wrapper">
-                  <div class="card-image">
-                  </div>
-                  <div class="card-description">
-                    <h2>
-                      <%= referrer.user.first_name  %>
-                    </h2>
-                  </div>
-                </div>
+        <h2> Popular experiences in this area: </h2>
+        <% @experiences.each do |experience| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card-wrapper">
+            <div class="index-card-image" style = "background-image: url(<%=experience.photo%>);">
+              <img src='https://kitt.lewagon.com/placeholder/users/eventlessdrop' class="index-avatar-large"/>
+              <div class="card-category">
+                <%= experience.category %>
               </div>
-              <% end %>
+            </div>
+            <div class="card-description">
+              <h2> <i class="fas fa-globe"></i> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
+              <h4> <%= experience.description %></h4>
+              <h5> <i class="fas fa-user"></i> <%= experience.host_info.name %> </h5>
+              <h5> <i class="fas fa-map-marker"></i>  <%= experience.location.name %> </h5>
+              <h6> <%= experience.price %> <i class="fas fa-euro-sign"></i> </h6>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
-  </div>
+    </div>
+
+    <div class="cards-container">
+      <div class="row">
+        <h2> Successful referrers in this area: </h2>
+        <% @referrers.each do |referrer| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card-wrapper">
+            <div class="card-image">
+            </div>
+            <div class="card-description">
+              <h2> <%= referrer.user.first_name %> </h2>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
 </div>
