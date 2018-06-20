@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_20_145333) do
+ActiveRecord::Schema.define(version: 2018_06_20_164624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,14 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
     t.index ["user_id"], name: "index_referrer_infos_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "experience_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_reviews_on_experience_id"
+  end
+
   create_table "traveller_infos", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -136,5 +144,6 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
   add_foreign_key "ngo_locations", "locations"
   add_foreign_key "ngo_locations", "ngos"
   add_foreign_key "referrer_infos", "users"
+  add_foreign_key "reviews", "experiences"
   add_foreign_key "traveller_infos", "users"
 end

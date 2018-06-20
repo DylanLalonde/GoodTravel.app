@@ -5,6 +5,7 @@ class Experience < ApplicationRecord
   belongs_to :location
   has_many :bookings
   has_many :ngo_locations, through: :location
+  has_many :reviews, dependent: :destroy
   # has_one :featured_ngo, class: Ngo
 
   geocoded_by :address
