@@ -39,32 +39,56 @@ amsterdam = Location.create!(name:"amsterdam")
 
 #end
 
-#travellers
-    carla = User.create!(first_name:"Carla", last_name:"Smith", photo:"", email:"carla@test.com", password:"123456", credit:500, photo:image_tag("Carla.jpg"))
-    Feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", photo:"", email:"feiko@test.com", password:"123456", credit:500, photo:image_tag("the-fiek.jpg"))
+#travellers_user
+    carla = User.create!(first_name:"Carla", last_name:"Smith", email:"carla@test.com", password:"123456", credit:500, photo:image_tag("Carla.jpg"))
+    feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", email:"feiko@test.com", password:"123456", credit:500, photo:image_tag("the-fiek.jpg"))
 #end
 
-#tourhost
-    Jennifer = User.create!(first_name:"Jennifer", last_name:"Rodrigez", photo:image_tag("jennifer.jpg"), email:"jennifer@test.com", password:"123456")
-    Jad = User.create!(first_name:"Jad", last_name:"Joubran", photo:image_tag("jad.jpg"), email:"jad@test.com", password:"123456")
+#traveller
+    travellercarla = TravellerInfo.create!(user: carla)
+    travellerfeiko = TravellerInfo.create!(user: feiko)
 #end
 
-#referrer
-    barbara = User.create!(first_name:"Barbara", last_name:"Samantha", photo:"", email:"barbara@test.com", password:"123456")
+#tourhost_user
+    jennifer = User.create!(first_name:"Jennifer", last_name:"Rodrigez", photo:image_tag("jennifer.jpg"), email:"jennifer@test.com", password:"123456")
+    jad = User.create!(first_name:"Jad", last_name:"Joubran", photo:image_tag("jad.jpg"), email:"jad@test.com", password:"123456")
+#end
+
+#tourhoster
+    hostjennifer = HostInfo.create!(user: jennifer, description:"canal tour provider")
+    hostjad = HostInfo.create!(user: jad, description:"Cycling tour provider")
+#end
+
+#referrer_user
+    barbara = User.create!(first_name:"Barbara", last_name:"Samantha", photo:image_tag("barbara.jpg"), email:"barbara@test.com", password:"123456")
+    bob = User.create!(first_name:"Bob", last_name:"Bobbonius", photo:image_tag("bob.jpg"), email:"bob@test.com", password:"123456")
+#end
+
+#Referrer_code
+    referrerbarbara = ReferrerInfo.create!(user: barbara, referral_code: "00001")
+    referrerbob = ReferrerInfo.create!(user: bob, referral_code: "00002")
+#end
+
+#tours
+    canaltour = Experience.create!(name: "Canal Tour", price:"50", description:"such water, much wow!", host_info:hostjennifer, location: amsterdam, address: "Binnenkant 1, 1011 BG Amsterdam", featured_ngo: peta.id, photo:image_tag("canal_tour.png"))
+
+    cyclingtour = Experience.create!(name: "Cycling Tour", price:"25", description:"much cycle, very pain!", host_info:hostjad, location: amsterdam, address: "Nieuwezijds Kolk 29, 1012 PV Amsterdam", featured_ngo: sea_sheperd.id, photo:image_tag("cycling_tour.png")
+
+    Beertour = Experience.create!(name: "Craft Beer Tour", price:"50", description:"Just one beer!", host_info:hostjad, location: amsterdam, address: "Funenkade 7, 1018 AL Amsterdam", featured_ngo: pax_for_peace.id, photo:image_tag("beer_tour.png"))
+
+    historicaltour = Experience.create!(name: "Historical Tour", price:"40", description:"much tour, very wow!", host_info:hostjennifer, location: amsterdam, address: "Dam 3, 1012 JS Amsterdam", featured_ngo: world_animal_protection.id,photo:image_tag("Historical_tour.png"))
+
+    cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", description:"much tour, very wow!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: war_child.id,  photo:image_tag("cathedral_tour.png"))
+
+    
+    cheesetour = Experience.create!(name: "Cheese Tour", price:"30", description:"Such yellow, very cheese!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: slow_food.id,  photo:image_tag("cheese_tour.png"))
+
+    #Redlightdistricttour
+    #klompenday
 
 #end
-travellercarla = TravellerInfo.create!(user: carla)
 
-hostjoe = HostInfo.create!(name:"Joe", description:"canal tour provider", user: joe)
-
-referrerbarbara = ReferrerInfo.create!(user: barbara, referral_code: "00001")
-
-canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"such water, much wow!", host_info:hostjoe, location: amsterdam, address: "16 Villa Gaudelet Paris", featured_ngo: peta.id, photo:"https://res.cloudinary.com/dylanlalonde/image/upload/v1529492648/goodtravel/pax.png")
-cyclingtour = Experience.create!(name: "Joes Cycling Tour", price:"25", description:"much cycle, very pain!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: sea_sheperd.id, photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-canaltour = Experience.create!(name: "Joes Canal Tour", price:"50", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: icrse.id, photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-historicaltour = Experience.create!(name: "Historical Tour", price:"40", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: world_animal_protection.id, photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", description:"much tour, very wow!", host_info:hostjoe, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: slow_food.id,  photo:"https://res.cloudinary.com/greggstyle/image/upload/v1529099386/xipqak07dqbfpwrqopaq.jpg")
-
+#bookings
 carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount:"1", ngo: icrse, experience: canaltour)
-
+#end
 puts "Process Completed"
