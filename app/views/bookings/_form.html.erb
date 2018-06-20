@@ -10,7 +10,16 @@
     <%= simple_form_for :search, method: "get" do |f| %>
       <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :amount %>
+      <%#= f.textarea  %>
+           NGO name :
+           <br>
+           <br>
+
       <%= f.button :submit, "Book", class: "btn btn-primary" %>
     <% end %>
+
+
+
   </div>
 </div>
