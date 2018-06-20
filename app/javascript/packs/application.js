@@ -12,3 +12,6 @@
 // import "bootstrap";
 import "../plugins/flatpickr"
 import "../plugins/coverr"
+import { changeNavbarOnScroll } from "../components/navbar"
+
+changeNavbarOnScroll()
