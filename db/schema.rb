@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2018_06_19_123015) do
 
   create_table "experiences", force: :cascade do |t|
     t.string "name"
-    t.string "category"
     t.string "description"
     t.integer "price"
     t.bigint "host_info_id"
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_123015) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "category"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
