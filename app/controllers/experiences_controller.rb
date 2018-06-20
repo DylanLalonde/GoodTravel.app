@@ -17,11 +17,28 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def new
+     @experience = Experience.new
+  end
+
+  def create
+    @experience = Experience.new(experience_params)
+    @experience.user = current_user
+    if @experience.save
+      redirect_to experience_path(@experience)
+    else
+      render :new
+    end
+  end
+
+
   def show
     @experience = Experience.find(params[:id])
   end
 
+private
+
   def set_experience
-    @drone = Experience.find(params[:id])
+    @experience = Experience.find(params[:id])
   end
 end

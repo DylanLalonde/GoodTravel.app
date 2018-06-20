@@ -20,10 +20,12 @@ gem "simple_form"
 gem "uglifier"
 gem "webpacker"
 
+gem 'bootstrap-datepicker-rails'
 gem "rubocop"
 gem "rubocop-rails"
-
 gem "geocoder"
+gem 'pg_search'
+gem 'faker'
 
 group :development do
   gem "web-console", ">= 3.3.0"

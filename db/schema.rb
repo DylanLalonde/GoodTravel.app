@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_123015) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "category"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
