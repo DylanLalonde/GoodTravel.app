@@ -1,14 +1,33 @@
 /* Main navbar */
 .navbar-goodtravel {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: $black;
-  transition: all 0.3s ease;
-  height: 60px;
-  padding: 0px 0px;
-  padding-right: 4px;
   display: flex;
-  align-items: center;
+  position: fixed;
   justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding-right: 4px;
+  padding-left: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Navbar after scrolling past banner */
+.navbar-goodtravel-black {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding-right: 4px;
+  padding-left: 4px;
+  background-color: #333333;
+  transition: all 0.3s ease;
 }
 
 /* Logo */
@@ -38,19 +57,17 @@
 
 /* Navbar link */
 .navbar-goodtravel-link {
-  color: $sunset;
-  background-color: $white;
-  border-color: $sunset;
-  border-radius: 4px;
-  border: 1px solid $sunset;
+  color: white;
   font-size: 1em;
-  font-weight: lighter;
   line-height: 1;
   padding: .45em .875em;
   box-sizing: border-box;
   max-width: 350px;
   margin-right: 3px;
   transition: all .25s;
+  border: 1px solid $sunset;
+  border-radius: 4px;
+  border-color: transparent;
     transition-property: all;
     transition-duration: 0.25s;
     transition-timing-function: ease;
@@ -58,33 +75,25 @@
 }
 .navbar-goodtravel-link:hover {
   color: $white;
+  line-height: 1;
   background-color: $black;
   text-decoration: none;
-  font-weight: lighter;
   box-sizing: border-box;
   max-width: 350px;
-  line-height: 1;
   border: 1px solid $sunset;
   border-radius: 4px;
   border-color: $black;
 }
 
 .navbar-goodtravel-cta-link {
-  color: #d6d3cc;
-  display: inline-block;
+  color: white;
+  font-size: 1em;
+  line-height: 1;
+  padding: .45em .875em;
   box-sizing: border-box;
   max-width: 350px;
-  line-height: 1;
-  border: 1px solid $sunset;
+  border: 1px solid $white;
   border-radius: 4px;
-  padding: .45em .875em;
-  background: none;
-  background-color: $sunset;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
-  font-size: 1em;
-  font-weight: lighter;
-  text-align: center;
-  text-decoration: none;
   cursor: pointer;
   transition: all .25s;
       transition-property: all;
@@ -94,11 +103,15 @@
 }
 
 .navbar-goodtravel-cta-link:hover {
-  background-color: #92485a;
-  text-decoration: none;
-  font-weight: lighter;
   color: $white;
-  border-color: #92485a;
+  line-height: 1;
+  background-color: $black;
+  text-decoration: none;
+  box-sizing: border-box;
+  max-width: 350px;
+  border: 1px solid $sunset;
+  border-radius: 4px;
+  border-color: $black;
 }
 
 

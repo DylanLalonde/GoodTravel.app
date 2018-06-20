@@ -1,7 +1,7 @@
 
 <div class="homepage-hero-module">
     <div class="video-container">
-        <div class="filter"></div>
+        <!-- <div class="filter"></div> -->
         <video autoplay loop class="fillWidth">
             <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488646/goodtravel/The--Truck.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488381/goodtravel/The-Truck.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
@@ -19,9 +19,11 @@
       <% @ngos.each do |ngo| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card-wrapper">
-          <div class="card-image">
+          <div class="card-image" style = "background-image: url(<%=ngo.photo%>);">
+              <img src='https://kitt.lewagon.com/placeholder/users/eventlessdrop' class="index-avatar-large"/>
             <div class="card-category">
               <%= ngo.category %>
+              
             </div>
           </div>
           <div class="card-description">
