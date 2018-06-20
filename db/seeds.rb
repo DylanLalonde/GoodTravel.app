@@ -14,8 +14,14 @@ puts "Planting Seeds"
 
 amsterdam = Location.create!(name:"amsterdam")
 
-redcross = Ngo.create!(name:"red cross")
+#List of Ngos
+    redcross = Ngo.create!(name:"Red Cross", description:"")
 
+    peta = Ngo.create!(name:"Peta", description:"PETA focuses on establishing and protecting animal rights.Our work focuses on the four areas where the largest numbers of animals suffer the most intensely for the longest time.")
+
+    icrse = Ngo.create!(name:"ICRSE" description:"International Committee on the Rights of Sex Workers in Europe (ICRSE) is a network of sex worker organisations that work together to support the development of national and international law, policy and practice, which respects and upholds the human and labour rights of sex workers throughout Europe.")
+
+    slow_food = Ngo.create(name:"Slow Food", description:" ")
 redcrosslocation = NgoLocation.create!(location: amsterdam, ngo: redcross)
 
 carla = User.create!(first_name:"carla", last_name:"smith", photo:"", email:"carla@test.com", password:"123456")
