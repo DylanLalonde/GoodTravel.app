@@ -1,5 +1,5 @@
 <div class="show-container">
-        
+
     <div class="col-xs-12 col-sm-6">
         Bootstrap Carosel of Tour Images
         <%= image_tag @experience.photo , class:"show-image"%>
@@ -16,12 +16,17 @@
                             <%= @experience.price %>
                         </p>
                         Booking a spot on this tour will donate $$$ to this ngo
+                        <br>
+            <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success" %>
+
     </div>
+
+
     <div class="col-xs-12 col-sm-6">
         <div id="map" ; data-markers="<%= @markers.to_json %>">
         </div>
     </div>
-    
+
     <div class="col-xs-12 col-sm-6">
     #this tour has contributed this much Recommended NGO:
         <%= @ngo.name %>
@@ -29,7 +34,6 @@
     <div class="col-xs-12 col-sm-6">
         <div class="reviews">
             reviews
-        </div>
-        <%= link_to 'Booking', new_experience_booking_path(@experience) %>
-    </div>
+
 </div>
+
