@@ -1,14 +1,15 @@
-<div class="banner" style="background-color: #75e83b">
-  <div class="banner-content">
-    <h1>GoodTravel</h1>
-    <p>Fix travel with local commission distribution</p>
-    <div class="search-container">
-      <%= form_tag(experiences_path, method: :get) do %>
-      <%= text_field_tag :query, nil, placeholder: "What kind of experience?" %>
-      <%= submit_tag "Book an experience", class: "banner-button btn btn-success btn-mg"%>
-      <% end %>
+
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488646/goodtravel/The--Truck.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488381/goodtravel/The-Truck.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="https://res.cloudinary.com/dylanlalonde/image/upload/v1529489412/goodtravel/The---Truck.jpg" alt="">
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="cards-main-container">

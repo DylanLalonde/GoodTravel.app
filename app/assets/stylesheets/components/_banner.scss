@@ -1,38 +1,41 @@
-.banner {
-  color: $black;
-  text-align: center;
-  height: calc(100vh - 60px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
 }
-
-.banner h1 {
-  color: $sunset;
-  font-size: 50px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
 }
-
-.banner p {
-  color: $black;
-  font-size: 25px;
-  font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
 }
-
-.banner-content p {
-  color: $black;
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
 }
-
-.banner-button {
-  transition: all .25s;
-    transition-property: all;
-    transition-duration: 0.25s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
 }
