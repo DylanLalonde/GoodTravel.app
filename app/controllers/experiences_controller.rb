@@ -18,7 +18,7 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-     @experience = Experience.new
+    @experience = Experience.new
   end
 
   def create
@@ -35,7 +35,8 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @ngo = Ngo.find(@experience.featured_ngo)
-    @markers = [ { lat: @experience.latitude, lng: @experience.longitude} ]
+    @markers = [ { lat: @experience.latitude, lng: @experience.longitude } ]
+    @review = Review.new
   end
 
 private

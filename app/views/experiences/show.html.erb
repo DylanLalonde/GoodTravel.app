@@ -1,39 +1,43 @@
 <div class="show-container">
 
-    <div class="col-xs-12 col-sm-6">
-        Bootstrap Carosel of Tour Images
-        <%= image_tag @experience.photo , class:"show-image"%>
+  <div class="col-xs-12 col-sm-6">
+    Bootstrap Carosel of Tour Images
+    <%= image_tag @experience.photo , class:"show-image"%>
 
-            Experience Name:
-            <p>
-                <%= @experience.name %>
-            </p>
-            Experience Description:
-            <p>
-                <%= @experience.description %>
-                    <p>
-                        <p>$
-                            <%= @experience.price %>
-                        </p>
-                        Booking a spot on this tour will donate $$$ to this ngo
-                        <br>
-            <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success" %>
+    Experience Name:
+    <p>
+      <%= @experience.name %>
+    </p>
+    Experience Description:
+    <p>
+      <%= @experience.description %>
+      <p>
+        <p>$
+          <%= @experience.price %>
+        </p>
+        Booking a spot on this tour will donate $$$ to this ngo
+        <br>
+        <br>
+        <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
+        <br>
+        <br>
+      </div>
 
-    </div>
+      <div class="col-xs-12 col-sm-6">
+        #this tour has contributed this much Recommended NGO:
+        <%= @ngo.name %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="reviews">
+          reviews
+        </div>
+        <br>
+      </div>
 
-
-    <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6">
         <div id="map" ; data-markers="<%= @markers.to_json %>">
         </div>
-    </div>
+      </div>
 
-    <div class="col-xs-12 col-sm-6">
-    #this tour has contributed this much Recommended NGO:
-        <%= @ngo.name %>
+
     </div>
-    <div class="col-xs-12 col-sm-6">
-        <div class="reviews">
-            reviews
-        </div>
-    </div>
-</div>

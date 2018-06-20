@@ -20,13 +20,13 @@ gem "simple_form"
 gem "uglifier"
 gem "webpacker"
 
-gem 'bootstrap-datepicker-rails'
+gem "bootstrap-datepicker-rails"
 gem "rubocop"
 gem "rubocop-rails"
 gem "geocoder"
-gem 'pg_search'
-gem 'faker'
-gem 'jquery-rails'
+gem "pg_search"
+gem "faker"
+gem "jquery-rails"
 
 
 group :development do

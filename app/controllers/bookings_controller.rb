@@ -1,6 +1,6 @@
+# frozen_string_literal: true
+
 class BookingsController < ApplicationController
-
-
   before_action :set_booking, only: [ :new, :show, :create,]
 
   def show
@@ -38,13 +38,10 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_booking
-    @experience = Experience.find(params[:experience_id])
-  end
-  def booking_params
-    params.require(:booking).permit(:user_id)
-  end
-
-
-
+    def set_booking
+      @experience = Experience.find(params[:experience_id])
+    end
+    def booking_params
+      params.require(:booking).permit(:user_id)
+    end
 end
