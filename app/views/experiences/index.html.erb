@@ -33,7 +33,7 @@
         <h4> <%= experience.description %></h4>
         <h5> <i class="fas fa-user"></i> <%= experience.host_info.name %> </h5>
         <h5> <i class="fas fa-map-marker"></i>  <%= experience.location.name %> </h5>
-        <h6> <%= experience.price %> <i class="fas fa-euro-sign"></i> </h6>
+        <h6> <%= humanized_money_with_symbol(experience.price) %> </h6>
 
       </div>
     </div>
