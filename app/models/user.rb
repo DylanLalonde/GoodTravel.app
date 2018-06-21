@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :referrer_infos
   has_many :traveller_infos
   has_many :host_infos
+  has_many :bookings
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

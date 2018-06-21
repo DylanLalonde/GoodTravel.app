@@ -7,5 +7,6 @@ class PagesController < ApplicationController
     @ngos = Ngo.limit(4)
     @experiences = Experience.limit(4)
     @referrers = ReferrerInfo.limit(4)
+    @current_page = "home"
   end
 end

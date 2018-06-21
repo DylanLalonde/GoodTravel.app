@@ -3,24 +3,25 @@
 <div class="container">
   <div class="form-wrapper" style="width: 500px; margin: 0 auto;">
     <h2> <%= @experience.name %> </h2>
-<h5> <%= @experience.description %> </h5>
-<br>
-<br>
+    <h5> <%= @experience.description %> </h5>
+    <br>
+    <br>
 
     <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, label: "Starts",required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, label: "Ends", input_html: {class: "datepicker"} %>
-      <%= f.input :number_traveller, label: "How many person?", collection: 1..10, prompt: "select" %>
-      <%= f.input :amount, label: "Total amount", disabled: true, required: false, hint: "$ #{@experience.price}  per person for an AMAZING sustainable experience" %>
-      <br>
-      <%= f.input :description, as: :text, label: "Comments", required: false %>
+    <%= f.input :starts_at, as: :string, label: "Starts",required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :ends_at, as: :string, required: false, label: "Ends", input_html: {class: "datepicker"} %>
+    <%= f.input :number_traveller, label: "How many person?", collection: 1..10, prompt: "select" %>
+    <%= f.input :amount, label: "Total amount", disabled: true, required: false, hint: "$ #{@experience.price}  per person for an AMAZING sustainable experience" %>
+    <br>
+    <%= f.input :description, as: :text, label: "Comments", required: false %>
 
-           NGO name :
-           <br>
-           <br>
+    <%= f.input :number_traveller, label: "Pick your NGO", collection: ["blablaa", "blbalabla"], prompt: "select", required: false %>
+
+    <br>
+    <br>
 
 
-      <%= f.button :submit, "Book", class: "btn btn-primary" %>
+    <%= f.button :submit, "Book", class: "btn btn-primary btn-lg" %>
     <% end %>
 
 
@@ -31,4 +32,4 @@
 <br>
 
 <div id="amount-experience" class="hidden"> <%=  @experience.price%></div>
-  <%#= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
+<%#= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>

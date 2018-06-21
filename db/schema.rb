@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_20_145333) do
+ActiveRecord::Schema.define(version: 2018_06_21_103532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,17 +36,19 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
   create_table "experiences", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "price"
     t.bigint "host_info_id"
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.string "photo"
     t.integer "featured_ngo"
     t.string "category"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.integer "featured_ngo"
+    t.integer "price_cents", default: 0, null: false
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
@@ -85,6 +87,18 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
     t.string "address"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "booking_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "referrer_infos", force: :cascade do |t|
     t.integer "referral_code"
     t.bigint "user_id"
@@ -93,6 +107,14 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
     t.integer "location_id"
     t.index ["referral_code"], name: "index_referrer_infos_on_referral_code"
     t.index ["user_id"], name: "index_referrer_infos_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "experience_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_reviews_on_experience_id"
   end
 
   create_table "traveller_infos", force: :cascade do |t|
@@ -135,6 +157,8 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
   add_foreign_key "host_infos", "users"
   add_foreign_key "ngo_locations", "locations"
   add_foreign_key "ngo_locations", "ngos"
+  add_foreign_key "orders", "users"
   add_foreign_key "referrer_infos", "users"
+  add_foreign_key "reviews", "experiences"
   add_foreign_key "traveller_infos", "users"
 end
