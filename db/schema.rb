@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_090521) do
+ActiveRecord::Schema.define(version: 2018_06_21_103532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,18 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
     t.string "address"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "booking_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "referrer_infos", force: :cascade do |t|
     t.integer "referral_code"
     t.bigint "user_id"
@@ -143,6 +155,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
   add_foreign_key "host_infos", "users"
   add_foreign_key "ngo_locations", "locations"
   add_foreign_key "ngo_locations", "ngos"
+  add_foreign_key "orders", "users"
   add_foreign_key "referrer_infos", "users"
   add_foreign_key "reviews", "experiences"
   add_foreign_key "traveller_infos", "users"

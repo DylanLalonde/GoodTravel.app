@@ -20,6 +20,7 @@ gem "simple_form"
 gem "uglifier"
 gem "webpacker"
 gem 'money-rails'
+gem 'stripe'
 
 gem "bootstrap-datepicker-rails"
 gem "rubocop"
