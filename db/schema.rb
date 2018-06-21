@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 2018_06_20_145333) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.integer "featured_ngo"
+    t.string "category"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.string "category"
-    t.integer "featured_ngo"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
