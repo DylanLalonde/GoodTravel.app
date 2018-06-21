@@ -1,11 +1,14 @@
 /* Home navbar */
-
 .home.navbar-goodtravel {
   background-color: transparent;
 }
 
+.home.navbar-goodtravel.opaque {
+  background-color: black;
+}
+
 /* Home Navbar after scrolling past banner */
-.navbar-goodtravel {
+ .navbar-goodtravel {
   display: flex;
   position: fixed;
   justify-content: space-between;
