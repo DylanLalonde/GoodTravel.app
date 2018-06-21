@@ -4,6 +4,9 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [ :new, :show, :create,]
 
   def show
+     @user = current_user
+     @experience = Experience.find(params[:experience_id])
+     @booking = Booking.find(params[:id])
   end
 
   def new
