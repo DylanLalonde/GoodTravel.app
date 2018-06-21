@@ -6,6 +6,14 @@ Rails.application.routes.draw do
     resources :bookings,  only: [:show, :new, :create, :destroy ]
   end
 
+  resources :experiences, only: [ :index, :show ] do
+    resources :review, only: [:create]
+  end
+
   resources :ngos, only: [:index]
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 
 end
