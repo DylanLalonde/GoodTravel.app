@@ -1,7 +1,19 @@
 <div class="container">
     <div class="row">
     <h1> Your Booking as been confirmed</h1>
-    <%= @booking.ngo.name %>q
+    <%= @booking.status %>
+    <br>
+    <%= @booking.ngo.name %>
+    <br>
+    Booking Information:
+    <br>
+    <%= @booking.start_date %>
+    <%= @booking.end_date %>
+    <br>
+    Payment Confirmation:
+    <br>
+    You have paid = <%= @booking.end_date %>
+    <br>
     </div>
 </div>
 

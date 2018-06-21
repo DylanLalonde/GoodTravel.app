@@ -11,9 +11,12 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
+            <%= f.input :first_name, required: true %>
+            <%= f.input :last_name, required: true %>
+            <%= f.input :role, label: "Pick your NGO", collection: @ngos , prompt: "Select NGO", required: false %>
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
         </div>
 
         <div class="form-actions">
