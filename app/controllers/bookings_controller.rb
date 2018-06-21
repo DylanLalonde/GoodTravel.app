@@ -18,23 +18,28 @@ skip_before_action :authenticate_user!, only: [:show]
   end
 
   def create
+    ngo = Ngo.find(params[:booking][:selected_ngo])
+    experience = Experience.find(params[:experience_id])
+   
     @booking = Booking.new(booking_params)
+    @booking.selected_ngo = ngo
+    @booking.experience = experience
     @traveller_info = TravellerInfo.create(user: current_user)
     @booking.traveller_info = @traveller_info
-    raise
     @booking.amount = update_total
-   
-    if @booking.save
-      redirect_to experience_booking_path
+
+    if @booking.save!
+      redirect_to experience_booking_path(@experience, @booking)
     else
-      render "experiences"
+      @experience = Experience.find(params[:experience_id])
+      @ngos = Ngo.all
+      @users = User.all
+      render :new
     end
   end
 
-  def update_total
-    total = @booking.number_traveller * @experience.price
-  end
 
+  
 
   def destroy
     @booking = Booking.find(params[:id])
@@ -44,11 +49,16 @@ skip_before_action :authenticate_user!, only: [:show]
 
   private
 
+    def update_total
+      total = @booking.number_traveller * @experience.price
+    end
+
     def set_booking
       @experience = Experience.find(params[:experience_id])
     end
+
     def booking_params
-      params.require(:booking).permit(:user_id, :amount, :referrer_info_id, :traveller_info_id, :ngo_id,)
+      params.require(:booking).permit(:user_id, :amount, :referrer_info_id, :traveller_info_id, :ngo_id, :number_traveller, :start_date, :end_date, :description)
     end
 end
     

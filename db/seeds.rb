@@ -41,8 +41,8 @@ amsterdam = Location.create!(name:"amsterdam")
 
 
 #travellers_user
-    carla = User.create!(first_name:"Carla", last_name:"Smith", email:"carla@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508838/goodtravel.app/Carla.png")
-    feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", email:"feiko@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/the-fiek.png")
+    carla = User.create!(first_name:"Carla", last_name:"Smith", role:"Traveller", email:"carla@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508838/goodtravel.app/Carla.png")
+    feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", role:"Traveller", email:"feiko@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/the-fiek.png")
 #end
 
 #traveller
@@ -51,8 +51,8 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #tourhost_user
-    jennifer = User.create!(first_name:"Jennifer", last_name:"Rodrigez", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/Jennifer.png", email:"jennifer@test.com", password:"123456")
-    jad = User.create!(first_name:"Jad", last_name:"Joubran", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508844/goodtravel.app/jad.png", email:"jad@test.com", password:"123456")
+    jennifer = User.create!(first_name:"Jennifer", last_name:"Rodrigez", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/Jennifer.png", role:"Host",email:"jennifer@test.com", password:"123456")
+    jad = User.create!(first_name:"Jad", last_name:"Joubran", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508844/goodtravel.app/jad.png", role:"Host",email:"jad@test.com", password:"123456")
 #end
 
 #tourhoster
@@ -61,8 +61,8 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #referrer_user
-    barbara = User.create!(first_name:"Barbara", last_name:"Samantha", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508836/goodtravel.app/Barbara.png", email:"barbara@test.com", password:"123456")
-    bob = User.create!(first_name:"Bob", last_name:"Bobbonius", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508837/goodtravel.app/bob.png", email:"bob@test.com", password:"123456")
+    barbara = User.create!(first_name:"Barbara", last_name:"Samantha", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508836/goodtravel.app/Barbara.png", role:"Referrer",email:"barbara@test.com", password:"123456")
+    bob = User.create!(first_name:"Bob", last_name:"Bobbonius", photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508837/goodtravel.app/bob.png", role:"Referrer",email:"bob@test.com", password:"123456")
 #end
 
 #Referrer_code
@@ -89,6 +89,6 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #bookings
-carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount:"1", ngo: icrse, experience: canaltour)
+carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount_cents:"1", ngo: icrse, experience: canaltour)
 #end
 puts "Process Completed"

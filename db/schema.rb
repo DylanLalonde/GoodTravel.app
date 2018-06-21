@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_123319) do
+ActiveRecord::Schema.define(version: 2018_06_21_151657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.integer "amount"
+    t.integer "amount_cents"
     t.bigint "referrer_info_id"
     t.bigint "traveller_info_id"
     t.bigint "ngo_id"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2018_06_21_123319) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.integer "featured_ngo"
     t.string "category"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_123319) do
     t.integer "traveller_info_id"
     t.integer "host_info_id"
     t.integer "credit"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
