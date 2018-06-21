@@ -1,11 +1,11 @@
 function changeNavbarOnScroll() {
-  const navbar = document.querySelector('.navbar-goodtravel');
+  const navbar = document.querySelector('.home.navbar-goodtravel');
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar-goodtravel-black');
+        navbar.classList.add('opaque');
       } else {
-        navbar.classList.remove('navbar-goodtravel-black');
+        navbar.classList.remove('opaque');
       }
     });
   }
