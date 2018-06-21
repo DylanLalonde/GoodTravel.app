@@ -12,4 +12,8 @@ Rails.application.routes.draw do
 
   resources :ngos, only: [:index]
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
+
 end
