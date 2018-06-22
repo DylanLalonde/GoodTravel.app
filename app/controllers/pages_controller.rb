@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @ngos = Ngo.limit(4)
+    @ngos = Ngo.all
     @experiences = Experience.limit(4)
     @referrers = ReferrerInfo.limit(4)
     @current_page = "home"
