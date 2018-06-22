@@ -6,8 +6,6 @@
 }
 
 #index-card-wrapper{
-  // border: 0.5px solid #7C7287;
-  background-color: #FCFAF9;
   margin-bottom: 20px;
   margin-top: 10px;
   padding-top: 5px;
@@ -63,18 +61,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+    margin-left: 10px;
 }
 
-
 .index-card-description {
-  position: relative;
+  // position: relative;
   bottom: 10px;
   left: 10px;
+  background-color: #FCFAF9;
+  // background-color: orange;
+  border: 0.5px solid #7C7287;
 }
 
 .index-card-description h2 {
   font-size: 20px;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .index-card-description h2 a:hover {
@@ -91,13 +93,15 @@
   height:26px;
   color: grey;
   font-size: 14px;
-  margin-top: -12.5px;
+  margin-top: -6.5px;
+  margin-left: 10px;
 }
 
 .index-card-description h5 {
   font-size: 12px;
   color: #7CC6FE;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-left: 10px;
 }
 
 .index-card-description h6 {
@@ -118,7 +122,7 @@
 
 .index-link-text {
   // color: $sunset ;
-    color: black;
+  color: black;
 }
 
 // AVATAR INFORMATION
@@ -145,10 +149,10 @@
 
 // INFO TO PUT EVERYTHING ON FLEXBOX
 @media only screen and (max-width: 1300px) {
-.index-container {
-  display: flex;
-  flex-direction: column;
-}
+  .index-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 #map {
