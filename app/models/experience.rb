@@ -13,4 +13,13 @@ class Experience < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   monetize :price_cents
+
+  # Search functionality
+  include PgSearch
+  pg_search_scope :search_by_name_and_description_and_category,
+  against: [ :name, :description, :category ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
 end
