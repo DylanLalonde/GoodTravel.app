@@ -9,4 +9,4 @@ class Booking < ApplicationRecord
   monetize :amount_cents
 end
 
-#generate migration that changes selected ngo to integer and add _id
+# generate migration that changes selected ngo to integer and add _id

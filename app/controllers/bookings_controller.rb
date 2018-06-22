@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_booking, only: [:new, :create]
 
   def show
-     @user = current_user
-     @experience = Experience.find(params[:experience_id])
-     @booking = Booking.find(params[:id])
+    @user = current_user
+    @experience = Experience.find(params[:experience_id])
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ skip_before_action :authenticate_user!, only: [:show]
   def create
     ngo = Ngo.find(params[:booking][:ngo_id])
     experience = Experience.find(params[:experience_id])
-   
+
     @booking = Booking.new(booking_params)
     @booking.ngo = ngo
     @booking.experience = experience
@@ -39,7 +39,7 @@ skip_before_action :authenticate_user!, only: [:show]
   end
 
 
-  
+
 
   def destroy
     @booking = Booking.find(params[:id])
@@ -61,4 +61,3 @@ skip_before_action :authenticate_user!, only: [:show]
       params.require(:booking).permit(:user_id, :amount, :referrer_info_id, :traveller_info_id, :ngo_id, :number_traveller, :start_date, :end_date, :description)
     end
 end
-    
