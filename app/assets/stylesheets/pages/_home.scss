@@ -2,3 +2,159 @@
 .cards-main-container {
   text-align: center;
 }
+
+// headings
+.home-section-heading {
+  text-align: center;
+}
+
+.home-section-heading h3 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+// home how it works section
+
+.index_card h5 {
+  text-align: center;
+}
+
+.index_card p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.index_card img {
+  height: 150px;
+  width: 150px;
+}
+
+.index_image {
+  display: flex;
+  justify-content: center;
+}
+
+.index_card {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+// Search Function
+
+.banner-content {
+  text-color: white;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0px 20px 30px 20px;
+  border-radius: 3px;
+}
+
+.banner-content h1 {
+  font-size: 1.5em;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#search {
+  border-bottom: 2px solid white;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+
+// solution section
+
+.solution-section {
+  background-color: black;
+}
+
+.solution-body {
+  text-align: center;
+  color: white;
+}
+
+.solution-body h1 {
+  font-size: 1.5em;
+}
+
+.solution-body p {
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+///// PROGRESS BARS SECTION
+
+// progress bar color
+
+.progress-bars-section {
+  background-color: lightgray;
+}
+
+.progress-bars-section h3 {
+  color: black;
+}
+
+.progress-bars-section h5 {
+  color: black;
+}
+
+// progress bar background color
+
+.progress {
+  background-color: #455151;
+  flex: 1 1 80%;
+  margin-bottom: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+// progress bar section background color
+
+.progress-bar {
+  background-color: #f0544f;
+}
+
+// progress bar boxes
+
+.progress-box-1 {
+  display: flex;
+  background-color: gray;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 3px;
+}
+
+.progress-ngo-img {
+  // flex: 1 1 20%;
+}
+
+.progress-ngo-img img {
+  height: 100px;
+  width: 100px;
+  border-radius: 4px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.home-cta {
+
+}
+
+.home-cta-button {
+  text-align: center;
+}

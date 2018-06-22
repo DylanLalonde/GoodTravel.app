@@ -1,83 +1,140 @@
+<!-- Banner & Search -->
 
 <div class="homepage-hero-module">
-    <div class="video-container">
-        <!-- <div class="filter"></div> -->
-        <video autoplay loop class="fillWidth">
-            <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488646/goodtravel/The--Truck.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488381/goodtravel/The-Truck.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-        <div class="poster hidden">
-            <img src="https://res.cloudinary.com/dylanlalonde/image/upload/v1529489412/goodtravel/The---Truck.jpg" alt="">
-        </div>
+  <div class="video-container">
+    <!-- <div class="filter"></div> -->
+    <video autoplay loop class="fillWidth">
+      <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488646/goodtravel/The--Truck.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      <source src="https://res.cloudinary.com/dylanlalonde/video/upload/v1529488381/goodtravel/The-Truck.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+    </video>
+    <div class="poster hidden">
+      <img src="https://res.cloudinary.com/dylanlalonde/image/upload/v1529489412/goodtravel/The---Truck.jpg" alt="">
     </div>
-</div>
-
-<div class="cards-main-container">
-  <div class="cards-container">
-    <div class="row">
-      <h2>Popular NGOs in this area: </h2>
-      <% @ngos.each do |ngo| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card-wrapper">
-          <div class="card-image" style = "background-image: url(<%=ngo.photo%>);">
-            <div class="card-category">
-              <%= ngo.category %>
-              
-            </div>
-          </div>
-          <div class="card-description">
-            <h2>
-              <%= ngo.name %>
-            </h2>
-            <h5>
-              <%= ngo.description %>
-            </h5>
-          </div>
-        </div>
+    <div class="banner-content">
+      <h1>Find your experience</h1>
+      <div class="search-container">
+        <%= form_tag(experiences_path, method: :get) do %>
+        <%= search_field_tag 'search', '' %>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
+</div>
 
-    <div class="cards-container">
+<!-- pain & solution section -->
+
+<div class="solution-section">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="solution-body">
+      <h1> Travel is broken. </h1>
+      <p>
+        <em>In 2017 more than 8.2 Trillion dollars were earned globally in travel and tourism.</em>
+      </p>
+      <p>
+        <strong>Very little made it to the locals.</strong> The sensitive ecosystems and delicate cultural traditions are eroding. <strong>We aim to fix this by distributing commissions into the local ecosystem.</strong>
+      </p>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+<!-- How it works section -->
+
+<div class="steps-section">
+  <div class="container">
+    <br>
+    <div class="home-section-heading"> <h3> Travel, fixed. </h3> </div>
       <div class="row">
-        <h2> Popular experiences in this area: </h2>
-        <% @experiences.each do |experience| %>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card-wrapper">
-            <div class="index-card-image" style = "background-image: url(<%=experience.photo%>);">
-              <img src='https://kitt.lewagon.com/placeholder/users/eventlessdrop' class="index-avatar-large"/>
-              <div class="card-category">
-                <%= experience.category %>
-              </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="index_card">
+            <div class="index_image"> <%= image_tag "https://www.placehold.it/150x150", alt: "Select an experience", width: 200 %> </div>
+            <h5> Select an experience <h5>
+              <p> Intuitively browse our growing catalogue of locally submitted travel experiences. </p>
             </div>
-            <div class="card-description">
-              <h2> <i class="fas fa-globe"></i> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
-              <h4> <%= experience.description %></h4>
-              <h5> <i class="fas fa-user"></i> <%= experience.host_info.name %> </h5>
-              <h5> <i class="fas fa-map-marker"></i>  <%= experience.location.name %> </h5>
-              <h6> <%= experience.price %> <i class="fas fa-euro-sign"></i> </h6>
-            </div>
-          </div>
         </div>
-        <% end %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="index_card">
+            <div class="index_image"> <%= image_tag "https://www.placehold.it/150x150", alt: "Select a cause", width: 200 %> </div>
+            <h5> Select a cause <h5>
+              <p> Based on your choice, we share our commission with a local cause. </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="index_card">
+            <div class="index_image"> <%= image_tag "https://www.placehold.it/150x150", alt: "Simple Booking", width: 200 %> </div>
+            <h5> Simple booking <h5>
+              <p> Instant, secure, easy in-app payment for booking on the fly. </p>
+            </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+  </div>
+</div>
+
+<!--  Progress Bars section -->
+
+<div class="progress-bars-section">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="home-section-heading"> <h3> Distributed donations </h3> </div>
+    <div class="home-section-heading"> <h5> June 2018 </h5> </div>
+      <br>
+    <div class="progress-box-1">
+      <div class="progress-ngo-img"> <%= image_tag("https://www.placehold.it/40x40") %> </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+        aria-valuemin="0" aria-valuemax="100" style="width:80%">
+        $8014
+        </div>
       </div>
     </div>
-
-    <div class="cards-container">
-      <div class="row">
-        <h2> Successful referrers in this area: </h2>
-        <% @referrers.each do |referrer| %>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card-wrapper">
-            <div class="card-image">
-            </div>
-            <div class="card-description">
-              <h2> <%= referrer.user.first_name %> </h2>
-            </div>
-          </div>
+      <br>
+    <div class="progress-box-1">
+      <div class="progress-ngo-img"> <%= image_tag("https://www.placehold.it/40x40") %> </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="42"
+        aria-valuemin="0" aria-valuemax="100" style="width:42%">
+        $4223
         </div>
-        <% end %>
       </div>
     </div>
+      <br>
+    <div class="progress-box-1">
+      <div class="progress-ngo-img"> <%= image_tag("https://www.placehold.it/40x40") %> </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33"
+        aria-valuemin="0" aria-valuemax="100" style="width:33%">
+        $3345
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+<!-- Homepage CTA -->
+
+<div class="home-cta">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="home-cta-button">
+      <%= link_to 'Become a GoodTraveller', experiences_path, class: "btn btn-success btn-lg" %>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
 </div>

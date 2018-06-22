@@ -9,7 +9,7 @@
 
 // import flatpickr from "flatpickr"
 
-// import "bootstrap";
+import "bootstrap";
 import "../plugins/flatpickr"
 import "../plugins/coverr"
 
