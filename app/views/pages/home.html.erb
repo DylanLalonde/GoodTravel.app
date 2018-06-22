@@ -14,8 +14,8 @@
       <h1>Find your experience</h1>
       <div class="search-container">
         <%= form_tag(experiences_path, method: :get) do %>
-        <%= search_field_tag 'search', '' %>
-        <% end %>
+          <%= search_field_tag :query, nil, placeholder: "", id: "search" %>
+           <% end %>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="index_card">
-            <div class="index_image"> <%= image_tag "https://www.placehold.it/150x150", alt: "Select an experience", width: 200 %> </div>
+            <div class="index_image"> <%= image_tag (@ngos.sample.photo) , alt: "Select an experience", width: 200 %> </div>
             <h5> Select an experience <h5>
               <p> Intuitively browse our growing catalogue of locally submitted travel experiences. </p>
             </div>

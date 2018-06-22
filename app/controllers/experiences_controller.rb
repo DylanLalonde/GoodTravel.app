@@ -5,15 +5,20 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show]
 
   def index
-    @experiences = Experience.all
-    @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @experiences = Experience.search_by_name_and_description_and_category("%#{params[:query]}%")
+    else
+      @experiences = Experience.all
+      @experiences = Experience.where.not(latitude: nil, longitude: nil)
 
-    @markers = @experiences.map do |experience|
-      {
-        lat: experience.latitude,
-        lng: experience.longitude,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
+      # Map stuff:
+      @markers = @experiences.map do |experience|
+        {
+          lat: experience.latitude,
+          lng: experience.longitude,
+          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        }
+      end
     end
   end
 

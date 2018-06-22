@@ -13,4 +13,12 @@ class Experience < ApplicationRecord
 
   monetize :price_cents
 
+  # Search functionality
+  include PgSearch
+  pg_search_scope :search_by_name_and_description_and_category,
+  against: [ :name, :description, :category ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
 end
