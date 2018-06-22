@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :experiences, only: [:index, :show, :new, :create] do
-    resources :bookings,  only: [:show, :new, :create, :destroy ]
+    resources :bookings,  only: [:show, :new, :create, :destroy ] do
+     resources :orders, only: [:show, :create] do
+      resources :payments, only: [:new, :create]
+     end
+    end
   end
 
   resources :experiences, only: [ :index, :show ] do
@@ -15,8 +19,6 @@ Rails.application.routes.draw do
 
   resources :ngos, only: [:index]
 
-  resources :orders, only: [:show, :create] do
-    resources :payments, only: [:new, :create]
-  end
+ 
 
 end
