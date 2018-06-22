@@ -1,3 +1,13 @@
+body {
+  position: absolute;
+  top: 60px;
+}
+
+body.home {
+  position: relative;
+  top: 0px;
+}
+
 /* Home navbar */
 .home.navbar-goodtravel {
   background-color: transparent;
