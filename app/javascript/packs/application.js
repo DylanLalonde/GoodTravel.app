@@ -9,15 +9,19 @@
 
 // import flatpickr from "flatpickr"
 
-// import "bootstrap";
+import "bootstrap";
 import "../plugins/flatpickr"
 import "../plugins/coverr"
 
 
-import { setAmount } from "../components/booking_amount"
+import {
+  setAmount
+} from "../components/booking_amount"
 
 setAmount()
 
-import { changeNavbarOnScroll } from "../components/navbar"
+import {
+  changeNavbarOnScroll
+} from "../components/navbar"
 
 changeNavbarOnScroll()
