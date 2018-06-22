@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_103532) do
+ActiveRecord::Schema.define(version: 2018_06_21_151657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.integer "amount"
+    t.integer "amount_cents"
     t.bigint "referrer_info_id"
     t.bigint "traveller_info_id"
     t.bigint "ngo_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_06_21_103532) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "number_traveller"
+    t.string "description"
+    t.string "selected_ngo"
     t.index ["experience_id"], name: "index_bookings_on_experience_id"
     t.index ["ngo_id"], name: "index_bookings_on_ngo_id"
     t.index ["referrer_info_id"], name: "index_bookings_on_referrer_info_id"
@@ -40,9 +42,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_103532) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
     t.string "photo"
-    t.integer "featured_ngo"
     t.string "category"
     t.float "latitude"
     t.float "longitude"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_103532) do
     t.integer "traveller_info_id"
     t.integer "host_info_id"
     t.integer "credit"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
