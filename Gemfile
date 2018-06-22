@@ -19,7 +19,10 @@ gem "sass-rails"
 gem "simple_form"
 gem "uglifier"
 gem "webpacker"
-gem 'money-rails'
+gem "money-rails"
+gem "stripe"
+gem "stripe_event"
+gem "forest_liana"
 
 gem "bootstrap-datepicker-rails"
 gem "rubocop"

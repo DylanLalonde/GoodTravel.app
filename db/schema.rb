@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_090521) do
+ActiveRecord::Schema.define(version: 2018_06_22_092846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.integer "amount"
+    t.integer "amount_cents"
     t.bigint "referrer_info_id"
     t.bigint "traveller_info_id"
     t.bigint "ngo_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "number_traveller"
+    t.string "description"
     t.index ["experience_id"], name: "index_bookings_on_experience_id"
     t.index ["ngo_id"], name: "index_bookings_on_ngo_id"
     t.index ["referrer_info_id"], name: "index_bookings_on_referrer_info_id"
@@ -40,11 +41,11 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "category"
     t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
@@ -83,6 +84,18 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
     t.string "description"
     t.string "photo"
     t.string "address"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "booking_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "referrer_infos", force: :cascade do |t|
@@ -130,6 +143,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
     t.integer "traveller_info_id"
     t.integer "host_info_id"
     t.integer "credit"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -143,6 +157,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_090521) do
   add_foreign_key "host_infos", "users"
   add_foreign_key "ngo_locations", "locations"
   add_foreign_key "ngo_locations", "ngos"
+  add_foreign_key "orders", "users"
   add_foreign_key "referrer_infos", "users"
   add_foreign_key "reviews", "experiences"
   add_foreign_key "traveller_infos", "users"

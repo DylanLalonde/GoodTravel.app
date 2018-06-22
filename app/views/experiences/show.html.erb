@@ -1,45 +1,71 @@
 <div class="show-container">
-
   <div class="col-xs-12 col-sm-6">
-    Bootstrap Carosel of Tour Images
     <%= image_tag @experience.photo , class:"show-image"%>
 
-    Experience Name:
-    <p>
-      <%= @experience.name %>
-    </p>
-    Experience Description:
-    <p>
-      <%= @experience.description %>
+      Experience Name:
       <p>
-        <p>
-          <%= humanized_money_with_symbol(@experience.price) %>
-        </p>
-        Booking a spot on this tour will donate $$$ to this ngo
-        <br>
-        <br>
-        <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
-        <br>
-        <br>
-        <div class="col-xs-12 col-sm-6">
-        #this tour has contributed this much Recommended NGO:
-        <%= @ngo.name %>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="reviews">
-          reviews
+        <%= @experience.name %>
+      </p>
+      Experience Description:
+      <p>
+        <%= @experience.description %>
+          <p>
+            <p>
+              <%= humanized_money_with_symbol(@experience.price) %>
+            </p>
+            Booking a spot on this tour will donate $$$ to this ngo
+            <br>
+            <br>
+            <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
+              <br>
+              <br>
+              <div class="col-xs-12 col-sm-6">
+                #this tour has contributed this much Recommended NGO:
+                
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="reviews">
+                  reviews
+                </div>
+                <br>
+                <br>
+              </div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    <%= @ngo.name %>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel"><%= @ngo.name %></h4>
         </div>
-        <br>
-        <br>
-      </div>
-      </div>
-
-
-
-      <div class="col-xs-12 col-sm-6">
-        <div id="map" ; data-markers="<%= @markers.to_json %>">
+        <div class="modal-body">
+          <%= image_tag (@ngo.photo) %>
+          <br>
+          <%= @ngo.description %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %></button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
         </div>
       </div>
-
-
+      <!-- /.modal-content -->
     </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <br>
+
+
+  <div class="col-xs-12 col-sm-6">
+    <div id="map" ; data-markers="<%= @markers.to_json %>">
+    </div>
+  </div>
+
+
+</div>
