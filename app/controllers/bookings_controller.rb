@@ -18,11 +18,11 @@ skip_before_action :authenticate_user!, only: [:show]
   end
 
   def create
-    ngo = Ngo.find(params[:booking][:selected_ngo])
+    ngo = Ngo.find(params[:booking][:ngo_id])
     experience = Experience.find(params[:experience_id])
    
     @booking = Booking.new(booking_params)
-    @booking.selected_ngo = ngo
+    @booking.ngo = ngo
     @booking.experience = experience
     @traveller_info = TravellerInfo.create(user: current_user)
     @booking.traveller_info = @traveller_info
