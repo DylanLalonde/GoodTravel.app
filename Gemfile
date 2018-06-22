@@ -19,8 +19,10 @@ gem "sass-rails"
 gem "simple_form"
 gem "uglifier"
 gem "webpacker"
-gem 'money-rails'
-gem 'stripe'
+gem "money-rails"
+gem "stripe"
+gem "stripe_event"
+gem "forest_liana"
 
 gem "bootstrap-datepicker-rails"
 gem "rubocop"
@@ -30,9 +32,6 @@ gem "pg_search"
 gem "faker"
 gem "jquery-rails"
 
-gem "stripe"
-gem "stripe_event"
-gem 'forest_liana'
 
 group :development do
   gem "web-console", ">= 3.3.0"
