@@ -5,11 +5,48 @@
   margin-bottom: 200px;
 }
 
+#index-card-wrapper{
+  // border: 0.5px solid #7C7287;
+  background-color: #FCFAF9;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-top: 5px;
+
+}
+
 .index-card-image {
-  height: 280px;
+  height: 120px;
   background-size: cover !important;
   background-position: center;
-  border-radius: 3px;
+  // border-radius: 2px;
+  width: 100%;
+}
+
+// SEARCH PART
+.index-search-bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: grey;
+}
+
+.index-btn-success-mobile{
+  border-radius: 0px;
+  background-color: #406E8E;
+  font-size: 13px;
+  border: 0px;
+}
+
+
+
+.index-text-popular-design{
+  display: flex;
+  justify-content:center ;
+  color: white;
+  background-color: orange;
+  width: 25%;
+  // font-weight: bold;
+  font-size: 15px;
 }
 
 .index-card-category {
@@ -22,15 +59,22 @@
   border-radius: 3px;
 }
 
+.index-bottom-card-description{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
 .index-card-description {
   position: relative;
   bottom: 10px;
   left: 10px;
-
 }
 
 .index-card-description h2 {
   font-size: 20px;
+  margin-top: 10px;
 }
 
 .index-card-description h2 a:hover {
@@ -44,16 +88,20 @@
 }
 
 .index-card-description h4 {
-  height:50px;
+  height:26px;
+  color: grey;
+  font-size: 14px;
+  margin-top: -12.5px;
 }
 
 .index-card-description h5 {
-  font-size: 14px;
-  color: black;
+  font-size: 12px;
+  color: #7CC6FE;
+  margin-top: 20px;
 }
 
 .index-card-description h6 {
-  font-size: 14px;
+  font-size: -1px;
   color: $sunset;
 }
 
@@ -69,9 +117,11 @@
 }
 
 .index-link-text {
-  color: $sunset ;
+  // color: $sunset ;
+    color: black;
 }
 
+// AVATAR INFORMATION
 .index-avatar {
   width: 30px;
   border-radius: 50%;
@@ -93,6 +143,7 @@
   border: white 1px solid;
 }
 
+// INFO TO PUT EVERYTHING ON FLEXBOX
 @media only screen and (max-width: 1300px) {
 .index-container {
   display: flex;
