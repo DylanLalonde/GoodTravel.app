@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_06_22_092846) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.integer "amount"
+    t.integer "amount_cents"
     t.bigint "referrer_info_id"
     t.bigint "traveller_info_id"
     t.bigint "ngo_id"
