@@ -52,21 +52,21 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="index_card">
-            <div class="index_image"> <%= image_tag (@ngos.sample.photo) , alt: "Select an experience", width: 200 %> </div>
+            <div class="index_image"> <%= image_tag "https://res.cloudinary.com/dylanlalonde/image/upload/v1529678144/selectexperience.png" , alt: "Select an experience", width: 200 %> </div>
             <h5> Select an experience <h5>
               <p> Intuitively browse our growing catalogue of locally submitted travel experiences. </p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="index_card">
-            <div class="index_image"> <%= image_tag "https://www.placehold.it/150x150", alt: "Select a cause", width: 200 %> </div>
+            <div class="index_image"> <%= image_tag "https://res.cloudinary.com/dylanlalonde/image/upload/v1529678144/choosecause.png", alt: "Select a cause", width: 200 %> </div>
             <h5> Select a cause <h5>
               <p> Based on your choice, we share our commission with a local cause. </p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="index_card">
-            <div class="index_image"> <%= image_tag "https://www.placehold.it/150x150", alt: "Simple Booking", width: 200 %> </div>
+            <div class="index_image"> <%= image_tag "https://res.cloudinary.com/dylanlalonde/image/upload/v1529678270/noun_1630806_cc.png", alt: "Simple Booking", width: 200 %> </div>
             <h5> Simple booking <h5>
               <p> Instant, secure, easy in-app payment for booking on the fly. </p>
             </div>
@@ -89,7 +89,7 @@
     <div class="home-section-heading"> <h5> June 2018 </h5> </div>
       <br>
     <div class="progress-box-1">
-      <div class="progress-ngo-img"> <%= image_tag("https://www.placehold.it/40x40") %> </div>
+      <div class="progress-ngo-img"> <%= image_tag(@ngos.sample.photo) %> </div>
       <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
         aria-valuemin="0" aria-valuemax="100" style="width:80%">
@@ -99,7 +99,7 @@
     </div>
       <br>
     <div class="progress-box-1">
-      <div class="progress-ngo-img"> <%= image_tag("https://www.placehold.it/40x40") %> </div>
+      <div class="progress-ngo-img"> <%= image_tag(@ngos.sample.photo) %> </div>
       <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="42"
         aria-valuemin="0" aria-valuemax="100" style="width:42%">
@@ -109,7 +109,7 @@
     </div>
       <br>
     <div class="progress-box-1">
-      <div class="progress-ngo-img"> <%= image_tag("https://www.placehold.it/40x40") %> </div>
+      <div class="progress-ngo-img"> <%= image_tag(@ngos.sample.photo) %> </div>
       <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33"
         aria-valuemin="0" aria-valuemax="100" style="width:33%">
