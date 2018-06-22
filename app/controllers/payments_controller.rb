@@ -4,9 +4,15 @@ class PaymentsController < ApplicationController
   before_action :set_order
 
   def new
+    @experience = Experience.find(params[:experience_id])
+    @booking = Booking.find(params[:booking_id])
+    @order = Order.find(params[:order_id])
   end
 
   def create
+    @experience = Experience.find(params[:experience_id])
+    @booking = Booking.find(params[:booking_id])
+    @order = Order.find(params[:order_id])
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
@@ -20,16 +26,16 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(payment: charge.to_json, state: "paid")
-    redirect_to order_path(@order)
+    redirect_to experience_booking_path(@experience, @booking)
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
-    redirect_to new_order_payment_path(@order)
+    redirect_to new_experience_booking_order_payment_path(@experience, @booking, @order)
   end
 
-  def show
-    @order = current_user.orders.where(state: "paid").find(params[:id])
-  end
+  # def show
+  #   @order = current_user.orders.where(state: "paid").find(params[:id])
+  # end
 
   private
 
