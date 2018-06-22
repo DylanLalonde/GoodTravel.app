@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 2018_06_22_092846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.string "category"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "category"
     t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
