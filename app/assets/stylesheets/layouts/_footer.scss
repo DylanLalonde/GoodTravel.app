@@ -2,14 +2,19 @@
   background-color: black;
   text-align: center;
 }
-.footer-links h1 {
-  font-size: 1em;
+.footer-links p {
+  font-size: 0.85em;
+  color: grey;
   border-bottom: thin solid grey;
   padding-bottom: 17px;
 }
 
+#padding-top {
+  padding-top: 15px;
+}
+
 .footer-info h1 {
-  font-size: 1.25em;
+  font-size: 1em;
   color: grey;
 }
 
