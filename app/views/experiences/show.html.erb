@@ -1,70 +1,121 @@
-<div class="show-container">
-  <div class="col-xs-12 col-sm-6">
-    <%= image_tag @experience.photo , class:"show-image"%>
+  <div class="show-header-button">
+    <%= link_to 'Back to results', experiences_path(@experience), class: "btn btn-link" %>
+  </div>
+  <div class="show-container">
 
-      Experience Name:
-      <p>
-        <%= @experience.name %>
-      </p>
-      Experience Description:
-      <p>
-        <%= @experience.description %>
-          <p>
-            <p>
-              <%= humanized_money_with_symbol(@experience.price) %>
-            </p>
-            Booking a spot on this tour will donate $$$ to this ngo
-            <br>
-            <br>
-            <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
-              <br>
-              <br>
-              <div class="col-xs-12 col-sm-6">
-                #this tour has contributed this much Recommended NGO:
 
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="reviews">
-                  reviews
-                </div>
-                <br>
-                <br>
-              </div>
+    <div class="show-image-display">
+      <%= image_tag @experience.photo , class:"show-image"%>
+      <p class ="show-text-popular-design"> Popular </p>
+    </div>
+
+    <div class="show-location-info">
+      <%= @experience.location.name %>
+    </div>
+    <div class="show-tour-frequency-infor">
+      Tour duration :
+      <br>
+      Frequency:
+      <br>
+      Price : <%= humanized_money_with_symbol(@experience.price) %>
+    </div>
+
+
+
+    <div class="show-experience-info">
+      <h4> <%= @experience.name %></h4>
+      <h5> <%= @experience.description %></h5>
+
+    </div>
+    <div class="show-what-you-get">
+      <h4> What do you get</h4>
+      <h5> Enjoy a unique and unforgettable experience as you cruise through Amsterdam's beautiful historic canals and dine under the stars with culinary delights.</h5>
+      <hr width="90%">
+    </div>
+
+
+    <div class="show-hour-part-design">
+      <h4> Hours</h4>
+      <h5> Hours
+        Monday - Friday: 10.00am - 6.00pm <br>
+        Saturday - Sunday: 09.00am - 7.00pm
+      </h5>
+    </div>
+
+
+    <div class="show-calendar-info">
+
+      <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker show-calendar-form"} %>
+      <% end %>
+    </div>
+    <div class="show-calendar-form-button">
+      <button class="show-button-selected"></button> selected
+      <br>
+      <button class="show-button-available"></button> available
+      <br>
+      <button class="show-button-not-available"></button> not available
+    </div>
   </div>
 
-  <!-- Button trigger modal -->
-  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    <%= @ngo.name %>
-  </button>
+  <div class="show-button-part">
+    <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn" %>
+    <br>
+    <hr width="90%">
+  </div>
+  <div class="show-supported-ngos">
+    <h4> Supported NGO's</h4>
+    <h5> By booking this tour you support the following NGO's.
+      Check out the total donnation meter <strong>here</strong>.
+    </h5>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      <%= @ngo.name %>
+    </button> <br>
+    image <br>
+    image <br>
+    <br>
+    <hr width="90%">
+  </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel"><%= @ngo.name %></h4>
-        </div>
-        <div class="modal-body">
-          <%= image_tag (@ngo.photo) %>
-          <br>
-          <%= @ngo.description %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %></button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
-        </div>
+  <div class="show-location-part-with-map">
+    <h4> Locations</h4>
+    <h5> <%= @experience.address %></h5>
+    <h5> <%= @experience.location.name %></h5>
+
+    <div class="show-map-experience "id="map" ; data-markers="<%= @markers.to_json %>">
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><%= @ngo.name %></h4>
       </div>
-      <!-- /.modal-content -->
+      <div class="modal-body">
+        <%= image_tag (@ngo.photo) %>
+        <br>
+        <%= @ngo.description %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %></button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
+      </div>
     </div>
-    <!-- /.modal-dialog -->
+    <!-- /.modal-content -->
   </div>
-  <!-- /.modal -->
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
-  <br>
-  <br>
+<br>
+<br>
 
-    <div id="map" ; data-markers="<%= @markers.to_json %>">
-    </div>
 
 
 
