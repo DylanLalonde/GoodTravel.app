@@ -26,11 +26,11 @@ class BookingsController < ApplicationController
     @booking.experience = experience
     @traveller_info = TravellerInfo.create(user: current_user)
     @booking.traveller_info = @traveller_info
-    @booking.amount = update_total
+    @booking.amount_cents = update_total
 
     if @booking.save!
-        @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
-        # change booking_sku in the order model to booking_id 
+        @order = Order.create!(booking_sku: @booking.id, amount_cents: @booking.amount_cents, state: "pending", user: current_user)
+        # change booking_sku in the order model to booking_id
         # add an order_id to booking
         redirect_to new_experience_booking_order_payment_path(experience, @booking, @order)
         # redirect_to experience_booking_path(@experience, @booking)
@@ -62,6 +62,6 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-      params.require(:booking).permit(:user_id, :amount, :referrer_info_id, :traveller_info_id, :ngo_id, :number_traveller, :start_date, :end_date, :description)
+      params.require(:booking).permit(:user_id, :amount_cents, :referrer_info_id, :traveller_info_id, :ngo_id, :number_traveller, :start_date, :end_date, :description)
     end
 end
