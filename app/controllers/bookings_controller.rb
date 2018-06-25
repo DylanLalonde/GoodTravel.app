@@ -8,6 +8,10 @@ class BookingsController < ApplicationController
     @user = current_user
     @experience = Experience.find(params[:experience_id])
     @booking = Booking.find(params[:id])
+    @totaldonations = 0
+    @booking.ngo.bookings.each do |booking|
+      @totaldonations += booking.amount_donated if booking.amount_donated
+    end
   end
 
   def new
@@ -26,10 +30,12 @@ class BookingsController < ApplicationController
     @booking.experience = experience
     @traveller_info = TravellerInfo.create(user: current_user)
     @booking.traveller_info = @traveller_info
-    @booking.amount_cents = update_total
+    @booking.amount = update_total
+    @booking.amount_donated = @booking.amount * 0.05
 
     if @booking.save!
-        @order = Order.create!(booking_sku: @booking.id, amount_cents: @booking.amount_cents, state: "pending", user: current_user)
+        @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
+      
         # change booking_sku in the order model to booking_id
         # add an order_id to booking
         redirect_to new_experience_booking_order_payment_path(experience, @booking, @order)
@@ -62,6 +68,6 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-      params.require(:booking).permit(:user_id, :amount_cents, :referrer_info_id, :traveller_info_id, :ngo_id, :number_traveller, :start_date, :end_date, :description)
+      params.require(:booking).permit(:user_id, :amount, :referrer_info_id, :traveller_info_id, :ngo_id, :number_traveller, :start_date, :end_date, :description, :amount_donated)
     end
 end

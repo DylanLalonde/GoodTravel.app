@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_22_092846) do
+ActiveRecord::Schema.define(version: 2018_06_25_101443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.integer "amount"
     t.bigint "referrer_info_id"
     t.bigint "traveller_info_id"
     t.bigint "ngo_id"
@@ -28,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_06_22_092846) do
     t.datetime "end_date"
     t.integer "number_traveller"
     t.string "description"
+    t.float "amount_donated"
+    t.integer "amount_cents", default: 0, null: false
     t.index ["experience_id"], name: "index_bookings_on_experience_id"
     t.index ["ngo_id"], name: "index_bookings_on_ngo_id"
     t.index ["referrer_info_id"], name: "index_bookings_on_referrer_info_id"
@@ -41,11 +42,11 @@ ActiveRecord::Schema.define(version: 2018_06_22_092846) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.string "category"
     t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"

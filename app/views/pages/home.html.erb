@@ -87,52 +87,24 @@
     <div class="home-section-heading"> <h3> Donations collected </h3> </div>
     <div class="home-section-heading"> <h5> in June 2018 </h5> </div>
       <br>
-    <div class="progress-box-1">
-
-      <div class="progress-ngo-img"> <%= image_tag(@ngos.sample.photo) %> </div>
-        <div class="progress-ngo-info">
-          <h5> <%= @ngos.sample.name %> </h5>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
-            aria-valuemin="0" aria-valuemax="100" style="width:80%">
-            $8014
+      <% @ngos.each do |ngo| %>
+        <div class="progress-box-1">
+          <div class="progress-ngo-img"> <%= image_tag(ngo.photo) %> </div>
+            <div class="progress-ngo-info">
+              <h5> <%= ngo.name %> </h5>
+              <div class="progress">
+                <% @totaldonations = 0  %>
+                  <% ngo.bookings.each do |booking| %>
+                    <% @totaldonations += booking.amount_donated if booking.amount_donated %>
+                <% end %>
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=" <%= @totaldonations / 10  %> " aria-valuemin="0" aria-valuemax="100" style="width: <%= @totaldonations / 10  %>%">
+                    $<%= @totaldonations %>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
-
-    </div>
-      <br>
-    <div class="progress-box-1">
-
-      <div class="progress-ngo-img"> <%= image_tag(@ngos.sample.photo) %> </div>
-        <div class="progress-ngo-info">
-          <h5> <%= @ngos.sample.name %> </h5>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
-            aria-valuemin="0" aria-valuemax="100" style="width:50%">
-            $5124
-            </div>
-          </div>
-        </div>
-
-    </div>
-
-      <br>
-    <div class="progress-box-1">
-
-      <div class="progress-ngo-img"> <%= image_tag(@ngos.sample.photo) %> </div>
-        <div class="progress-ngo-info">
-          <h5> <%= @ngos.sample.name %> </h5>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65"
-            aria-valuemin="0" aria-valuemax="100" style="width:65%">
-            $6403
-            </div>
-          </div>
-        </div>
-
-    </div>
-
+        <br>
+      <% end %>
     <br>
     <br>
     <br>
