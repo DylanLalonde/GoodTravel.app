@@ -8,6 +8,10 @@ class BookingsController < ApplicationController
     @user = current_user
     @experience = Experience.find(params[:experience_id])
     @booking = Booking.find(params[:id])
+    @totaldonations = 0
+    @booking.ngo.bookings.each do |booking|
+      @totaldonations += booking.amount_donated if booking.amount_donated
+    end
   end
 
   def new

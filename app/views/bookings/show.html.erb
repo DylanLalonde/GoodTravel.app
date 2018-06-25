@@ -12,9 +12,11 @@
     <br>
     Payment Confirmation:
     <br>
-    You have paid = <%= @booking.end_date %>
+    You have paid = <%= @booking.amount %>
     <br>
-    You have donated: <%= @booking.amount_donated %>
+    Your booking has donated: <%= @booking.amount_donated %>
+    <br>
+    This NGO has earned: <%= @totaldonations %>
     </div>
 </div>
 
