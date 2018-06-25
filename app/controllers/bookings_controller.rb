@@ -34,12 +34,12 @@ class BookingsController < ApplicationController
     @booking.amount_donated = @booking.amount * 0.05
 
     if @booking.save!
-        @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
-      
-        # change booking_sku in the order model to booking_id
-        # add an order_id to booking
-        redirect_to new_experience_booking_order_payment_path(experience, @booking, @order)
-        # redirect_to experience_booking_path(@experience, @booking)
+      @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
+
+      # change booking_sku in the order model to booking_id
+      # add an order_id to booking
+      redirect_to new_experience_booking_order_payment_path(experience, @booking, @order)
+    # redirect_to experience_booking_path(@experience, @booking)
     else
       @experience = Experience.find(params[:experience_id])
       @ngos = Ngo.all

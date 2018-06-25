@@ -25,3 +25,9 @@ import {
 } from "../components/navbar"
 
 changeNavbarOnScroll()
+
+import {
+  more
+} from "../components/more"
+
+more()
