@@ -1,65 +1,74 @@
 <div class="show-container">
   <div class="col-xs-12 col-sm-6">
-    <%= image_tag @experience.photo , class:"show-image"%>
+    <%= link_to "Back to Results", experiences_path %>
+      <%= image_tag @experience.photo , class:"show-image"%>
 
-      Experience Name:
-      <p>
-        <%= @experience.name %>
-      </p>
-      Experience Description:
-      <p>
-        <%= @experience.description %>
-          <p>
+        <h4>
+          <%= @experience.location.name %>
+        </h4>
+       
+       <div id="tour-detail">
+       <i class="far fa-2x fa-clock"></i> Tour Duration: <%# <%= @experience.time %>
+       <br>
+       <i class="fas fa-2x fa-sync-alt"></i> Frequency:<%# <%= @experience.frequency %>
+       </div>
+
+
+        <h3>
+          <%= @experience.name %>
+        </h3>
+        Experience Description:
+        <p>
+          <%= @experience.description %>
             <p>
-              <%= humanized_money_with_symbol(@experience.price) %>
-            </p>
-            Booking a spot on this tour will donate $$$ to this ngo
-            <br>
-            <br>
-            <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
+              <p>
+                <%= humanized_money_with_symbol(@experience.price) %>
+              </p>
               <br>
-              <br>
-              <div class="col-xs-12 col-sm-6">
-                #this tour has contributed this much Recommended NGO:
-                
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <div class="reviews">
-                  reviews
+
+              <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
+                <br>
+                <br>
+                <div class="col-xs-12 col-sm-6">
+                Ngos of the Month:
                 </div>
-                <br>
-                <br>
-              </div>
+                </div>
   </div>
 
   <!-- Button trigger modal -->
-  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    <%= @ngo.name %>
-  </button>
+  <div> <!-- Modal -->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      <%= @ngo.name %>
+    </button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel"><%= @ngo.name %></h4>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+              <%= @ngo.name %>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <%= image_tag (@ngo.photo) %>
+              <br>
+              <%= @ngo.description %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              <%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %>
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <%= image_tag (@ngo.photo) %>
-          <br>
-          <%= @ngo.description %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %></button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
-        </div>
+        <!-- /.modal-content -->
       </div>
-      <!-- /.modal-content -->
+      <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal-dialog -->
+    <!-- /.modal -->
+    <br>
   </div>
-  <!-- /.modal -->
-  <br>
 
 
   <div class="col-xs-12 col-sm-6">
