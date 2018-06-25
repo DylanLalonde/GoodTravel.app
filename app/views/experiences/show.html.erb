@@ -30,7 +30,9 @@
               </p>
               <br>
 
+
               <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
+
                 <br>
                 <br>
                 <div class="col-xs-12 col-sm-6">
@@ -74,11 +76,16 @@
     <br>
   </div>
 
+  <!-- /.modal -->
 
-  <div class="col-xs-12 col-sm-6">
+  <br>
+  <br>
+
     <div id="map" ; data-markers="<%= @markers.to_json %>">
     </div>
-  </div>
+
+
+
 
 
 </div>
