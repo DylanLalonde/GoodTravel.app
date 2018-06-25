@@ -151,7 +151,6 @@
 @media only screen and (max-width: 1300px) {
   .index-container {
     display: flex;
-    flex-direction: column;
   }
 }
 
@@ -163,4 +162,5 @@
 }
 .index-container {
   display: flex;
+  flex-direction: column;
 }
