@@ -21,5 +21,4 @@ class Experience < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
-
 end

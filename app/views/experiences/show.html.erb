@@ -21,6 +21,10 @@
         <p>
           <%= @experience.description %>
             <p>
+            <ul>
+          <li class="button"><p><%= @experience.description %></p></li>
+          <li class="content" id="expand-content"><p><%= @experience.description %></p></li>
+          </ul>
               <p>
                 <%= humanized_money_with_symbol(@experience.price) %>
               </p>
