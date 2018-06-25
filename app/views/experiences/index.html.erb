@@ -1,46 +1,51 @@
-  <h1> index pages </h1>
 
 
-  <div class="index-content">
+<div class="index-content">
 
-    <div class="index-row">
+  <div class="index-row">
+    <div class="index-box-for-search-bar">
+      <div class="index-search-info">
+      <div class="index-featured-info-search"> Featured </div> <div class="index-categories-info-search"> Categories <%#= submit_tag "Categories", class: "btn btn-link btn-xs" %> </div>
+
+      </div>
       <div class="index-search-bar">
         <%= form_tag(experiences_path, method: :get) do %>
-        <%= text_field_tag :query, nil, placeholder: "Search..." %>
-        <%= submit_tag "Category", class: "btn btn-danger btn-xs" %>
+
+        <i class="fas fa-search"></i><%= text_field_tag :query, nil, placeholder: "     Address city, activity    " %><i class="fas fa-microphone"></i>
         <% end %>
-      </div>
-    </div>
-    <br>
-
-    <div class="index-container">
-      <div class="index-row">
-        <% @experiences.each do |experience| %>
-        <div class="col-xs-12 col-sm-6 col-md-4" id="index-card-wrapper">
-          <div class="index-card-image" style = "background-image: url(<%=experience.photo%>);">
-            <br>
-            <p class ="index-text-popular-design"> Popular </p>
-
-          </div>
-          <div class="index-card-description">
-            <br>
-            <h5> <%= experience.location.name %> </h5>
-            <h2> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
-            <h4> <%= experience.description %></h4>
-            <div class="index-bottom-card-description">
-              <h6> <%= humanized_money_with_symbol(experience.price) %> </h6>
-              <%= link_to 'Book now', experience_path(experience), class: "btn btn-success btn-lg index-btn-success-mobile" %>
-            </div>
-
-          </div>
-        </div>
-        <% end %>
-      </div>
-
-
-      <div id="map"; data-markers="<%= @markers.to_json %>">
       </div>
     </div>
   </div>
+  <br>
+
+  <div class="index-container">
+    <div class="index-row">
+      <% @experiences.each do |experience| %>
+      <div class="col-xs-12 col-sm-6 col-md-4" id="index-card-wrapper">
+        <div class="index-card-image" style = "background-image: url(<%=experience.photo%>);">
+          <br>
+          <p class ="index-text-popular-design"> Popular </p>
+
+        </div>
+        <div class="index-card-description">
+          <br>
+          <h5> <%= experience.location.name %> </h5>
+          <h2> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
+          <h4> <%= experience.description %></h4>
+          <div class="index-bottom-card-description">
+            <h6> <%= humanized_money_with_symbol(experience.price) %> </h6>
+            <%= link_to 'Book now', experience_path(experience), class: "btn btn-success btn-lg index-btn-success-mobile" %>
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+    <div id="map"; data-markers="<%= @markers.to_json %>">
+    </div>
+  </div>
+</div>
 
 
