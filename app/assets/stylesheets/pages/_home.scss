@@ -114,7 +114,6 @@
 
 .progress {
   background-color: #455151;
-  flex: 1 1 80%;
   margin-bottom: 0;
   margin-right: 20px;
   margin-left: 20px;
@@ -136,6 +135,14 @@
   margin-right: 20px;
   margin-left: 20px;
   border-radius: 3px;
+}
+
+.progress-ngo-info {
+  flex: 1 1 80%;
+}
+
+.progress-ngo-info h5 {
+  text-align: center;
 }
 
 .progress-ngo-img {
