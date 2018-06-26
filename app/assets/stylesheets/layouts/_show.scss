@@ -29,3 +29,8 @@
   opacity: 1;
   transition-duration: 5s;
 }
+
+#show-banner-bottom-gradient {
+  height: 15px;
+  background: linear-gradient(-90deg, yellow, orange);
+}

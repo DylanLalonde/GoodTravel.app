@@ -23,6 +23,7 @@ gem "money-rails"
 gem "stripe"
 gem "stripe_event"
 gem "forest_liana"
+gem "pundit"
 
 gem "bootstrap-datepicker-rails"
 gem "rubocop"
