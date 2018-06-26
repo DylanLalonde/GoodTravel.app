@@ -21,7 +21,7 @@
   height: 150px;
   background-size: cover !important;
   background-position: center;
-  // border-radius: 2px;
+  border: 0.5px solid #7C7287;
   width: 100%;
 }
 
@@ -31,10 +31,10 @@
   display: flex;
   flex-direction: column;
   background-color: #FDF5E6;
-  width: 370px;
-  // border: 1px solid green;
   padding: 0px;
-  margin: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  // border: 1px solid green;
 }
 
 .index-search-bar{
@@ -57,7 +57,7 @@ font-size: 25px;
 }
 
 .index-featured-info-search{
-  border-bottom: 4px solid orange;
+  border-bottom: 4px solid $sunset;
   flex-grow: 1;
   text-align: center;
 }
@@ -78,7 +78,7 @@ font-size: 25px;
 
 .index-btn-success-mobile{
   border-radius: 0px;
-  background-color: #406E8E;
+  background-color: $sunset;
   font-size: 13px;
   border: 0px;
 }
@@ -88,7 +88,7 @@ font-size: 25px;
   display: flex;
   justify-content:center ;
   color: white;
-  background-color: orange;
+  background-color: $sunset;
   width: 25%;
   // font-weight: bold;
   font-size: 15px;
@@ -116,8 +116,8 @@ font-size: 25px;
   bottom: 10px;
   left: 10px;
   background-color: #FCFAF9;
-  // background-color: orange;
   border: 0.5px solid #7C7287;
+  // background-color: orange;
 }
 
 .index-card-description h2 {

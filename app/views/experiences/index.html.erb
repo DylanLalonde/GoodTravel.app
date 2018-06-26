@@ -1,21 +1,19 @@
 
 
 <div class="index-content">
-
   <div class="index-row">
     <div class="index-box-for-search-bar">
       <div class="index-search-info">
       <div class="index-featured-info-search"> Featured </div> <div class="index-categories-info-search"> Categories <%#= submit_tag "Categories", class: "btn btn-link btn-xs" %> </div>
-
       </div>
       <div class="index-search-bar">
         <%= form_tag(experiences_path, method: :get) do %>
-
-        <i class="fas fa-search"></i><%= text_field_tag :query, nil, placeholder: "  Address city, activity    " %><i class="fas fa-microphone"></i>
+        <i class="fas fa-search"></i><%= text_field_tag :query, nil, placeholder: "Ex: Windmill Tour" %><i class="fas fa-microphone"></i>
         <% end %>
       </div>
     </div>
   </div>
+
   <br>
 
   <div class="index-container">
