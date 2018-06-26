@@ -14,7 +14,7 @@ puts "Planting Seeds"
 
 amsterdam = Location.create!(name:"amsterdam")
 
-#List of Ngosrail
+#List of Ngos
     peta = Ngo.create!(name:"Peta", description:"PETA focuses on establishing and protecting animal rights.Our work focuses on the four areas where the largest numbers of animals suffer the most intensely for the longest time.", category:"Animal Rights", photo:"https://res.cloudinary.com/dylanlalonde/image/upload/v1529492648/goodtravel/pax.png", address:"Bellamyplein 51, 1053 AT Amsterdam")
 
     icrse = Ngo.create!(name:"ICRSE", description:"International Committee on the Rights of Sex Workers in Europe (ICRSE) is a network of sex worker organisations that work together to support the development of national and international law, policy and practice, which respects and upholds the human and labour rights of sex workers throughout Europe.", category:"Human Rights", photo:"https://res.cloudinary.com/dylanlalonde/image/upload/v1529492648/goodtravel/sexworkers.png", address:"Oosterpark 9, 1091 AC Amsterdam")
@@ -71,24 +71,21 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #tours
-    canaltour = Experience.create!(name: "Canal Tour", price:"50", description:"such water, much wow!", host_info:hostjennifer, location: amsterdam, address: "Binnenkant 1, 1011 BG Amsterdam", featured_ngo: peta.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508839/goodtravel.app/canal_tour.png")
+    canaltour = Experience.create!(name: "Canal Tour", price:"50", smdescription:"Explore Amsterdam's UNESCO protected Seventeenth-Century Canals that provide a truly Dutch experience, from the water", lgdescription:"With more than one hundred kilometers of grachten, about 90 islands and 1,500 bridges, canals are a core aspect of Amsterdam. Lining the canals are historical buildings that will transport you back to Amsterdam's hayday.", host_info:hostjennifer, location: amsterdam, address: "Binnenkant 1, 1011 BG Amsterdam", featured_ngo: Ngo.first.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508839/goodtravel.app/canal_tour.png")
 
-    cyclingtour = Experience.create!(name: "Cycling Tour", price:"25", description:"much cycle, very pain!", host_info:hostjad, location: amsterdam, address: "Nieuwezijds Kolk 29, 1012 PV Amsterdam", featured_ngo: sea_sheperd.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/cycling_tour.png")
+    cyclingtour = Experience.create!(name: "Cycling Tour", price:"25", smdescription:"much cycle, very pain!", host_info:hostjad, location: amsterdam, address: "Nieuwezijds Kolk 29, 1012 PV Amsterdam", featured_ngo: Ngo.first.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/cycling_tour.png")
 
-    Beertour = Experience.create!(name: "Craft Beer Tour", price:"50", description:"Just one beer!", host_info:hostjad, location: amsterdam, address: "Funenkade 7, 1018 AL Amsterdam", featured_ngo: pax_for_peace.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/Beer_tour.png")
+    Beertour = Experience.create!(name: "Craft Beer Tour", price:"50", smdescription:"Just one beer!", host_info:hostjad, location: amsterdam, address: "Funenkade 7, 1018 AL Amsterdam", featured_ngo: Ngo.first.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/Beer_tour.png")
 
-    historicaltour = Experience.create!(name: "Historical Tour", price:"40", description:"much tour, very wow!", host_info:hostjennifer, location: amsterdam, address: "Dam 3, 1012 JS Amsterdam", featured_ngo: world_animal_protection.id,photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/Historical_Tour.png")
+    historicaltour = Experience.create!(name: "Historical Tour", price:"40", smdescription:"much tour, very wow!", host_info:hostjennifer, location: amsterdam, address: "Dam 3, 1012 JS Amsterdam", featured_ngo: Ngo.first.id,photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/Historical_Tour.png")
 
-    cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", description:"much tour, very wow!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: war_child.id,  photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508841/goodtravel.app/cathedral_tour.png")
+    cathedraltour = Experience.create!(name: "Cathedrals Tour", price:"30", smdescription:"much tour, very wow!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: Ngo.first.id,  photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508841/goodtravel.app/cathedral_tour.png")
 
-    cheesetour = Experience.create!(name: "Cheese Tour", price:"30", description:"Such yellow, very cheese!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: slow_food.id,  photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508841/goodtravel.app/cheese_tour.png")
-
-    #Redlightdistricttour
-    #klompenday
+    cheesetour = Experience.create!(name: "Cheese Tour", price:"30", smdescription:"Such yellow, very cheese!", host_info:hostjad, location: amsterdam, address: "Overhoeksplein 2, 1031 KS Amsterdam", featured_ngo: Ngo.first.id,  photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508841/goodtravel.app/cheese_tour.png")
 
 #end
 
 #bookings
 carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount_cents:"1", ngo: icrse, experience: canaltour)
 #end
-puts "Process Completed"
+puts "Seedling is visable"
