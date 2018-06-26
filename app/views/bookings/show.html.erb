@@ -1,22 +1,25 @@
 <div class="container">
     <div class="row">
-    <h1> Your Booking as been confirmed</h1>
-    <%= @booking.status %>
-    <br>
-    <%= @booking.ngo.name %>
-    <br>
-    Booking Information:
-    <br>
-    <%= @booking.start_date %>
-    <%= @booking.end_date %>
-    <br>
-    Payment Confirmation:
-    <br>
-    You have paid = <%= @booking.amount %>
-    <br>
-    Your booking has donated: <%= @booking.amount_donated %>
-    <br>
-    This NGO has earned: <%= @totaldonations %>
+
+      <div class="booking-confirmation">
+
+        <h1> Your Booking as been confirmed!</h1>
+        <!-- Need to add booking status later! -->
+        <h2> <strong>Experience:</strong> <%= @booking.experience.name %> </h2>
+        <p><strong>Your group size:</strong> <%= @booking.number_traveller %></p>
+        <p><strong>Starts at:</strong> <%= @booking.start_date %></p>
+        <p><strong>Ends at:</strong> <%= @booking.end_date %></p>
+        <p><strong>Payment received:</strong> <%= @booking.amount %></p>
+        <br>
+        <h5><strong>Your booking has donated:
+        <br>
+        </strong> <%= @booking.donation.amount %> to <%= @booking.ngo.name %>!</h5>
+        <h5> <%= @booking.ngo.name %> has earned: <%= @totaldonations %> since joining GoodTravel </h5>
+        <p> <%= @referrerearnings %> </p>
+        <p> <%= @referrerearning %> </p>
+      </div>
+
     </div>
+
 </div>
 
