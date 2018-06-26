@@ -35,7 +35,7 @@ amsterdam = Location.create!(name:"amsterdam")
 
 #NGOLocations
 
-    redcrosslocation = NgoLocation.create!(location: amsterdam, ngo: peta)
+    redcrosslocation = NgoLocation.create!(location: amsterdam, ngo: Ngo.first)
 
 #end
 
@@ -86,6 +86,6 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #bookings
-carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount_cents:"1", ngo: icrse, experience: canaltour)
+carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount_cents:"1", ngo: sea_sheperd, experience: canaltour)
 #end
 puts "Seedling is visable"
