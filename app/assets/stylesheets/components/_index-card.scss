@@ -194,6 +194,13 @@ font-size: 25px;
   border: white 1px solid;
 }
 
+//
+
+#show-banner-bottom-gradient {
+    height: 20px;
+    background: linear-gradient(-90deg, yellow,red, orange);
+}
+
 // INFO TO PUT EVERYTHING ON FLEXBOX
 @media only screen and (max-width: 1300px) {
   .index-container {
