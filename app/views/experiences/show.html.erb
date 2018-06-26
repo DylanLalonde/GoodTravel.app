@@ -82,8 +82,6 @@
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
       <%= @ngo.name %>
     </button> <br>
-    image <br>
-    image <br>
     <br>
     <hr width="90%">
   </div>
@@ -122,6 +120,7 @@
       <h5> <%= @experience.address %></h5>
       <h5> <%= @experience.location.name %></h5>
 
+
       <div class="show-map-experience "id="map" ; data-markers="<%= @markers.to_json %>">
       </div>
     </div>
@@ -129,12 +128,5 @@
 
   <!-- Button trigger modal -->
 
-<br>
-<br>
-
-
-
-
-<div id="show-banner-bottom-gradient" style="color:white;text-align:center;">  </div>
-
 </div>
+

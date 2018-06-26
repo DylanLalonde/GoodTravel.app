@@ -12,7 +12,7 @@ body.home {
 }
 
 .home.navbar-goodtravel.opaque {
-  background-color: black;
+  background-color: $black;
 }
 
 /* Home Navbar after scrolling past banner */
@@ -27,7 +27,7 @@ body.home {
   height: 60px;
   padding-right: 4px;
   padding-left: 4px;
-  background-color: #333333;
+  background-color: $black;
   transition: all 0.3s ease;
 }
 
