@@ -27,7 +27,11 @@ class PaymentsController < ApplicationController
       )
 
     @order.update(payment: charge.to_json, state: "paid")
+    
     BookingMailer.creation_confirmation(@booking, current_user).deliver_now
+    
+    @booking.createdonation
+    @booking.createearning
 
     redirect_to experience_booking_path(@experience, @booking)
 
