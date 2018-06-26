@@ -1,19 +1,31 @@
 .col {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 @media only screen and (max-width: 600px) {
-    #map {
-        max-height: 150px;
-    }
-    .show-image {
-        width: 90vw;
-    }
+  #map {
+    max-height: 150px;
+  }
+  .show-image {
+    width: 90vw;
+  }
 }
 
 @media only screen and (min-width: 600px) {
-    .show-image {
-        width: 49vw;
-    }
+  .show-image {
+    width: 49vw;
+  }
+}
+
+.content {
+  display: none;
+  opacity: 0;
+  transition-duration: 5s;
+}
+
+.content-active {
+  display: block;
+  opacity: 1;
+  transition-duration: 5s;
 }
