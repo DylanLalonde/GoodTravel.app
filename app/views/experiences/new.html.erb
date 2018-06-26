@@ -1,4 +1,6 @@
-
+<% if policy(Experience).create? %>
+  <%= link_to "New Experience", new_experience_path %>
+<% end %>
 <h1> New experiences</h1>
 
 <%= render "form" %>
