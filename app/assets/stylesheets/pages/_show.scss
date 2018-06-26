@@ -137,6 +137,10 @@ input#search_starts_at{
   display: none;
 }
 
+input#booking_end_date{
+  display: none;
+}
+
 label.form-control-label.string.optional{
   display: none;
 }
@@ -254,7 +258,7 @@ span.flatpickr-day{
 }
 
 #show-grad4 {
-    height: 15px;
+    height: 10px;
     background: linear-gradient(-90deg, yellow, orange);
 }
 
