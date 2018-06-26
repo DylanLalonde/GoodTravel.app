@@ -1,25 +1,48 @@
 <div class="container">
     <div class="row">
 
-      <div class="booking-confirmation">
+      <div class="confirmation-intro">
+        <h6> This is your proof of purchase and must be shown to the experience host. </h6>
+      </div>
 
-        <h1> Your Booking as been confirmed!</h1>
+      <div class="booking-confirmation">
+        <h1> Your booking as been confirmed!</h1>
         <!-- Need to add booking status later! -->
-        <h2> <strong>Experience:</strong> <%= @booking.experience.name %> </h2>
+        <h2> <strong>Experience: <br>
+        </strong> <%= @booking.experience.name %> </h2>
         <p><strong>Your group size:</strong> <%= @booking.number_traveller %></p>
-        <p><strong>Starts at:</strong> <%= @booking.start_date %></p>
-        <p><strong>Ends at:</strong> <%= @booking.end_date %></p>
+        <p><strong>Starts at: <br>
+        </strong> <%= @booking.start_date %></p>
+        <p><strong>Ends at: <br>
+        </strong> <%= @booking.end_date %></p>
         <p><strong>Payment received:</strong> <%= @booking.amount %></p>
-        <br>
-        <h5><strong>Your booking has donated:
-        <br>
+      </div>
+
+      <div class="donation-info">
+        <!-- placeholder image for now, replace with ngo image -->
+        <div class="ngo-image"> <%= image_tag "http://via.placeholder.com/100x100" %> </div>
+        <h5><strong>Your booking has donated: <br>
         </strong> <%= @booking.donation.amount %> to <%= @booking.ngo.name %>!</h5>
-        <h5> <%= @booking.ngo.name %> has earned: <%= @totaldonations %> since joining GoodTravel </h5>
-        <p> <%= @referrerearnings %> </p>
-        <p> <%= @referrerearning %> </p>
+        <h5><strong> <%= @booking.ngo.name %>  has received: <br>
+         </strong> <%= @totaldonations %> since joining GoodTravel </h5>
+
+      </div>
+
+      <div class="referral-info">
+        <!-- placeholder image for now, replace with referrer image-->
+        <div class="ref-image"> <%= image_tag "http://via.placeholder.com/100x100" %> </div>
+        <p>Joe, the local who referred you to GoodTravel, <strong>earned <%= @referrerearning %> when you made this booking!</strong></p>
+      </div>
+
+      <br>
+
+      <div class="confirmation-page-buttons">
+        <%= link_to "Share", '#', class: "btn btn-primary" %>
+        <%= link_to "Print", '#', class: "btn btn-primary",
+            onclick: 'window.print();return false;' %>
+        <%= link_to "Dashboard", '#', class: "btn btn-primary" %>
       </div>
 
     </div>
-
 </div>
 
