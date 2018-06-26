@@ -1,13 +1,14 @@
 
 puts "Uprooting"
+ReferrerInfo.destroy_all
+TravellerInfo.destroy_all
+HostInfo.destroy_all
 Booking.destroy_all
 Experience.destroy_all
 NgoLocation.destroy_all
 Location.destroy_all
 Ngo.destroy_all
-ReferrerInfo.destroy_all
-TravellerInfo.destroy_all
-HostInfo.destroy_all
+Order.destroy_all
 User.destroy_all
 
 puts "Planting Seeds"

@@ -34,6 +34,7 @@ class BookingsController < ApplicationController
     @booking.amount_donated = @booking.amount * 0.05
 
     if @booking.save!
+      BookingMailer.creation_confirmation(@booking).deliver_now
       @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
 
       # change booking_sku in the order model to booking_id
