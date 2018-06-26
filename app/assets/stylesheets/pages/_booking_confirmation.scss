@@ -8,7 +8,8 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 10px;
-  background-color: #F54040;
+  border: thick solid $sunset;
+  // background-color: $sunset;
   border-radius: 3px;
   padding-left: 20px;
   padding-bottom: 20px;
@@ -18,25 +19,25 @@
 .booking-confirmation h1 {
   font-size: 1.25em;
   text-align: center;
-  color: white;
+  color: $black;
 }
 
 .booking-confirmation h2 {
   font-size: 1.1em;
   text-align: left;
-  color: white;
+  color: $black;
 }
 
 .booking-confirmation h5 {
   font-size: 1em;
   text-align: center;
-  color: white;
+  color: $black;
 }
 
 .booking-confirmation p {
   font-size: 1em;
   text-align: left;
-  color: white;
+  color: $black;
 }
 
 // Donation info
@@ -45,7 +46,7 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 10px;
-  background-color: #F54040;
+  background-color: $sunset;
   border-radius: 3px;
   text-align: center;
   padding-bottom: 20px;
@@ -75,7 +76,7 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 10px;
-  background-color: #F54040;
+  background-color: $sunset;
   border-radius: 3px;
   padding-bottom: 20px;
   padding-top: 10px;
