@@ -1,0 +1,253 @@
+// HEADER FOR BACK TO RESULTS
+
+.show-header-button{
+  display: flex;
+  justify-content:flex-end;
+  background-color: white;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  // border-bottom: 4px solid orange;
+}
+
+.show-container{
+  margin-right: 0px;
+}
+
+.btn-link{
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: orange;
+}
+
+
+// IMAGES AT THE TOP
+
+.show-image-display{
+  position: relative;
+  margin-left:25px;
+  // border-radius: 2px;
+  width: 100%;
+}
+.show-text-popular-design{
+  position: absolute;
+  top: 40px;
+  display: flex;
+  justify-content:center ;
+  color: white;
+  background-color: orange;
+  width: 25%;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+// INFORMATION LOCATION & FREQUENCY HEADER
+.show-location-info{
+  font-size: 14px;
+  color: #7CC6FE;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f1f2f1;
+  padding-left: 40px;
+}
+
+.show-tour-frequency-infor{
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+}
+
+
+// INFORMATION EXPERIENCE
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  align: center;
+}
+
+.show-experience-info{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: #f1f2f1;
+  padding-left: 50px;
+}
+
+.show-experience-info h4 {
+  font-size: 25px
+}
+
+.show-experience-info h5 {
+  color: grey;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.show-what-you-get{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f1f2f1;
+  padding-left: 50px;
+}
+
+.show-what-you-get h4 {
+  color: grey;
+}
+
+.show-what-you-get h5 {
+  color: grey;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+// HOURS PART
+
+.show-hour-part-design{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: #f1f2f1;
+  padding-left: 50px;
+}
+
+.show-hour-part-design h4{
+  color: grey;
+}
+
+.show-hour-part-design h5{
+  color: grey;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+// FLATPICKR - CALENDAR INFO
+
+.show-calendar-info {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  padding-left: 50px;
+}
+
+input#search_starts_at{
+  display: none;
+}
+
+label.form-control-label.string.optional{
+  display: none;
+}
+
+
+// span.flatpickr-day.disabled{
+//   background-color: #FF6347;
+// }
+
+span.flatpickr-day{
+  background-color: green;
+}
+
+.show-calendar-form-button{
+  padding-top: 5px;
+  padding-bottom: 20px;
+  background-color: white;
+  padding-left: 50px;
+}
+
+.show-button-available {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
+.show-button-selected {
+  background-color: #7CC6FE;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
+.show-button-not-available {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
+// BOOK BUTTON INFORMATION
+
+.show-button-part{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  background-color: #f1f2f1;
+  padding-left: 50px;
+}
+
+// SUPPORTED NGOS INFORMATIONS
+.show-supported-ngos{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: #f1f2f1;
+  padding-left: 50px;
+}
+
+.show-supported-ngos h4 {
+  color: grey;
+}
+
+.show-supported-ngos h5 {
+  color: grey;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#map{
+  height: 150px;
+}
+
+// LOCATION PART
+.show-location-part-with-map{
+  padding-top: 5px;
+  padding-bottom: 20px;
+  background-color: #f1f2f1;
+  padding-left: 50px;
+}
+
+.show-location-part-with-map h4 {
+  color: grey;
+}
+
+.show-location-part-with-map h5{
+  color: grey;
+  font-size: 14px;
+  line-height: 1.4;
+}
+// MAP
+#map.show-map-experience {
+  height: 300px,
+}
+
