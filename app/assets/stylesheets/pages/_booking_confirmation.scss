@@ -1,24 +1,104 @@
+.confirmation-intro {
+  text-align: center;
+  margin-right: 35px;
+  margin-left: 35px;
+}
+
 .booking-confirmation {
- margin-left: 35px;
- margin-right: 35px;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 10px;
+  background-color: #F54040;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
 
 .booking-confirmation h1 {
   font-size: 1.25em;
   text-align: center;
+  color: white;
 }
 
 .booking-confirmation h2 {
   font-size: 1.1em;
   text-align: left;
+  color: white;
 }
 
 .booking-confirmation h5 {
   font-size: 1em;
   text-align: center;
+  color: white;
 }
 
 .booking-confirmation p {
   font-size: 1em;
   text-align: left;
+  color: white;
+}
+
+// Donation info
+
+.donation-info {
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 10px;
+  background-color: #F54040;
+  border-radius: 3px;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.donation-info h5 {
+  color: white;
+}
+
+.donation-info p {
+  color: white;
+}
+
+.ngo-image img {
+  border-radius: 3px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+// Referrer info
+
+.referral-info {
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 10px;
+  background-color: #F54040;
+  border-radius: 3px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.referral-info p {
+  color: white;
+}
+
+.ref-image img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+// Buttons
+
+.confirmation-page-buttons {
+  text-align: center;
 }
