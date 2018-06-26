@@ -27,6 +27,9 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(payment: charge.to_json, state: "paid")
+    @booking.createdonation
+    @booking.createearning
+
     redirect_to experience_booking_path(@experience, @booking)
 
     rescue Stripe::CardError => e
