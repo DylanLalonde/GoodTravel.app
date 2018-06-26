@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_25_101443) do
+ActiveRecord::Schema.define(version: 2018_06_25_140100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_06_25_101443) do
 
   create_table "experiences", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.string "smdescription"
     t.bigint "host_info_id"
     t.bigint "location_id"
     t.datetime "created_at", null: false
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2018_06_25_101443) do
     t.string "address"
     t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
+    t.integer "duration"
+    t.string "lgdescription"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end
