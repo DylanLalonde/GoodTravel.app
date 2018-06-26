@@ -24,10 +24,6 @@
   text-align: center;
 }
 
-.index_card img {
-  height: 150px;
-  width: 150px;
-}
 
 .index_image {
   display: flex;
@@ -77,7 +73,7 @@
 // solution section
 
 .solution-section {
-  background-color: black;
+  background-color: $black;
 }
 
 .solution-body {
@@ -91,7 +87,7 @@
 
 .solution-body p {
   font-size: 1em;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 ///// PROGRESS BARS SECTION
@@ -125,6 +121,10 @@
   background-color: #f0544f;
 }
 
+.progress-donation{
+  margin-left: 10px;
+}
+
 // progress bar boxes
 
 .progress-box-1 {
@@ -150,12 +150,12 @@
 }
 
 .progress-ngo-img img {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   border-radius: 4px;
-  margin-left: 2px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .home-cta {
