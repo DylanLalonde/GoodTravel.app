@@ -6,6 +6,7 @@ class ExperiencesController < ApplicationController
 
   def index
     if params[:query].present?
+      @experience = policy_scope(Experience).order(created_at: :desc)
       @experiences = Experience.search_by_name_and_description_and_category("%#{params[:query]}%")
     else
       @experiences = policy_scope(Experience).order(created_at: :desc)

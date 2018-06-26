@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ExperiencePolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
   attr_reader :user, :scope
 
