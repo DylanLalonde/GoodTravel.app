@@ -6,8 +6,9 @@
 
 
  <%= simple_form_for [@experience, @booking] do |f| %>
-    <%= f.input :start_date, as: :string, label: "Starts",required: false, input_html: {class: "datepicker booking-calendar-form"} %>
+    <%#= f.input :start_date, as: :string, label: "Starts",required: false, input_html: {class: "datepicker booking-calendar-form"} %>
     <%= f.input :end_date, as: :string, required: false, label: "Ends", input_html: {class: "datepicker booking-calendar-form"} %>
+        <%= f.input :end_date, as: :string, required: false, label: "Ends", input_html: {class: "datepicker booking-time-form"} %>
     <%= f.input :number_traveller, label: "How many person?", collection: 1..10, prompt: "select" %>
     <%= f.input :amount_cents, label: "Total amount in euro", disabled: true, required: false, hint:" #{humanized_money_with_symbol(@experience.price)} per person for an AMAZING sustainable experience" %>
     <br>
