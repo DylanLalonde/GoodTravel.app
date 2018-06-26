@@ -32,6 +32,7 @@ gem "geocoder"
 gem "pg_search"
 gem "faker"
 gem "jquery-rails"
+gem "letter_opener", group: :development
 
 group :development do
   gem "web-console", ">= 3.3.0"

@@ -38,13 +38,16 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save!
-        @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
+
+      BookingMailer.creation_confirmation(@booking).deliver_now
+      @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
         # @donation = Donation.create!(booking: @booking, ngo: ngo, amount: @donationamount )
         # @earning = Earning.create!(booking: @booking, referrer_info: @booking.referrer_info, amount: @donationamount )
         # change booking_sku in the order model to booking_id
         # add an order_id to booking
         # redirect_to experience_booking_path(@experience, @booking)
         redirect_to new_experience_booking_order_payment_path(@experience, @booking, @order)
+
     else
       @experience = Experience.find(params[:experience_id])
       @ngos = Ngo.all

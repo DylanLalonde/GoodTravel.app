@@ -1,13 +1,14 @@
 
 puts "Uprooting"
+ReferrerInfo.destroy_all
+TravellerInfo.destroy_all
+HostInfo.destroy_all
 Booking.destroy_all
 Experience.destroy_all
 NgoLocation.destroy_all
 Location.destroy_all
 Ngo.destroy_all
-ReferrerInfo.destroy_all
-TravellerInfo.destroy_all
-HostInfo.destroy_all
+Order.destroy_all
 User.destroy_all
 
 puts "Planting Seeds"
@@ -15,7 +16,9 @@ puts "Planting Seeds"
 amsterdam = Location.create!(name:"amsterdam")
 
 #List of Ngos
+
     # peta = Ngo.create!(name:"Peta", description:"PETA focuses on establishing and protecting animal rights.Our work focuses on the four areas where the largest numbers of animals suffer the most intensely for the longest time.", category:"Animal Rights", photo:"https://res.cloudinary.com/dylanlalonde/image/upload/v1529492648/goodtravel/pax.png", address:"Bellamyplein 51, 1053 AT Amsterdam")
+
 
     # icrse = Ngo.create!(name:"ICRSE", description:"International Committee on the Rights of Sex Workers in Europe (ICRSE) is a network of sex worker organisations that work together to support the development of national and international law, policy and practice, which respects and upholds the human and labour rights of sex workers throughout Europe.", category:"Human Rights", photo:"https://res.cloudinary.com/dylanlalonde/image/upload/v1529492648/goodtravel/sexworkers.png", address:"Oosterpark 9, 1091 AC Amsterdam")
 
@@ -72,6 +75,7 @@ amsterdam = Location.create!(name:"amsterdam")
 
 #tours
     canaltour = Experience.create!(name: "Canal Tour", price:"50", smdescription:"Explore Amsterdam's UNESCO protected Seventeenth-Century Canals that provide a truly Dutch experience, from the water", lgdescription:"With more than one hundred kilometers of grachten, about 90 islands and 1,500 bridges, canals are a core aspect of Amsterdam. Lining the canals are historical buildings that will transport you back to Amsterdam's hayday.", host_info:hostjennifer, location: amsterdam, address: "Binnenkant 1, 1011 BG Amsterdam", featured_ngo: Ngo.first.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508839/goodtravel.app/canal_tour.png")
+
 
     cyclingtour = Experience.create!(name: "Cycling Tour", price:"25", smdescription:"much cycle, very pain!", host_info:hostjad, location: amsterdam, address: "Nieuwezijds Kolk 29, 1012 PV Amsterdam", featured_ngo: Ngo.first.id, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508843/goodtravel.app/cycling_tour.png")
 

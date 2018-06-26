@@ -14,6 +14,7 @@
       <%= @experience.location.name %>
     </div>
     <div class="show-tour-frequency-infor">
+
       <i class="far fa-2x fa-clock"></i> Tour Duration: <%# <%= @experience.time %>
        <br>
       <i class="fas fa-2x fa-sync-alt"></i> Frequency:<%# <%= @experience.frequency %>
@@ -25,6 +26,7 @@
 
     <div class="show-experience-info">
       <h4> <%= @experience.name %></h4>
+
           <ul>
           <li class="button"><p><%= @experience.smdescription %></p></li>
           <li class="content" id="expand-content"><p><%= @experience.lgdescription %></p></li>
@@ -120,10 +122,12 @@
       <h5> <%= @experience.address %></h5>
       <h5> <%= @experience.location.name %></h5>
 
+
       <div class="show-map-experience "id="map" ; data-markers="<%= @markers.to_json %>">
       </div>
     </div>
-  </div>
+    <!-- /.modal-content -->
+
   <!-- Button trigger modal -->
 
 <br>
