@@ -8,10 +8,9 @@ class BookingsController < ApplicationController
     @user = current_user
     @experience = Experience.find(params[:experience_id])
     @booking = Booking.find(params[:id])
-    @totaldonations = 0
-    @booking.ngo.bookings.each do |booking|
-      @totaldonations += booking.amount_donated if booking.amount_donated
-    end
+    @totaldonations = Money.new(@booking.ngo.donations.sum(:amount_cents))
+    @referrerearnings = Money.new(@booking.referrer_info.earnings.sum(:amount_cents))
+    @referrerearning = Money.new(@booking.earning.amount)
   end
 
   def new
@@ -24,22 +23,25 @@ class BookingsController < ApplicationController
   def create
     ngo = Ngo.find(params[:booking][:ngo_id])
     experience = Experience.find(params[:experience_id])
-
     @booking = Booking.new(booking_params)
     @booking.ngo = ngo
     @booking.experience = experience
     @traveller_info = TravellerInfo.create(user: current_user)
     @booking.traveller_info = @traveller_info
     @booking.amount = update_total
-    @booking.amount_donated = @booking.amount * 0.05
+    @donationamount = @booking.amount * 0.05 # Using donationamount for donation amount & referrer earnings!
+    ### Temporary fix: picking last referrer. Seed needs same for now:
+    @referrer = ReferrerInfo.last
+    @booking.referrer_info = @referrer
 
     if @booking.save!
-      @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
-
-      # change booking_sku in the order model to booking_id
-      # add an order_id to booking
-      redirect_to new_experience_booking_order_payment_path(experience, @booking, @order)
-    # redirect_to experience_booking_path(@experience, @booking)
+        @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
+        # @donation = Donation.create!(booking: @booking, ngo: ngo, amount: @donationamount )
+        # @earning = Earning.create!(booking: @booking, referrer_info: @booking.referrer_info, amount: @donationamount )
+        # change booking_sku in the order model to booking_id
+        # add an order_id to booking
+        # redirect_to experience_booking_path(@experience, @booking)
+        redirect_to new_experience_booking_order_payment_path(experience, @booking, @order)
     else
       @experience = Experience.find(params[:experience_id])
       @ngos = Ngo.all
@@ -47,9 +49,6 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-
-
-
 
   def destroy
     @booking = Booking.find(params[:id])

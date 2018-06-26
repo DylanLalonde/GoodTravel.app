@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_25_140100) do
+
+ActiveRecord::Schema.define(version: 2018_06_25_152558) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +35,22 @@ ActiveRecord::Schema.define(version: 2018_06_25_140100) do
     t.index ["ngo_id"], name: "index_bookings_on_ngo_id"
     t.index ["referrer_info_id"], name: "index_bookings_on_referrer_info_id"
     t.index ["traveller_info_id"], name: "index_bookings_on_traveller_info_id"
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "booking_id"
+    t.integer "ngo_id"
+    t.integer "amount_cents", default: 0, null: false
+  end
+
+  create_table "earnings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "booking_id"
+    t.integer "referrer_info_id"
+    t.integer "amount_cents", default: 0, null: false
   end
 
   create_table "experiences", force: :cascade do |t|
