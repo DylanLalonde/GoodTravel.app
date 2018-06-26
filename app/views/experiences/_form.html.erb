@@ -7,12 +7,12 @@
           <br>
           <div class="form-group">
             <%= f.input :name %>
-            <%= f.input :category, collection: ["Nature","Travel" ] %>
+            <%= f.input :category, collection: ["Nature","Travel"] %>
             <%= f.input :description %>
             <%= f.input :location %>
             <%= f.input :price %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :photo, as: :hidden %>
+            <%#= f.input :photo_cache, as: :hidden %>
           </div>
           <%= f.submit class: 'btn btn-primary' %>
           <% end %>
