@@ -17,7 +17,7 @@ class Experience < ApplicationRecord
   # Search functionality
   include PgSearch
   pg_search_scope :search_by_name_and_description_and_category,
-  against: [ :name, :description, :category ],
+  against: [ :name, :smdescription, :category ],
   using: {
     tsearch: { prefix: true }
   }
