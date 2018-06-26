@@ -57,7 +57,7 @@ font-size: 25px;
 }
 
 .index-featured-info-search{
-  border-bottom: 4px solid orange;
+  border-bottom: 4px solid $orange;;
   flex-grow: 1;
   text-align: center;
 }
@@ -78,7 +78,8 @@ font-size: 25px;
 
 .index-btn-success-mobile{
   border-radius: 0px;
-  background-color: #406E8E;
+  background-color: $orange;
+  // #406E8E
   font-size: 13px;
   border: 0px;
 }
@@ -88,7 +89,7 @@ font-size: 25px;
   display: flex;
   justify-content:center ;
   color: white;
-  background-color: orange;
+  background-color: $orange;;
   width: 25%;
   // font-weight: bold;
   font-size: 15px;
@@ -197,8 +198,8 @@ font-size: 25px;
 //
 
 #show-banner-bottom-gradient {
-    height: 20px;
-    background: linear-gradient(-90deg, yellow,red, orange);
+    height: 10px;
+    background: linear-gradient(-90deg, yellow, $orange);
 }
 
 // INFO TO PUT EVERYTHING ON FLEXBOX
