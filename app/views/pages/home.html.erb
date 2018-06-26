@@ -93,12 +93,9 @@
             <div class="progress-ngo-info">
               <h5> <%= ngo.name %> </h5>
               <div class="progress">
-                <% @totaldonations = 0  %>
-                  <% ngo.bookings.each do |booking| %>
-                    <% @totaldonations += booking.amount_donated if booking.amount_donated %>
-                <% end %>
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=" <%= @totaldonations / 10  %> " aria-valuemin="0" aria-valuemax="100" style="width: <%= @totaldonations / 10  %>%">
-                    $<%= @totaldonations %>
+                <% donations = Money.new(ngo.donations.sum(:amount_cents)) %>
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=" <%= donations / 10  %> " aria-valuemin="0" aria-valuemax="100" style="width: <%= donations / 10  %>%">
+                    <%= humanized_money_with_symbol(donations) %>
                 </div>
               </div>
             </div>
