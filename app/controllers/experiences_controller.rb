@@ -6,9 +6,10 @@ class ExperiencesController < ApplicationController
 
   def index
     if params[:query].present?
+      @experience = policy_scope(Experience).order(created_at: :desc)
       @experiences = Experience.search_by_name_and_description_and_category("%#{params[:query]}%")
     else
-      @experiences = Experience.all
+      @experiences = policy_scope(Experience).order(created_at: :desc)
       @experiences = Experience.where.not(latitude: nil, longitude: nil)
 
       # Map stuff:
@@ -23,12 +24,13 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-    @experience = Experience.new
+    @experience = current_user.experiences.new
+    authorize @experience
   end
 
   def create
-    @experience = Experience.new(experience_params)
-    @experience.user = current_user
+    @experience = current_user.experiences.new(experience_params)
+    authorize @experience
     if @experience.save
       redirect_to experience_path(@experience)
     else
@@ -48,5 +50,6 @@ private
 
   def set_experience
     @experience = Experience.find(params[:id])
+    authorize @experience
   end
 end

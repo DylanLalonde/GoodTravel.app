@@ -2,6 +2,7 @@
 
 class PaymentsController < ApplicationController
   before_action :set_order
+  skip_after_action :verify_authorized
 
   def new
     @experience = Experience.find(params[:experience_id])
@@ -28,9 +29,9 @@ class PaymentsController < ApplicationController
     @order.update(payment: charge.to_json, state: "paid")
     redirect_to experience_booking_path(@experience, @booking)
 
-  rescue Stripe::CardError => e
-    flash[:alert] = e.message
-    redirect_to new_experience_booking_order_payment_path(@experience, @booking, @order)
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to new_experience_booking_order_payment_path(@experience, @booking, @order)
   end
 
   # def show

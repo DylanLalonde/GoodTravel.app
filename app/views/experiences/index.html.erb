@@ -31,7 +31,7 @@
           <br>
           <h5> <%= experience.location.name %> </h5>
           <h2> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
-          <h4> <%= experience.description %></h4>
+          <h4> <%= experience.smdescription %></h4>
           <div class="index-bottom-card-description">
             <h6> <%= humanized_money_with_symbol(experience.price) %> </h6>
             <%= link_to 'Book now', experience_path(experience), class: "btn btn-success btn-lg index-btn-success-mobile" %>
