@@ -24,17 +24,20 @@ class PaymentsController < ApplicationController
       amount:       @order.amount_cents,
       description:  "Payment for booking experience #{@order.booking_sku} for order #{@order.id}",
       currency:     @order.amount.currency
-    )
+      )
 
     @order.update(payment: charge.to_json, state: "paid")
+    
+    BookingMailer.creation_confirmation(@booking, current_user).deliver_now
+    
     @booking.createdonation
     @booking.createearning
 
     redirect_to experience_booking_path(@experience, @booking)
 
-    rescue Stripe::CardError => e
-      flash[:alert] = e.message
-      redirect_to new_experience_booking_order_payment_path(@experience, @booking, @order)
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to new_experience_booking_order_payment_path(@experience, @booking, @order)
   end
 
   # def show
@@ -43,7 +46,7 @@ class PaymentsController < ApplicationController
 
   private
 
-    def set_order
-      @order = current_user.orders.where(state: "pending").find(params[:order_id])
-    end
+  def set_order
+    @order = current_user.orders.where(state: "pending").find(params[:order_id])
+  end
 end

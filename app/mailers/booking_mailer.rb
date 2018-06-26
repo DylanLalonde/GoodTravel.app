@@ -1,8 +1,8 @@
 class BookingMailer < ApplicationMailer
-  def creation_confirmation(booking)
+  def creation_confirmation(booking, user)
     @booking = booking
 
-    mail(to:user.email, subject:"Booking #{@booking.name} created!")
+    mail(to:user.email, subject:"Thanks for booking with Good Travel")
 
   end
 end
