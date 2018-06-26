@@ -6,11 +6,17 @@
           <h1>Add your experience</h1>
           <br>
           <div class="form-group">
+            Tour Name:
             <%= f.input :name %>
             <%= f.input :category, collection: ["Nature","Travel"] %>
-            <%= f.input :description %>
+            Short Description:
+            <%= f.input :smdescription %>
+            Extended Description:
+            <%= f.input :lgdescription %>
             <%= f.input :location %>
+            Tour Price:
             <%= f.input :price %>
+            Upload a Photo:
             <%= f.input :photo, as: :hidden %>
             <%#= f.input :photo_cache, as: :hidden %>
           </div>

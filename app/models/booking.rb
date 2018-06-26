@@ -10,10 +10,9 @@ class Booking < ApplicationRecord
   has_one    :earning
   monetize   :amount_cents
 
-  after_save :createdonation
-  after_save :createearning
+  # after_save :createdonation
+  # after_save :createearning ## Now handled in payment controller create action
 
-private
   ### Instantiates a new (ngo) donation and (referrer) earning every time a booking is created:
   def createdonation
     Donation.create!(booking_id: self.id, ngo_id: self.ngo_id, amount_cents: self.amount_cents * 0.05)
