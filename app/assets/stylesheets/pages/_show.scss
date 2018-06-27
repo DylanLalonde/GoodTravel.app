@@ -3,8 +3,8 @@
   display: flex;
   justify-content: flex-end;
   background-color: white;
-  padding-bottom: 15px;
-  padding-top: 15px; // border-bottom: 4px solid orange;
+  padding-bottom: 7px;
+  padding-top: 7px; // border-bottom: 4px solid orange;
 }
 
 .show-container {
@@ -14,13 +14,13 @@
 .btn-link {
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-color: orange;
+  text-decoration-color: $sunset;
 }
 
 // IMAGES AT THE TOP
 .show-image-display {
   position: relative;
-  margin-left: 25px; // border-radius: 2px;
+  margin-left: 21px; // border-radius: 2px;
   width: 100%;
 }
 
@@ -30,7 +30,7 @@
   display: flex;
   justify-content: center;
   color: white;
-  background-color: orange;
+  background-color: $sunset;
   width: 25%;
   font-weight: bold;
   font-size: 15px;
@@ -56,7 +56,7 @@
 }
 
 .show-btn-success {
-  width: 80%;
+  width: 100%;
   background-color: $orange;
   color: $white;
 }
@@ -126,6 +126,24 @@ hr {
   color: grey;
   font-size: 14px;
   line-height: 1.4;
+}
+
+.location-information h4 {
+  color: grey;
+  margin: 0px;
+}
+
+.location-information h5 {
+  color: grey;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.location-information {
+  padding-bottom: 20px;
+  background-color: #f1f2f1;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 // FLATPICKR - CALENDAR INFO
@@ -228,16 +246,14 @@ span.flatpickr-day {
   line-height: 1.4;
 }
 
-#map {
-  height: 150px;
-} // LOCATION PART
+#map-show {
+  height: 600px;
+}
+
+// LOCATION PART
 .show-location-part-with-map {
   padding-top: 5px;
-  padding-bottom: 20px;
   background-color: #f1f2f1;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-top: -46px;
 }
 
 .show-location-part-with-map h4 {
@@ -248,9 +264,6 @@ span.flatpickr-day {
   color: grey;
   font-size: 14px;
   line-height: 1.4;
-} // MAP
-#map.show-map-experience {
-  // height: 500px,
 }
 
 // text toggle to show more
@@ -298,4 +311,11 @@ span.flatpickr-day {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }

@@ -58,11 +58,11 @@ ActiveRecord::Schema.define(version: 2018_06_27_132903) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.string "category"
     t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
     t.integer "duration"
