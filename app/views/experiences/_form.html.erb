@@ -6,22 +6,18 @@
           <h1>Add your experience</h1>
           <br>
           <div class="form-group">
-            Tour Name:
-            <%= f.input :name %>
-            <%= f.input :category, collection: ["Nature","Travel"] %>
-            Short Description:
-            <%= f.input :smdescription %>
-            Extended Description:
-            <%= f.input :lgdescription %>
+            Tour Name: <%= f.input :name %>
+            <%= f.input :category, collection: ["City tour","Nature","Travel", prompt:"select your day" ] %>
+            Short Description: <%= f.input :smdescription, hint: 'information' %>
+             <%= f.input :duration %>
+            Extended Description:<%= f.input :lgdescription %>
             <%#= f.input :location %>
             <%= f.input :location, collection: @locations %>
-            Tour Price:
-            <%= f.input :price %>
-            Upload a Photo:
-            <%= f.input :photo, as: :hidden %>
+            Tour Price:<%= f.input :price %>
+            Upload a Photo: <%= f.input :photo, as: :hidden %>
             <%#= f.input :photo_cache, as: :hidden %>
           </div>
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit class: 'btn btn-primary btn-lg' %>
           <% end %>
           <br>
 
@@ -29,3 +25,8 @@
       </div>
   </div>
 </div>
+
+days of the week <br>
+start times <br>
+duration of Tour
+
