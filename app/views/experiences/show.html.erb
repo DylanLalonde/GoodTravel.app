@@ -3,10 +3,9 @@
     <%= link_to 'Back to results', experiences_path(@experience), class: "btn btn-link" %>
   </div>
 
-
   <div class="show-container">
     <div class="show-image-display">
-      <%= image_tag @experience.photo , class:"show-image"%>
+      <%= image_tag (cl_image_path @experience.photo, width: 200, height: 150, crop: :fill) , class:"show-image"%>
       <p class ="show-text-popular-design"> Popular </p>
     </div>
 
@@ -32,7 +31,7 @@
           -->
           <div>
             <input type="checkbox" class="read-more-state" id="post-1" />
-              <h5 class="read-more-wrap"><%= @experience.smdescription %><span class="read-more-target"> <%= @experience.lgdescription %></span></h5> 
+              <h5 class="read-more-wrap"><%= @experience.smdescription %><span class="read-more-target"> <%= @experience.lgdescription %></span></h5>
             <label for="post-1" class="read-more-trigger"></label>
           </div>
 
@@ -89,8 +88,8 @@
       <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         <%= image_tag(ngo.photo) %>
       </button><br>
-      
-    
+
+
 
   <div> <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -133,6 +132,6 @@
     <!-- /.modal-content -->
   <!-- Button trigger modal -->
   </div>
-  
+
 </div>
 
