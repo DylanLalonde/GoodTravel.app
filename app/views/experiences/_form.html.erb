@@ -13,7 +13,8 @@
             <%= f.input :smdescription %>
             Extended Description:
             <%= f.input :lgdescription %>
-            <%= f.input :location %>
+            <%#= f.input :location %>
+            <%= f.input :location, collection: @locations %>
             Tour Price:
             <%= f.input :price %>
             Upload a Photo:

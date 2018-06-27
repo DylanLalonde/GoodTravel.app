@@ -24,14 +24,19 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-    @experience = current_user.experiences.new
+    @locations = Location.all
+    @experience = Experience.new
+    
     authorize @experience
   end
 
   def create
-    @experience = current_user.experiences.new(experience_params)
+    @experience = Experience.new(experience_params.except("location"))
+    @experience.host_info_id = current_user.host_info_id
+    @experience.location = Location.find_by_id(experience_params["location"].to_i)
+    
     authorize @experience
-    if @experience.save
+    if @experience.save!
       redirect_to experience_path(@experience)
     else
       render :new
@@ -40,8 +45,9 @@ class ExperiencesController < ApplicationController
 
 
   def show
+    @ngos = Ngo.all
     @experience = Experience.find(params[:id])
-    @ngo = Ngo.find(@experience.featured_ngo)
+    # @ngo = Ngo.find(@experience.featured_ngo)
     @markers = [ { lat: @experience.latitude, lng: @experience.longitude } ]
     @review = Review.new
   end
@@ -52,4 +58,8 @@ private
     @experience = Experience.find(params[:id])
     authorize @experience
   end
+
+  def experience_params
+      params.require(:experience).permit(:name, :category, :smdescription, :lgdescription, :location, :price, :photo)
+    end
 end
