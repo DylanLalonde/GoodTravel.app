@@ -1,7 +1,7 @@
-.index-content{
- background: linear-gradient(0deg, $gray 89%, $black 0%);
- margin-top: 60px;
- padding-top: 20px;
+.index-content {
+  background: linear-gradient(0deg, $gray 89%, $black 0%);
+  margin-top: 60px;
+  padding-top: 20px;
 }
 
 .index-card-wrapper {
@@ -13,7 +13,7 @@
   margin-bottom: 200px;
 }
 
-#index-card-wrapper{
+#index-card-wrapper {
   margin-bottom: 20px;
   margin-top: 10px;
   padding-top: 5px;
@@ -31,18 +31,16 @@
 }
 
 // SEARCH PART
-
-.index-box-for-search-bar{
+.index-box-for-search-bar {
   display: flex;
   flex-direction: column;
   background-color: #FDF5E6;
   padding: 0px;
   margin-left: 25px;
-  margin-right: 25px;
-  // border: 1px solid green;
+  margin-right: 25px; // border: 1px solid green;
 }
 
-.index-search-bar{
+.index-search-bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -53,53 +51,45 @@
   font-size: 17px;
 }
 
-.fa-microphone{
-font-size: 25px;
-}
-
-.fa-search{
+.fa-microphone {
   font-size: 25px;
 }
 
-.index-featured-info-search{
+.fa-search {
+  font-size: 25px;
+}
+
+.index-featured-info-search {
   border-bottom: 4px solid $sunset;
   flex-grow: 1;
   text-align: center;
 }
 
-.index-categories-info-search{
- flex-grow: 1;
- text-align: center;
+.index-categories-info-search {
+  flex-grow: 1;
+  text-align: center;
 }
 
-.index-search-info{
+.index-search-info {
   display: flex;
   justify-content: space-around;
   background-color: #f1f1f1;
-  padding-top: 10px;
-  // padding-bottom: 5px;
-
+  padding-top: 10px; // padding-bottom: 5px;
 }
 
-.index-btn-success-mobile{
-  border-radius: 0px;
-
-  // #406E8E
-
+.index-btn-success-mobile {
+  border-radius: 0px; // #406E8E
   background-color: $sunset;
-
   font-size: 13px;
   border: 0px;
 }
 
-
-.index-text-popular-design{
+.index-text-popular-design {
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   color: white;
   background-color: $sunset;
-  width: 25%;
-  // font-weight: bold;
+  width: 25%; // font-weight: bold;
   font-size: 15px;
   margin-top: 15px;
 }
@@ -114,7 +104,7 @@ font-size: 25px;
   border-radius: 3px;
 }
 
-.index-bottom-card-description{
+.index-bottom-card-description {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -126,8 +116,7 @@ font-size: 25px;
   bottom: 10px;
   left: 10px;
   background-color: #FCFAF9;
-  border: 1px solid RGBA(124, 114, 135, 0.2);
-  // background-color: orange;
+  border: 1px solid RGBA(124, 114, 135, 0.2); // background-color: orange;
 }
 
 .index-card-description h2 {
@@ -147,7 +136,7 @@ font-size: 25px;
 }
 
 .index-card-description h4 {
-  height:26px;
+  height: 26px;
   color: grey;
   font-size: 14px;
   margin-top: -6.5px;
@@ -188,26 +177,30 @@ font-size: 25px;
   width: 30px;
   border-radius: 50%;
 }
+
 .index-avatar-large {
-  width:60px;
+  width: 60px;
   border-radius: 50%;
 }
+
 .index-avatar-bordered {
   width: 30px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-}
-.index-avatar-square {
-  width: 30px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
 
-#show-banner-bottom-gradient {
-    height: 10px;
-    background: linear-gradient(-90deg, yellow, $orange);
+.index-avatar-square {
+  width: 30px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: white 1px solid;
+}
+
+<<<<<<< HEAD //
+=======>>>>>>>master #show-banner-bottom-gradient {
+  height: 10px;
+  background: linear-gradient(-90deg, yellow, $orange);
 }
 
 // INFO TO PUT EVERYTHING ON FLEXBOX
@@ -223,9 +216,9 @@ font-size: 25px;
   position: sticky !important;
   top: 0 !important;
 }
+
 .index-container {
   display: flex;
-  flex-direction: column;
-  // margin-left: 10px;
+  flex-direction: column; // margin-left: 10px;
   // margin-right: 10px;
 }

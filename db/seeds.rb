@@ -73,4 +73,4 @@ amsterdam = Location.create!(name:"amsterdam")
   carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount_cents:"1", ngo: sea_sheperd, experience: canaltour)
 #end
 
-puts "Seedling is visable"
+puts "Seedling is visible"
