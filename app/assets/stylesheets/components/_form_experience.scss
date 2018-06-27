@@ -1,0 +1,21 @@
+
+.form-experience-title {
+  color: $sunset;
+  font-size: 35px;
+  text-align: center;
+}
+
+.form-experience-category-title {
+  color: $sunset;
+  font-size: 20px;
+  text-align: left;
+}
+.form-experience-btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.d-flex.flex-row.justify-content-between.align-items-center {
+  display: inline-block;
+}
