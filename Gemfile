@@ -24,6 +24,8 @@ gem "stripe"
 gem "stripe_event"
 gem "forest_liana"
 gem "pundit"
+gem "cloudinary"
+gem "carrierwave"
 
 gem "bootstrap-datepicker-rails"
 gem "rubocop"

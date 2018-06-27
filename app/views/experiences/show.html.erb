@@ -2,14 +2,12 @@
   <%= link_to 'Back to results', experiences_path(@experience), class: "btn btn-link" %>
 </div>
 
-
-<div class="show-container">
-  <div class="show-image-display">
-    <%= image_tag @experience.photo , class:"show-image"%>
-      <p class="show-text-popular-design"> Popular </p>
-  </div>
-
-
+  <div class="show-container">
+    <div class="show-image-display">
+      <%= image_tag (cl_image_path @experience.photo, width: 200, height: 150, crop: :fill) , class:"show-image"%>
+      <p class ="show-text-popular-design"> Popular </p>
+    </div>
+    
     <div class="show-location-info">
       <%= @experience.location.name.capitalize %>
     </div>
@@ -46,7 +44,6 @@
           </span>
       </h5>
       <label for="post-1" class="read-more-trigger"></label>
-
 
     </div>
     <div class="show-what-you-get">
@@ -161,9 +158,7 @@
 
   <div class="show-map-experience " id="map" ; data-markers="<%= @markers.to_json %>">
   </div>
-
 </div>
-
 </div>
 
 </div>
