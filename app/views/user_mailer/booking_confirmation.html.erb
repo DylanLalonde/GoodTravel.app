@@ -7,12 +7,18 @@
   <br>
   <br>
 
-  Please find hereafter all information.
-<br>
-<br>
-
-<strong> HERE I WILL PUT ALL INFORMATIONS REGARDING BOOKING </strong>
-
+     <div class="booking-confirmation">
+        <h1> Your booking as been confirmed!</h1>
+        <!-- Need to add booking status later! -->
+        <h2> <strong>Experience: <br>
+        </strong> <%#= @booking.experience.name %> </h2>
+        <p><strong>Your group size:</strong> <%#= @booking.number_traveller %></p>
+        <p><strong>Starts at: <br>
+        </strong> <%#= @booking.start_date %></p>
+        <p><strong>Ends at: <br>
+        </strong> <%#= @booking.end_date %></p>
+        <p><strong>Payment received:</strong> <%#= @booking.amount %></p>
+      </div>
 
 <br>
 <br>
