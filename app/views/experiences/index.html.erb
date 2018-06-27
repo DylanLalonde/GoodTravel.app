@@ -19,8 +19,9 @@
     <div class="index-row">
       <div class="index-card-wrapper">
         <% @experiences.each do |experience| %>
+        <%  %>
         <div class="col-xs-12 col-sm-6 col-md-4" id="index-card-wrapper">
-          <div class="index-card-image" style = "background-image: url(<%= cl_image_path experience.photo, width: 200, height: 150, crop: :fill %> )"; >
+          <div class="index-card-image" style = "background-image: url(http://via.placeholder.com/350x150 )"; >
             <p class ="index-text-popular-design"> Popular </p>
 
           </div>
@@ -39,7 +40,7 @@
         <% end %>
       </div>
     </div>
-  
+
     <div id="map"; data-markers="<%= @markers.to_json %>">
     </div>
   </div>
