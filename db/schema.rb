@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_124903) do
+ActiveRecord::Schema.define(version: 2018_06_27_132903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2018_06_27_124903) do
     t.integer "duration"
     t.string "lgdescription"
     t.date "start_date"
-    t.datetime "start_time"
     t.date "end_date"
+    t.time "start_time"
     t.index ["host_info_id"], name: "index_experiences_on_host_info_id"
     t.index ["location_id"], name: "index_experiences_on_location_id"
   end

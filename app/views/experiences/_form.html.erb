@@ -11,7 +11,9 @@
       <%#= f.input :duration, as: :datetime,%>
       <hr width="90%">
       <div class="form-experience-category-title"><p> Hours and Dates info</p>
-        </div>
+      </div>
+      <%= f.input :start_date, label: "select your date" %>
+      <%= f.input :start_time, label: "start time" %>
       <%= f.input :duration, as: :time, label: 'How long will be the duration?'%>
       <%#= f.input :duration, as: :time, label: 'end hours'%>
       <hr width="90%">
@@ -33,10 +35,7 @@
   </div>
 </div>
 
-days of the week <br>
-start times <br>
-duration of Tour
 <%# Date::DAYNAMES.each do |day| %>
-      <%#= f.check_box :duration, {}, day %>
-      <%#= day %>
-      <%# end %>
+<%#= f.check_box :duration, {}, day %>
+<%#= day %>
+<%# end %>
