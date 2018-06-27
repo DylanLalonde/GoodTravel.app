@@ -299,3 +299,10 @@ span.flatpickr-day {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
