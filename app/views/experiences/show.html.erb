@@ -9,10 +9,11 @@
       <p class="show-text-popular-design"> Popular </p>
   </div>
 
-  <div class="show-location-info">
-    <%= @experience.location.name %>
-  </div>
-  <div class="show-tour-frequency-infor">
+
+    <div class="show-location-info">
+      <%= @experience.location.name.capitalize %>
+    </div>
+    <div class="show-tour-frequency-infor">
 
     <i class="far fa-clock"></i> Tour Duration:
     <%# <%= @experience.time %>
@@ -35,6 +36,7 @@
           <p><%= @experience.smdescription %><p class="button">More...</p></p>
           <p class="content" id="expand-content"><%= @experience.lgdescription %></p>
           -->
+
     <div>
       <input type="checkbox" class="read-more-state" id="post-1" />
       <h5 class="read-more-wrap">
@@ -44,6 +46,13 @@
           </span>
       </h5>
       <label for="post-1" class="read-more-trigger"></label>
+
+
+    </div>
+    <div class="show-what-you-get">
+      <h4> What do you get</h4>
+      <h5> Enjoy a unique and unforgettable experience as you cruise through Amsterdam's beautiful historic canals and dine under the stars with culinary delights.</h5>
+      <hr width="90%">
     </div>
 
   </div>
@@ -97,6 +106,7 @@
 
   <div class="ngo-container">
     <% @ngos.each do |ngo| %>
+
       <div id="modalButton">
         <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
           <%= image_tag(ngo.photo,height: '65') %>
@@ -151,7 +161,9 @@
 
   <div class="show-map-experience " id="map" ; data-markers="<%= @markers.to_json %>">
   </div>
+
 </div>
+
 </div>
 
 </div>

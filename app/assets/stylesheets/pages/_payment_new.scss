@@ -1,5 +1,94 @@
-.payment-confirmation {}
 
+// STYLING FOR THE WHOLE PAGE
+.col-xs-12{
+  padding: 0px;
+}
+
+
+// TITLE STYLING
 .payment-confirmation h1 {
   text-align: center;
+
+  margin-bottom: -28px;
+  margin-top: -2px;
+  padding-top: 38px;
+    padding-bottom: 26px;
+    background-color: white;
+}
+
+// location information
+.payment-location-info {
+  font-size: 16px;
+  color: #7CC6FE;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1f2f1;
+  padding-left: 40px;
+}
+
+// EXPERIENCE INFORMATIONS
+
+.payment-experience-image {
+  position: relative;
+ // border-radius: 2px;
+ width: 90%;
+}
+
+.payment-experience-info {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 40px;
+}
+
+// Experience test info
+.payment-experience-confirmation-info h4{
+  font-size:23px
+}
+
+.payment-experience-confirmation-info h5{
+  font-size: 16px;
+    line-height: 1.4;
+}
+
+.payment-ngo-info{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f1f2f1;
+  // padding-left: 40px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.payment-ngo-info h4{
+  margin-top: -2px;
+}
+
+.payment-ngo-image{
+  width: 80%;
+    padding-left: 80px;
+}
+.payment-price-experience{
+  color : $sunset;
+  font-size: 20px;
+}
+
+
+.payment-confirmation-questions p {
+  font-size: 14px;
+  text-align: center;
+  background-color: white;
+  padding-left: 40px;
+  padding-top: 24px;
+}
+
+.payment-payment-part{
+  text-align: center;
+  background-color: white;
+}
+
+.stripe-button {
+  size: 20px;
+  background-color: green;
 }
