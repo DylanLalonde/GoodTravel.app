@@ -11,7 +11,7 @@
     </div>
 
     <div class="show-location-info">
-      <%= @experience.location.name %>
+      <%= @experience.location.name.capitalize %>
     </div>
     <div class="show-tour-frequency-infor">
 
@@ -32,7 +32,7 @@
           -->
           <div>
             <input type="checkbox" class="read-more-state" id="post-1" />
-              <h5 class="read-more-wrap"><%= @experience.smdescription %><span class="read-more-target"> <%= @experience.lgdescription %></span></h5> 
+              <h5 class="read-more-wrap"><%= @experience.smdescription %><span class="read-more-target"> <%= @experience.lgdescription %></span></h5>
             <label for="post-1" class="read-more-trigger"></label>
           </div>
 
@@ -89,8 +89,8 @@
       <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         <%= image_tag(ngo.photo) %>
       </button><br>
-      
-    
+
+
 
   <div> <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -133,6 +133,6 @@
     <!-- /.modal-content -->
   <!-- Button trigger modal -->
   </div>
-  
+
 </div>
 
