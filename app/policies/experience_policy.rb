@@ -2,7 +2,7 @@
 
 class ExperiencePolicy < ApplicationPolicy
   class Scope < Scope
-  attr_reader :user, :scope
+    attr_reader :user, :scope
 
     def initialize(user, scope)
       @user  = user
@@ -14,5 +14,4 @@ class ExperiencePolicy < ApplicationPolicy
   def create?
     true
   end
-
 end
