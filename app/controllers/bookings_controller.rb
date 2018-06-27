@@ -38,7 +38,6 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save!
-      # BookingMailer.creation_confirmation(@booking).deliver_now
 
       @order = Order.create!(booking_sku: @booking.id, amount: @booking.amount, state: "pending", user: current_user)
         # @donation = Donation.create!(booking: @booking, ngo: ngo, amount: @donationamount )

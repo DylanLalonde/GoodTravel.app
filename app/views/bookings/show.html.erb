@@ -21,17 +21,15 @@
       <div class="donation-info">
         <!-- placeholder image for now, replace with ngo image -->
         <div class="ngo-image"> <%= image_tag "http://via.placeholder.com/100x100" %> </div>
-        <h5><strong>Your booking has donated: <br>
-        </strong> <%= @booking.donation.amount %> to <%= @booking.ngo.name %>!</h5>
-        <h5><strong> <%= @booking.ngo.name %>  has received: <br>
-         </strong> <%= @totaldonations %> since joining GoodTravel </h5>
-
+        <h5>Your booking has donated <%= @booking.donation.amount %> to <%= @booking.ngo.name %>!</h5>
+        <h5><%= @booking.ngo.name %> has received
+          <%= @totaldonations %> since joining GoodTravel! </h5>
       </div>
 
       <div class="referral-info">
         <!-- placeholder image for now, replace with referrer image-->
         <div class="ref-image"> <%= image_tag "http://via.placeholder.com/100x100" %> </div>
-        <p>Joe, the local who referred you to GoodTravel, <strong>earned <%= @referrerearning %> when you made this booking!</strong></p>
+        <h5>Joe, the local who referred you to GoodTravel, <strong>earned <%= @referrerearning %> when you made this booking!</strong></h5>
       </div>
 
       <br>
@@ -42,6 +40,8 @@
             onclick: 'window.print();return false;' %>
         <%= link_to "Dashboard", '#', class: "btn btn-primary" %>
       </div>
+
+      <br>
 
     </div>
 </div>

@@ -1,5 +1,5 @@
 .index-content{
- background: linear-gradient(0deg, #fbf5f3 89%, #000000 0%);
+ background: linear-gradient(0deg, #fbf5f3 89%, $black 0%);
  margin-top: 60px;
  padding-top: 20px;
 }
@@ -21,8 +21,11 @@
   height: 150px;
   background-size: cover !important;
   background-position: center;
-  // border-radius: 2px;
+  border: 1px solid RGBA(124, 114, 135, 0.2);
+  border-bottom: 0;
   width: 100%;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 // SEARCH PART
@@ -31,10 +34,10 @@
   display: flex;
   flex-direction: column;
   background-color: #FDF5E6;
-  width: 370px;
-  // border: 1px solid green;
   padding: 0px;
-  margin: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  // border: 1px solid green;
 }
 
 .index-search-bar{
@@ -57,7 +60,7 @@ font-size: 25px;
 }
 
 .index-featured-info-search{
-  border-bottom: 4px solid orange;
+  border-bottom: 4px solid $sunset;
   flex-grow: 1;
   text-align: center;
 }
@@ -78,7 +81,7 @@ font-size: 25px;
 
 .index-btn-success-mobile{
   border-radius: 0px;
-  background-color: #406E8E;
+  background-color: $sunset;
   font-size: 13px;
   border: 0px;
 }
@@ -88,10 +91,11 @@ font-size: 25px;
   display: flex;
   justify-content:center ;
   color: white;
-  background-color: orange;
+  background-color: $sunset;
   width: 25%;
   // font-weight: bold;
   font-size: 15px;
+  margin-top: 15px;
 }
 
 .index-card-category {
@@ -116,8 +120,8 @@ font-size: 25px;
   bottom: 10px;
   left: 10px;
   background-color: #FCFAF9;
+  border: 1px solid RGBA(124, 114, 135, 0.2);
   // background-color: orange;
-  border: 0.5px solid #7C7287;
 }
 
 .index-card-description h2 {
@@ -142,6 +146,7 @@ font-size: 25px;
   font-size: 14px;
   margin-top: -6.5px;
   margin-left: 10px;
+  line-height: 1.2;
 }
 
 .index-card-description h5 {
@@ -210,7 +215,7 @@ font-size: 25px;
 
 #map {
   flex: 0 0 650px;
-  height: 100vh;
+  min-height: 100vh;
   position: sticky !important;
   top: 0 !important;
 }

@@ -8,7 +8,7 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 10px;
-  background-color: #F54040;
+  border: thick solid $sunset;
   border-radius: 3px;
   padding-left: 20px;
   padding-bottom: 20px;
@@ -18,25 +18,25 @@
 .booking-confirmation h1 {
   font-size: 1.25em;
   text-align: center;
-  color: white;
+  color: $black;
 }
 
 .booking-confirmation h2 {
   font-size: 1.1em;
   text-align: left;
-  color: white;
+  color: $black;
 }
 
 .booking-confirmation h5 {
   font-size: 1em;
   text-align: center;
-  color: white;
+  color: $black;
 }
 
 .booking-confirmation p {
   font-size: 1em;
   text-align: left;
-  color: white;
+  color: $black;
 }
 
 // Donation info
@@ -45,7 +45,6 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 10px;
-  background-color: #F54040;
   border-radius: 3px;
   text-align: center;
   padding-bottom: 20px;
@@ -53,11 +52,7 @@
 }
 
 .donation-info h5 {
-  color: white;
-}
-
-.donation-info p {
-  color: white;
+  color: $sunset;
 }
 
 .ngo-image img {
@@ -75,7 +70,6 @@
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 10px;
-  background-color: #F54040;
   border-radius: 3px;
   padding-bottom: 20px;
   padding-top: 10px;
@@ -84,8 +78,8 @@
   text-align: center;
 }
 
-.referral-info p {
-  color: white;
+.referral-info h5 {
+  color: $sunset;
 }
 
 .ref-image img {

@@ -8,15 +8,26 @@ flatpickr(".show-calendar-form", {
   inline: true,
   disable: [
   function(date) {
-            // disable every multiple of 8
-            return !(date.getDate() % 4);
+            // disable every multiple of 5
+            return !(date.getDate() % 5);
           }
           ]
         })
 
 flatpickr(".booking-calendar-form", {
-  enableTime: true,
+  // enableTime: true,
   minDate: "today",
-  weekNumbers: true,
+  // weekNumbers: true,
+  inline: true,
 
+})
+
+
+flatpickr(".booking-time-form", {
+ enableTime: true,
+ noCalendar: true,
+ dateFormat: "H:i",
+ // time_24hr: true,
+ // minDate: "09:00",
+ // maxDate: "20:30",
 })
