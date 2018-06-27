@@ -4,7 +4,7 @@
 
 <div class="show-container">
   <div class="show-image-display">
-    <%= image_tag (cl_image_path @experience.photo, width: 200, height: 150, crop: :fill) , class:"show-image"%>
+    <%= cl_image_tag @experience.photo , class:"show-image"%>
       <p class="show-text-popular-design"> Popular </p>
   </div>
 
@@ -151,3 +151,4 @@
 </div>
 </div>
 
+</div>

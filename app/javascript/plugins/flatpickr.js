@@ -21,7 +21,8 @@ flatpickr(".booking-calendar-form", {
   minDate: "today",
   // weekNumbers: true,
   inline: true,
-  dateFormat: "Y-m-d H:i",
+  dateFormat: "Y-m-d",
+  mode: "multiple",
   altFormat: "F j, Y",
 })
 

@@ -32,7 +32,7 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params.except("location"))
-    @experience.host_info_id = current_user.host_info_id
+    @experience.host_info = HostInfo.last
     @experience.location = Location.find_by_id(experience_params["location"].to_i)
 
     authorize @experience
