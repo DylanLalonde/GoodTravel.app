@@ -1,38 +1,34 @@
 // HEADER FOR BACK TO RESULTS
-
-.show-header-button{
+.show-header-button {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   background-color: white;
   padding-bottom: 15px;
-  padding-top: 15px;
-  // border-bottom: 4px solid orange;
+  padding-top: 15px; // border-bottom: 4px solid orange;
 }
 
-.show-container{
+.show-container {
   margin-right: 0px;
 }
 
-.btn-link{
+.btn-link {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-color: orange;
 }
 
-
 // IMAGES AT THE TOP
-
-.show-image-display{
+.show-image-display {
   position: relative;
-  margin-left:25px;
-  // border-radius: 2px;
+  margin-left: 25px; // border-radius: 2px;
   width: 100%;
 }
-.show-text-popular-design{
+
+.show-text-popular-design {
   position: absolute;
   top: 40px;
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   color: white;
   background-color: orange;
   width: 25%;
@@ -41,7 +37,7 @@
 }
 
 // INFORMATION LOCATION & FREQUENCY HEADER
-.show-location-info{
+.show-location-info {
   font-size: 14px;
   color: #7CC6FE;
   padding-top: 20px;
@@ -50,16 +46,14 @@
   padding-left: 40px;
 }
 
-.show-tour-frequency-infor{
+.show-tour-frequency-infor {
   background-color: white;
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 50px;
 }
 
-
 // INFORMATION EXPERIENCE
-
 hr {
   display: block;
   height: 1px;
@@ -70,7 +64,7 @@ hr {
   align: center;
 }
 
-.show-experience-info{
+.show-experience-info {
   padding-top: 5px;
   padding-bottom: 10px;
   background-color: #f1f2f1;
@@ -87,7 +81,7 @@ hr {
   line-height: 1.4;
 }
 
-.show-what-you-get{
+.show-what-you-get {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #f1f2f1;
@@ -105,8 +99,7 @@ hr {
 }
 
 // HOURS PART
-
-.show-hour-part-design{
+.show-hour-part-design {
   padding-top: 5px;
   padding-bottom: 10px;
   background-color: #f1f2f1;
@@ -114,18 +107,17 @@ hr {
   margin-top: -38px;
 }
 
-.show-hour-part-design h4{
+.show-hour-part-design h4 {
   color: grey;
 }
 
-.show-hour-part-design h5{
+.show-hour-part-design h5 {
   color: grey;
   font-size: 14px;
   line-height: 1.4;
 }
 
 // FLATPICKR - CALENDAR INFO
-
 .show-calendar-info {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -133,128 +125,141 @@ hr {
   padding-left: 50px;
 }
 
-input#search_starts_at{
+input#search_starts_at {
   display: none;
 }
 
-input#booking_end_date{
+label.form-control-label.string.optional {
+  input#booking_end_date {
+    display: none;
+  }
+  label.form-control-label.string.optional {
   display: none;
-}
-
-label.form-control-label.string.optional{
-  display: none;
-}
-
-
-// span.flatpickr-day.disabled{
-//   background-color: #FF6347;
-// }
-
-span.flatpickr-day{
-  background-color: green;
-}
-
-.show-calendar-form-button{
-  padding-top: 5px;
-  padding-bottom: 20px;
-  background-color: white;
-  padding-left: 50px;
-}
-
-.show-button-available {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 50%;
-}
-
-.show-button-selected {
-  background-color: #7CC6FE;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 50%;
-}
-
-.show-button-not-available {
-  background-color: grey;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 50%;
-}
-
-// BOOK BUTTON INFORMATION
-
-.show-button-part{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 25px;
-  padding-bottom: 10px;
-  background-color: #f1f2f1;
-  padding-left: 50px;
-}
-
-// SUPPORTED NGOS INFORMATIONS
-.show-supported-ngos{
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-color: #f1f2f1;
-  padding-left: 50px;
-}
-
-.show-supported-ngos h4 {
-  color: grey;
-}
-
-.show-supported-ngos h5 {
-  color: grey;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-#map{
-  height: 150px;
-}
-
-// LOCATION PART
-.show-location-part-with-map{
-  padding-top: 5px;
-  padding-bottom: 20px;
-  background-color: #f1f2f1;
-  padding-left: 50px;
-  margin-top: -46px;
-}
-
-.show-location-part-with-map h4 {
-  color: grey;
-}
-
-.show-location-part-with-map h5{
-  color: grey;
-  font-size: 14px;
-  line-height: 1.4;
-}
-// MAP
-#map.show-map-experience {
-  // height: 500px,
-}
-
-
+  }
+  // span.flatpickr-day.disabled{
+  //   background-color: #FF6347;
+  // }
+  span.flatpickr-day {
+    background-color: green;
+  }
+  .show-calendar-form-button {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background-color: white;
+    padding-left: 50px;
+  }
+  .show-button-available {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+  }
+  .show-button-selected {
+    background-color: #7CC6FE;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+  }
+  .show-button-not-available {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+  }
+  // BOOK BUTTON INFORMATION
+  .show-button-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    background-color: #f1f2f1;
+    padding-left: 50px;
+  }
+  // SUPPORTED NGOS INFORMATIONS
+  .show-supported-ngos {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: #f1f2f1;
+    padding-left: 50px;
+  }
+  .show-supported-ngos h4 {
+    color: grey;
+  }
+  .show-supported-ngos h5 {
+    color: grey;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  #map {
+    height: 150px;
+  }
+  // LOCATION PART
+  .show-location-part-with-map {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background-color: #f1f2f1;
+    padding-left: 10px;
+    margin-top: -46px;
+  }
+  .show-location-part-with-map h4 {
+    color: grey;
+  }
+  .show-location-part-with-map h5 {
+    color: grey;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  // MAP
+  #map.show-map-experience {
+    // height: 500px,
+  }
+  // text toggle to show more
+  .read-more-state {
+    display: none;
+  }
+  .read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+  }
+  .read-more-state:checked~.read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+  }
+  .read-more-state~.read-more-trigger:before {
+    content: 'More';
+  }
+  .read-more-state:checked~.read-more-trigger:before {
+    content: 'Less';
+  }
+  .read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #666;
+    font-size: .9em;
+    line-height: 2;
+    border: 1px solid #ddd;
+    border-radius: .25em;
+  }
