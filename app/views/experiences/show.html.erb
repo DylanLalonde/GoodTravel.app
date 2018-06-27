@@ -19,18 +19,22 @@
        <br>
       <i class="fas fa-2x fa-sync-alt"></i> Frequency:<%# <%= @experience.frequency %>
       <br>
-      Price : <%= humanized_money_with_symbol(@experience.price) %>
+      <i class="far fa-credit-card"></i> Price : <%= humanized_money_with_symbol(@experience.price) %>
     </div>
 
 
 
     <div class="show-experience-info">
       <h4> <%= @experience.name %></h4>
-
-          <ul>
-          <li class="button"><p><%= @experience.smdescription %></p></li>
-          <li class="content" id="expand-content"><p><%= @experience.lgdescription %></p></li>
-          </ul>
+          <!--
+          <p><%= @experience.smdescription %><p class="button">More...</p></p>
+          <p class="content" id="expand-content"><%= @experience.lgdescription %></p>
+          -->
+          <div>
+            <input type="checkbox" class="read-more-state" id="post-1" />
+              <p class="read-more-wrap"><%= @experience.smdescription %><span class="read-more-target"> <%= @experience.lgdescription %></span></p> 
+            <label for="post-1" class="read-more-trigger"></label>
+          </div>
 
     </div>
     <div class="show-what-you-get">
@@ -48,7 +52,7 @@
       </h5>
     </div>
 
-
+    <!--
     <div class="show-calendar-info">
 
       <%= simple_form_for :search, method: "get" do |f| %>
@@ -62,6 +66,7 @@
       <br>
       <button class="show-button-not-available"></button> not available
     </div>
+    -->
   </div>
 
   <!-- Button trigger modal -->
@@ -79,12 +84,13 @@
     <h5> By booking this tour you support the following NGO's.
       Check out the total donnation meter <strong>here</strong>.
     </h5>
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      <%= @ngo.name %>
-    </button> <br>
-    <br>
-    <hr width="90%">
-  </div>
+
+    <% @ngos.each do |ngo| %>
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        <%= image_tag(ngo.photo) %>
+      </button><br>
+      
+    
 
   <div> <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -92,13 +98,13 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title" id="myModalLabel">
-                <%= @ngo.name %>
+                <%= ngo.name %>
               </h4>
             </div>
             <div class="modal-body">
-              <%= image_tag (@ngo.photo) %>
+              <%= image_tag (ngo.photo) %>
                 <br>
-                <%= @ngo.description %>
+                <%= ngo.description %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -113,8 +119,8 @@
       </div>
       <!-- /.modal -->
       <br>
-    </div>
-
+    <% end %>
+    <hr width="90%">
     <div class="show-location-part-with-map">
       <h4> Locations</h4>
       <h5> <%= @experience.address %></h5>
@@ -125,8 +131,21 @@
       </div>
     </div>
     <!-- /.modal-content -->
-
+  <hr width="90%">
   <!-- Button trigger modal -->
+<<<<<<< HEAD
+  </div>
+  
+<br>
+<br>
+<div id="show-banner-bottom-gradient" style="color:white;text-align:center;">-90deg</div>
+
+
+
+
+
+=======
+>>>>>>> master
 
 </div>
 
