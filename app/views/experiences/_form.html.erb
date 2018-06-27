@@ -11,7 +11,10 @@
       <%#= f.input :duration, as: :datetime,%>
       <hr width="90%">
       <div class="form-experience-category-title"><p> Hours and Dates info</p>
-        </div>
+      </div>
+      <%#= f.input :end_date, as: :string, required: false, label: "Ends", input_html: {class: "datepicker booking-calendar-form"} %>
+      <%= f.input :start_date, label: "select your date" %>
+      <%= f.input :start_time, label: "start time", collection: ["08:00","14:00"] %>
       <%= f.input :duration, as: :time, label: 'How long will be the duration?'%>
       <%#= f.input :duration, as: :time, label: 'end hours'%>
       <hr width="90%">
@@ -19,7 +22,8 @@
       <%= f.input :location, required: true, collection: @locations %>
       <%= f.input :address, required: true %>
       Tour Price:<%= f.input :price %>
-      Upload a Photo: <%= f.input :photo, as: :hidden %>
+      <%= f.input :photo, label: "Upload a Photo:"%>
+      <%= f.input :photo_cache, as: :hidden %>
 
       <br>
       <br>
@@ -33,10 +37,7 @@
   </div>
 </div>
 
-days of the week <br>
-start times <br>
-duration of Tour
 <%# Date::DAYNAMES.each do |day| %>
-      <%#= f.check_box :duration, {}, day %>
-      <%#= day %>
-      <%# end %>
+<%#= f.check_box :duration, {}, day %>
+<%#= day %>
+<%# end %>

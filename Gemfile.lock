@@ -305,7 +305,8 @@ DEPENDENCIES
   bootsnap
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3)
-  carrierwave
+  carrierwave (~> 1.2)
+
   cloudinary
   devise
   faker
