@@ -1,27 +1,52 @@
 
 <div class="container">
   <div class="row">
-    <div class="payment-confirmation">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-4">
+      <div class="payment-confirmation">
 
-      <h1>Please confirm your booking!</h1>
+        <h1>Please confirm <br>your booking</h1>
+        <br>
+        <div class="payment-location-info">
+          <i class="fas fa-map-marker-alt"></i>  <%= @experience.location.name.capitalize %> <br>
+          <i class="fas fa-map-marker-alt"></i>   <%= @experience.address.capitalize %>
+        </div>
+        <div class="payment-experience-info">
+          <div class="payment-image-for-div">
+            <h3> <%= image_tag @booking.experience.photo , class:"payment-experience-image"%></h3>
+          </div>
+          <div class="payment-experience-confirmation-info">
+            <h4> Experience : <%= @booking.experience.name %> </h4>
+            <h5>Number of people : <%= @booking.number_traveller %> </h5>
+                 <hr width="90%">
+<h4> Date and Hours</h4>
+            <h5>Starts at: <%= @booking.start_date %> </h5>
+            <h5>Ends at: <%= @booking.end_date %> </h5>
+            <br>
+          </div>
+        </div>
 
-      <p>Experience: <%= @booking.experience.name %> </p>
-      <p>Number of people in your group: <%= @booking.number_traveller %> </p>
-      <p>Starts at: <%= @booking.start_date %> </p>
-      <p>Ends at: <%= @booking.end_date %> </p>
-      <p>The NGO you've chosen to support is: <%= @booking.ngo.name %> </p>
-      <p>This booking will donate <%= @booking.amount * 0.05 %> to <%= @booking.ngo.name %>!</p>
-      <p>If you are ready to confirm your booking please pay now.</p>
-      <p>Total payment due: <%= @booking.amount %> </p>
+        <div class="payment-ngo-info">
+          <h4>Thanks for supporting : <br> <%= @booking.ngo.name %> </h4>
+          <%= image_tag @booking.ngo.photo , class:"payment-ngo-image"%>
+          <h5>This booking will donate <br> <%= @booking.amount * 0.05 %> euros to <%= @booking.ngo.name %>!</h5>
+          <br>
+        </div>
 
-      <%= form_tag experience_booking_order_payments_path(@experience, @booking, @order) do %>
-        <article>
-          <label class="amount">
-            <span>Total Price: <%= humanized_money_with_symbol(@order.amount) %></span>
-          </label>
-        </article>
+        <!--       <p>Total payment due: <%#= @booking.amount %> </p> -->
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        <div class="payment-payment-part">
+          <div class="payment-confirmation-questions">
+            <p>If you are ready to confirm your booking <br> please pay now.</p>
+            <br>
+          </div>
+          <%= form_tag experience_booking_order_payments_path(@experience, @booking, @order) do %>
+          <article>
+            <label class="payment-amount-page">
+              <span>Total Price: <%= humanized_money_with_symbol(@order.amount) %></span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="My Booking"
           data-email="<%= current_user.email %>"
@@ -29,8 +54,10 @@
           data-description="Booking <%= @order.booking_sku %>"
           data-amount="<%= @order.amount_cents %>"
           data-currency="<%= @order.amount.currency %>"></script>
-      <% end %>
-      <br>
+          <% end %>
+          <br>
+        </div>
+      </div>
     </div>
   </div>
 </div>

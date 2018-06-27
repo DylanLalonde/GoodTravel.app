@@ -4,7 +4,9 @@ import "flatpickr/dist/themes/material_blue.css" // Note this is important!
 
 flatpickr(".show-calendar-form", {
   minDate: "today",
-  // mode: "range",
+  dateFormat: "Y-m-d H:i",
+  altFormat: "F j, Y",
+    // mode: "range",
   inline: true,
   disable: [
   function(date) {
@@ -19,7 +21,8 @@ flatpickr(".booking-calendar-form", {
   minDate: "today",
   // weekNumbers: true,
   inline: true,
-
+  dateFormat: "Y-m-d H:i",
+  altFormat: "F j, Y",
 })
 
 

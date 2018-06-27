@@ -44,13 +44,15 @@
   padding-bottom: 20px;
   background-color: #f1f2f1;
   padding-left: 40px;
+  padding-right: 40px;
 }
 
 .show-tour-frequency-infor {
   background-color: white;
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .show-btn-success {
@@ -74,7 +76,8 @@ hr {
   padding-top: 5px;
   padding-bottom: 10px;
   background-color: #f1f2f1;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .show-experience-info h4 {
@@ -91,7 +94,8 @@ hr {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #f1f2f1;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .show-what-you-get h4 {
@@ -109,7 +113,8 @@ hr {
   padding-top: 5px;
   padding-bottom: 10px;
   background-color: #f1f2f1;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-top: -38px;
 }
 
@@ -128,7 +133,8 @@ hr {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: white;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 input#search_starts_at {
@@ -152,7 +158,8 @@ span.flatpickr-day {
   padding-top: 5px;
   padding-bottom: 20px;
   background-color: white;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .show-button-available {
@@ -200,13 +207,15 @@ span.flatpickr-day {
   padding-top: 25px;
   padding-bottom: 10px;
   background-color: #f1f2f1;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 } // SUPPORTED NGOS INFORMATIONS
 .show-supported-ngos {
   padding-top: 5px;
   padding-bottom: 10px;
   background-color: #f1f2f1;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .show-supported-ngos h4 {
@@ -226,7 +235,8 @@ span.flatpickr-day {
   padding-top: 5px;
   padding-bottom: 20px;
   background-color: #f1f2f1;
-  padding-left: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-top: -46px;
 }
 
@@ -274,8 +284,18 @@ span.flatpickr-day {
   display: inline-block;
   padding: 0 .5em;
   color: #666;
-  font-size: .9em;
+  font-size: 14px;
   line-height: 2;
   border: 1px solid #ddd;
   border-radius: 2px;
+}
+
+#modalButton {
+  margin: 4px;
+}
+
+.ngo-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

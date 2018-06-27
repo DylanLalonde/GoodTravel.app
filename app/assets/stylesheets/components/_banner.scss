@@ -2,6 +2,7 @@
     border-right: none;
     border-left: none;
     position: relative;
+    height: 100vh;
 }
 .no-video .video-container video,
 .touch .video-container video {
@@ -34,11 +35,30 @@
     background: rgba(0, 0, 0, 0.4);
     width: 100%;
 }
-.video-container video {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
+.video-container .video-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  height: 100%;
+  width: 300vw;
+  left: -100vw;
+  justify-content: center;
+  flex-direction: row;
 }
-.video-container video.fillWidth {
-    width: 100%;
+
+.video-wrapper video {
+  height: 100%;
+
+}
+
+// mediaquery
+
+@media (min-aspect-ratio: 16/9) {
+  .video-wrapper video {
+    width: 100vw;
+  }
+  .video-container .video-wrapper {
+    height: auto;
+  }
 }
