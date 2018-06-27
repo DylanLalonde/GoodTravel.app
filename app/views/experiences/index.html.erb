@@ -1,5 +1,3 @@
-
-
 <div class="index-content">
   <div class="index-row">
     <div class="index-box-for-search-bar">
@@ -19,27 +17,28 @@
 
   <div class="index-container">
     <div class="index-row">
-      <% @experiences.each do |experience| %>
-      <div class="col-xs-12 col-sm-6 col-md-4" id="index-card-wrapper">
-        <div class="index-card-image" style = "background-image: url(<%= cl_image_path experience.photo, width: 200, height: 150, crop: :fill %> )"; >
-          <p class ="index-text-popular-design"> Popular </p>
+      <div class="index-card-wrapper">
+        <% @experiences.each do |experience| %>
+        <div class="col-xs-12 col-sm-6 col-md-4" id="index-card-wrapper">
+          <div class="index-card-image" style = "background-image: url(<%= cl_image_path experience.photo, width: 200, height: 150, crop: :fill %> )"; >
+            <p class ="index-text-popular-design"> Popular </p>
 
-        </div>
-        <div class="index-card-description">
-          <br>
-          <h5> <%= experience.location.name %> </h5>
-          <h2> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
-          <h4> <%= experience.smdescription %></h4>
-          <div class="index-bottom-card-description">
-            <h6> <%= humanized_money_with_symbol(experience.price) %> </h6>
-            <%= link_to 'Book now', experience_path(experience), class: "btn btn-success btn-lg index-btn-success-mobile" %>
           </div>
+          <div class="index-card-description">
+            <br>
+            <h5> <%= experience.location.name %> </h5>
+            <h2> <%= link_to experience.name, experience_path(experience), class: "index-link-text" %></h2>
+            <h4> <%= experience.smdescription %></h4>
+            <div class="index-bottom-card-description">
+              <h6> <%= humanized_money_with_symbol(experience.price) %> </h6>
+              <%= link_to 'Book now', experience_path(experience), class: "btn btn-success btn-lg index-btn-success-mobile" %>
+            </div>
 
+          </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-
 
     <div id="map"; data-markers="<%= @markers.to_json %>">
     </div>
