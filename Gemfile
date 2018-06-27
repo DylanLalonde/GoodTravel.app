@@ -35,6 +35,8 @@ gem "pg_search"
 gem "faker"
 gem "jquery-rails"
 gem "letter_opener", group: :development
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 
 group :development do
   gem "web-console", ">= 3.3.0"
