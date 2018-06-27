@@ -81,7 +81,11 @@ font-size: 25px;
 
 .index-btn-success-mobile{
   border-radius: 0px;
+
+  // #406E8E
+
   background-color: $sunset;
+
   font-size: 13px;
   border: 0px;
 }
@@ -202,8 +206,8 @@ font-size: 25px;
 //
 
 #show-banner-bottom-gradient {
-    height: 20px;
-    background: linear-gradient(-90deg, yellow,red, orange);
+    height: 10px;
+    background: linear-gradient(-90deg, yellow, $orange);
 }
 
 // INFO TO PUT EVERYTHING ON FLEXBOX
