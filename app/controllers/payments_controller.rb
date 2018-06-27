@@ -27,9 +27,9 @@ class PaymentsController < ApplicationController
       )
 
     @order.update(payment: charge.to_json, state: "paid")
-    
+
     BookingMailer.creation_confirmation(@booking, current_user).deliver_now
-    
+
     @booking.createdonation
     @booking.createearning
 
@@ -46,7 +46,7 @@ class PaymentsController < ApplicationController
 
   private
 
-  def set_order
-    @order = current_user.orders.where(state: "pending").find(params[:order_id])
-  end
+    def set_order
+      @order = current_user.orders.where(state: "pending").find(params[:order_id])
+    end
 end

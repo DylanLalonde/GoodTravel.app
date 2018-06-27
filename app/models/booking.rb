@@ -19,6 +19,6 @@ class Booking < ApplicationRecord
   end
 
   def createearning
-    Earning.create!(booking_id: self.id, referrer_info_id: ReferrerInfo.last.id, amount_cents: self.amount_cents * 0.05 )
+    Earning.create!(booking_id: self.id, referrer_info_id: ReferrerInfo.last.id, amount_cents: self.amount_cents * 0.05)
   end
 end

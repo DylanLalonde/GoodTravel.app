@@ -53,7 +53,7 @@
   padding-left: 50px;
 }
 
-.show-btn-success{
+.show-btn-success {
   width: 80%;
   background-color: $orange;
   color: $white;
@@ -140,9 +140,8 @@ label.form-control-label.string.optional {
     display: none;
   }
   label.form-control-label.string.optional {
-  display: none;
-  }
-  // span.flatpickr-day.disabled{
+    display: none;
+  } // span.flatpickr-day.disabled{
   //   background-color: #FF6347;
   // }
   span.flatpickr-day {
@@ -189,8 +188,7 @@ label.form-control-label.string.optional {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 50%;
-  }
-  // BOOK BUTTON INFORMATION
+  } // BOOK BUTTON INFORMATION
   .show-button-part {
     display: flex;
     flex-direction: column;
@@ -199,8 +197,7 @@ label.form-control-label.string.optional {
     padding-bottom: 10px;
     background-color: #f1f2f1;
     padding-left: 50px;
-  }
-  // SUPPORTED NGOS INFORMATIONS
+  } // SUPPORTED NGOS INFORMATIONS
   .show-supported-ngos {
     padding-top: 5px;
     padding-bottom: 10px;
@@ -217,8 +214,7 @@ label.form-control-label.string.optional {
   }
   #map {
     height: 150px;
-  }
-  // LOCATION PART
+  } // LOCATION PART
   .show-location-part-with-map {
     padding-top: 5px;
     padding-bottom: 20px;
@@ -233,39 +229,43 @@ label.form-control-label.string.optional {
     color: grey;
     font-size: 14px;
     line-height: 1.4;
-  }
-  // MAP
+  } // MAP
   #map.show-map-experience {
     // height: 500px,
   }
-  // text toggle to show more
-  .read-more-state {
-    display: none;
-  }
-  .read-more-target {
-    opacity: 0;
-    max-height: 0;
-    font-size: 0;
-    transition: .25s ease;
-  }
-  .read-more-state:checked~.read-more-wrap .read-more-target {
-    opacity: 1;
-    font-size: inherit;
-    max-height: 999em;
-  }
-  .read-more-state~.read-more-trigger:before {
-    content: 'More';
-  }
-  .read-more-state:checked~.read-more-trigger:before {
-    content: 'Less';
-  }
-  .read-more-trigger {
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 .5em;
-    color: #666;
-    font-size: .9em;
-    line-height: 2;
-    border: 1px solid #ddd;
-    border-radius: .25em;
-  }
+} // text toggle to show more
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+
+.read-more-state:checked~.read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state~.read-more-trigger:before {
+  content: 'More';
+}
+
+.read-more-state:checked~.read-more-trigger:before {
+  content: 'Less';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}

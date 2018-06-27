@@ -26,7 +26,7 @@ class ExperiencesController < ApplicationController
   def new
     @locations = Location.all
     @experience = Experience.new
-    
+
     authorize @experience
   end
 
@@ -34,7 +34,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(experience_params.except("location"))
     @experience.host_info_id = current_user.host_info_id
     @experience.location = Location.find_by_id(experience_params["location"].to_i)
-    
+
     authorize @experience
     if @experience.save!
       redirect_to experience_path(@experience)
@@ -60,6 +60,6 @@ private
   end
 
   def experience_params
-      params.require(:experience).permit(:name, :category, :smdescription, :lgdescription, :location, :price, :photo)
+    params.require(:experience).permit(:name, :category, :smdescription, :lgdescription, :location, :price, :photo)
     end
 end
