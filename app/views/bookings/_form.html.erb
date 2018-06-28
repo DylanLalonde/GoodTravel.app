@@ -13,9 +13,12 @@
         <%= f.input :end_date, as: :string, required: false, label: "Ends", input_html: {class: "datepicker booking-time-form"}%>
     <%= f.input :number_traveller, label: "How many people?", collection: 1..10, prompt: "select" %>
     <%= f.input :amount_cents, label: "Total amount in euro", disabled: true, required: false, hint:" #{humanized_money_with_symbol(@experience.price)} per person" %>
+    <div class="form-booking-willem">
+    <p>donation to your ngo: <span id="donation-amount">0</span> euros.
+    </div>
     <br>
 
-    <%= f.input :description, as: :text, label: "Message to Host", required: false %>
+    <%= f.input :description, as: :text, label: "Message", required: false %>
 
     <%= f.input :ngo_id, label: "Pick your NGO", collection: @ngos , prompt: "Select NGO", required: false %>
 
@@ -23,7 +26,7 @@
     <br>
 
 
-    <%= f.button :submit, "Book", class: "btn btn-primary btn-lg" %>
+    <%= f.button :submit, "Book", class: "booking-new-btn btn-primary btn-lg" %>
     <% end %>
 
       </div>

@@ -1,10 +1,26 @@
 
 input#booking_start_date {
-display: none;
+  display: none;
 }
 
 .form-group.string.optional.booking_start_date {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
+.form-booking-titles h5 {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.booking-new-btn{
+  background-color: $sunset;
+  width: 100%;
+  border-color: $sunset;
+  border-radius: 2px;
+}
+
+.form-booking-willem{
+  display: flex;
+  justify-content: flex-start;
+}
