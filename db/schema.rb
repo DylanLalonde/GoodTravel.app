@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_132903) do
+ActiveRecord::Schema.define(version: 2018_06_28_114919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_132903) do
     t.string "description"
     t.float "amount_donated"
     t.integer "amount_cents", default: 0, null: false
+    t.datetime "start_time"
     t.index ["experience_id"], name: "index_bookings_on_experience_id"
     t.index ["ngo_id"], name: "index_bookings_on_ngo_id"
     t.index ["referrer_info_id"], name: "index_bookings_on_referrer_info_id"
@@ -58,11 +59,11 @@ ActiveRecord::Schema.define(version: 2018_06_27_132903) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "category"
     t.integer "featured_ngo"
     t.integer "price_cents", default: 0, null: false
     t.integer "duration"
