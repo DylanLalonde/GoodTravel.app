@@ -1,4 +1,11 @@
 
+
+.form-booking-titles {
+  margin-bottom: 35px;
+  margin-top: -42px;
+}
+
+
 .form-experience-title {
   color: $sunset;
   font-size: 35px;
@@ -21,5 +28,10 @@
 }
 
 .d-flex.flex-row.justify-content-between.align-items-center {
-    display: flex;
+  display: flex;
+}
+
+.form-group.string.optional.booking_end_date{
+  display: flex;
+  justify-content: center;
 }

@@ -18,5 +18,7 @@ class User < ApplicationRecord
 
     def send_welcome_email
       UserMailer.welcome(self).deliver_now
+    rescue => e
+      Rails.logger.error("User#send_welcome_email error: #{e.message}")
     end
 end
