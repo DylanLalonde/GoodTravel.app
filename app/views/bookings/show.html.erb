@@ -10,14 +10,12 @@
         <!-- Need to add booking status later! -->
 
 
-        <h2> <strong>Experience: <br>
+        <h2> <strong>Experience:
         </strong> <%= @booking.experience.name %> </h2>
-        <p><strong>Your group size:</strong> <%= @booking.number_traveller %></p>
+        <p><strong>Number of Participants:</strong> <%= @booking.number_traveller %></p>
         <p><strong>Starts at: <br>
         </strong> <%= @booking.start_date %></p>
-        <p><strong>Ends at: <br>
-        </strong> <%= @booking.end_date %></p>
-        <p><strong>Payment received:</strong> <%= @booking.amount %></p>
+        <p><strong>Payment received:</strong> <%= humanized_money_with_symbol(@booking.amount) %></p>
       </div>
 
       <div class="donation-info">
