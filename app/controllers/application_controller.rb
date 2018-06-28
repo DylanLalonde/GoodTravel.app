@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
+  # production host setup for images absolute urls
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :devise_controller?
   after_action :verify_policy_scoped, only: :index, unless: :devise_controller?
@@ -36,7 +39,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def skip_pundit?
-      devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-    end
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
 end

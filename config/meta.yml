@@ -1,0 +1,5 @@
+meta_product_name: "Good Travel APP"
+meta_title: "Good Travel APP - Travelers who care"
+meta_description: "Travelers who care about society, culture, and the environment."
+meta_image: "logo2.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
