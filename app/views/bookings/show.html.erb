@@ -10,19 +10,17 @@
         <!-- Need to add booking status later! -->
 
 
-        <h2> <strong>Experience: <br>
+        <h2> <strong>Experience:
         </strong> <%= @booking.experience.name %> </h2>
-        <p><strong>Your group size:</strong> <%= @booking.number_traveller %></p>
+        <p><strong>Number of Participants:</strong> <%= @booking.number_traveller %></p>
         <p><strong>Starts at: <br>
         </strong> <%= @booking.start_date %></p>
-        <p><strong>Ends at: <br>
-        </strong> <%= @booking.end_date %></p>
-        <p><strong>Payment received:</strong> <%= @booking.amount %></p>
+        <p><strong>Payment received:</strong> <%= humanized_money_with_symbol(@booking.amount) %></p>
       </div>
 
       <div class="donation-info">
         <!-- placeholder image for now, replace with ngo image -->
-        <div class="ngo-image"> <%= image_tag "http://via.placeholder.com/100x100" %> </div>
+        <div class="ngo-image"> <%= cl_image_tag (@booking.ngo.photo) %> </div>
         <h5>Your booking has donated <%= @booking.donation.amount %> to <%= @booking.ngo.name %>!</h5>
         <h5><%= @booking.ngo.name %> has received
           <%= @totaldonations %> since joining GoodTravel! </h5>
@@ -30,8 +28,8 @@
 
       <div class="referral-info">
         <!-- placeholder image for now, replace with referrer image-->
-        <div class="ref-image"> <%= image_tag "http://via.placeholder.com/100x100" %> </div>
-        <h5>Joe, the local who referred you to GoodTravel, <strong>earned <%= @referrerearning %> when you made this booking!</strong></h5>
+        <div class="ref-image"> <%= cl_image_tag (@booking.referrer_info.user.photo) %> </div>
+        <h5> <%= (@booking.referrer_info.user.first_name) %> the local who referred you to GoodTravel, <strong>earned <%= @referrerearning %> when you made this booking!</strong></h5>
       </div>
 
       <br>
