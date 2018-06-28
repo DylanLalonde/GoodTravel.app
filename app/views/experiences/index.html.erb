@@ -7,7 +7,7 @@
       </div>
       <div class="index-search-bar">
         <%= form_tag(experiences_path, method: :get) do %>
-        <i class="fas fa-search"></i><%= text_field_tag :query, nil, placeholder: "Ex: Windmill Tour" %><i class="fas fa-microphone"></i>
+        <i class="fas fa-search"></i><%= text_field_tag :query, nil, placeholder: "Ex: Cheese Tour" %><i class="fas fa-microphone"></i>
         <% end %>
       </div>
     </div>
@@ -39,7 +39,7 @@
         <% end %>
       </div>
     </div>
-  
+
     <div id="map"; data-markers="<%= @markers.to_json %>">
     </div>
   </div>
