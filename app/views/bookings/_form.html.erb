@@ -1,34 +1,35 @@
 
-<!-- <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="form-booking"> -->
-<div class="form-booking-titles">
-<h4> <%= @experience.name %> </h4>
-<h5> <%= @experience.smdescription %> </h5>
-</div>
- <%= simple_form_for [@experience, @booking] do |f| %>
-    <%#= f.input :start_date, as: :string, label: "Starts",required: false, input_html: {class: "datepicker booking-calendar-form"} %>
-    <%= f.input :start_date, as: :string, required: false, label: "Starts", input_html: {class: "datepicker booking-calendar-form"} %>
+      <div class="form-booking">
+        <div class="form-booking-titles">
+          <h1> Booking details</h1>
+          <h4> <%= @experience.name %> </h4>
+          <h5> <%= @experience.smdescription %> </h5>
+
+        <%= simple_form_for [@experience, @booking] do |f| %>
+        <%#= f.input :start_date, as: :string, label: "Starts",required: false, input_html: {class: "datepicker booking-calendar-form"} %>
+        <%= f.input :start_date, as: :string, required: false, label: "Starts", input_html: {class: "datepicker booking-calendar-form"} %>
         <%= f.input :end_date, as: :string, required: false, label: "Ends", input_html: {class: "datepicker booking-time-form"}%>
-    <%= f.input :number_traveller, label: "How many people?", collection: 1..10, prompt: "select" %>
-    <%= f.input :amount_cents, label: "Total amount in euro", disabled: true, required: false, hint:" #{humanized_money_with_symbol(@experience.price)} per person" %>
-    <div class="form-booking-willem">
-    <p>donation to your ngo: <span id="donation-amount">0</span> euros.
-    </div>
-    <br>
+        <%= f.input :number_traveller, label: "How many people?", collection: 1..10, prompt: "select" %>
+        <%= f.input :amount_cents, label: "Total amount in euro", disabled: true, required: false, hint:" #{humanized_money_with_symbol(@experience.price)} per person" %>
+        <div class="form-booking-willem">
+          <p>this booking will donate: <span id="donation-amount">0</span> euros.
+          </div>
+          <br>
 
-    <%= f.input :description, as: :text, label: "Message", required: false %>
+          <%= f.input :description, as: :text, label: "Message", required: false %>
 
-    <%= f.input :ngo_id, label: "Pick your NGO", collection: @ngos , prompt: "Select NGO", required: false %>
+          <%= f.input :ngo_id, label: "Pick your NGO", collection: @ngos , prompt: "Select NGO", required: false %>
 
-    <br>
-    <br>
+          <br>
+          <br>
 
 
-    <%= f.button :submit, "Book", class: "booking-new-btn btn-primary btn-lg" %>
-    <% end %>
-
+          <%= f.button :submit, "Book", class: "booking-new-btn btn-primary btn-lg" %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="hidden" id="amount-experience" > <%= @experience.price.to_f %></div>
