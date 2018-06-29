@@ -1,48 +1,78 @@
 <div class="container">
-    <div class="row">
+  <div class="row">
 
-      <div class="confirmation-intro">
-        <h6> This is your proof of purchase and must be shown to the experience host. </h6>
+    <div class="confirmation-intro">
+      <h6> This is your proof of purchase and must be shown to the experience host. </h6>
+    </div>
+    <div class="show-container">
+      <div class="show-image-display">
+        <%= cl_image_tag @experience.photo , class:"show-image"%>
       </div>
 
-      <div class="booking-confirmation">
-        <h1> Your booking as been confirmed!</h1>
+      <div class="show-tour-frequency-infor">
+        <h3> Your booking as been confirmed!</h3>
         <!-- Need to add booking status later! -->
 
-
-        <h2> <strong>Experience:
-        </strong> <%= @booking.experience.name %> </h2>
-        <p><strong>Number of Participants:</strong> <%= @booking.number_traveller %></p>
-        <p><strong>Starts at: <br>
-        </strong> <%= @booking.start_date %></p>
-        <p><strong>Payment received:</strong> <%= humanized_money_with_symbol(@booking.amount) %></p>
+        <h4>
+          Experience:
+          <%= @booking.experience.name %>
+        </h4>
+        <p>
+          <strong>Number of Participants:</strong>
+          <%= @booking.number_traveller %>
+        </p>
+        <p>
+          <strong>Starts at:
+            <br>
+          </strong>
+          <%= @booking.start_date %>
+        </p>
+        <p>
+          <strong>Payment received:</strong3>
+            <%= humanized_money_with_symbol(@booking.amount) %>
+        </p>
       </div>
 
-      <div class="donation-info">
-        <!-- placeholder image for now, replace with ngo image -->
-        <div class="ngo-image"> <%= cl_image_tag (@booking.ngo.photo) %> </div>
-        <h5>Your booking has donated <%= @booking.donation.amount %> to <%= @booking.ngo.name %>!</h5>
-        <h5><%= @booking.ngo.name %> has received
-          <%= @totaldonations %> since joining GoodTravel! </h5>
-      </div>
+      <div class="show-container">
 
-      <div class="referral-info">
-        <!-- placeholder image for now, replace with referrer image-->
-        <div class="ref-image"> <%= cl_image_tag (@booking.referrer_info.user.photo) %> </div>
-        <h5> <%= (@booking.referrer_info.user.first_name) %> the local who referred you to GoodTravel, <strong>earned <%= @referrerearning %> when you made this booking!</strong></h5>
-      </div>
+        <div class="show-hour-part-design">
+          <!-- placeholder image for now, replace with ngo image -->
+          <div class="ngo-image">
+            <%= cl_image_tag (@booking.ngo.photo) %>
+          </div>
+          <div>
+          <h5>Your booking has donated
+            <%= @booking.donation.amount %> to
+              <%= @booking.ngo.name %>!</h5>
+          <h5>
+            <%= @booking.ngo.name %> has received
+              <%= @totaldonations %> since joining GoodTravel! </h5>
+          </div>
+        </div>
 
+        <div class="location-information">
+          <!-- placeholder image for now, replace with referrer image-->
+          <div class="ref-image">
+            <%= cl_image_tag (@booking.referrer_info.user.photo) %>
+          </div>
+          <h5>
+            <%= (@booking.referrer_info.user.first_name) %>, the local who referred you to GoodTravel,
+              <strong>earned
+                <%= @referrerearning %> when you made this booking!</strong>
+          </h5>
+        </div>
+      </div>
       <br>
 
       <div class="confirmation-page-buttons">
         <%= link_to "Share", '#', class: "btn btn-primary" %>
-        <%= link_to "Print", '#', class: "btn btn-primary",
+          <%= link_to "Print", '#', class: "btn btn-primary",
             onclick: 'window.print();return false;' %>
-        <%= link_to "Dashboard", '#', class: "btn btn-primary" %>
+            <%= link_to "Dashboard", '#', class: "btn btn-primary" %>
       </div>
 
       <br>
 
     </div>
+  </div>
 </div>
-

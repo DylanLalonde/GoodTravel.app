@@ -5,7 +5,7 @@
 <div class="show-container">
   <div class="show-image-display">
     <%= cl_image_tag @experience.photo , class:"show-image"%>
-    <p class="show-text-popular-design"> Popular </p>
+      <p class="show-text-popular-design"> Popular </p>
   </div>
 
   <div class="show-location-info">
@@ -15,17 +15,17 @@
 
     <i class="far fa-clock"></i> Tour Duration:
     <%# <%= @experience.time %>
-    <br>
-    <br>
+      <br>
+      <br>
 
 
-    <i class="fas fa-sync-alt"></i> Frequency:
-    <%= simple_form_for(@experience) do |f| %>
-    <%= f.input :start_time, collection: ["08:00","14:00"] %>
-    <% end %>
-    <br>
-    <i class="far fa-credit-card"></i> Price :
-    <%= humanized_money_with_symbol(@experience.price) %>
+      <i class="fas fa-sync-alt"></i> Frequency:
+      <%= simple_form_for(@experience) do |f| %>
+        <%= f.input :start_time, collection: ["08:00","14:00"] %>
+          <% end %>
+            <br>
+            <i class="far fa-credit-card"></i> Price :
+            <%= humanized_money_with_symbol(@experience.price) %>
   </div>
 
 
@@ -39,40 +39,40 @@
           <p class="content" id="expand-content"><%= @experience.lgdescription %></p>
         -->
 
-        <div>
-          <input type="checkbox" class="read-more-state" id="post-1" />
-          <h5 class="read-more-wrap">
-            <%= @experience.smdescription %>
-            <span class="read-more-target">
-              <%= @experience.lgdescription %>
-            </span>
-          </h5>
-          <label for="post-1" class="read-more-trigger"></label>
+    <div>
+      <input type="checkbox" class="read-more-state" id="post-1" />
+      <h5 class="read-more-wrap">
+        <%= @experience.smdescription %>
+          <span class="read-more-target">
+            <%= @experience.lgdescription %>
+          </span>
+      </h5>
+      <label for="post-1" class="read-more-trigger"></label>
 
-        </div>
-      </div>
-      <div class="show-what-you-get">
-        <h4> What do you get</h4>
-        <h5> Enjoy a unique and unforgettable experience as you cruise through Amsterdam's beautiful historic canals and dine under
-        the stars with culinary delights.</h5>
-        <hr width="100%">
-      </div>
-
-
-      <div class="show-hour-part-design">
-        <h4> Hours</h4>
-        <h5> Hours Monday - Friday: 10.00am - 6.00pm
-          <br> Saturday - Sunday: 09.00am - 7.00pm
-        </h5>
-      </div>
+    </div>
+  </div>
+  <div class="show-what-you-get">
+    <h4> What do you get</h4>
+    <h5> Enjoy a unique and unforgettable experience as you cruise through Amsterdam's beautiful historic canals and dine under
+      the stars with culinary delights.</h5>
+    <hr width="100%">
+  </div>
 
 
-      <div class="location-information">
-        <h4>Location</h4>
-        <h5>
-          <%= @experience.address %>
-        </h5>
-      </div>
+  <div class="show-hour-part-design">
+    <h4> Hours</h4>
+    <h5> Monday - Friday: 10.00am - 6.00pm
+      <br> Saturday - Sunday: 09.00am - 7.00pm
+    </h5>
+  </div>
+
+
+  <div class="location-information">
+    <h4>Location</h4>
+    <h5>
+      <%= @experience.address %>
+    </h5>
+  </div>
 
   <!--
     <div class="show-calendar-info">
@@ -93,8 +93,8 @@
 
 <div class="show-button-part">
   <%= link_to 'Booking', new_experience_booking_path(@experience), class: "btn btn-success btn-lg" %>
-  <br>
-  <hr width="100%">
+    <br>
+    <hr width="100%">
 </div>
 
 <div class="show-supported-ngos">
@@ -106,45 +106,46 @@
   <div class="ngo-container">
     <% @ngos.each do |ngo| %>
 
-    <div id="modalButton">
-      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        <%= image_tag(ngo.photo,height: '65') %>
-      </button>
-      <br>
-    </div>
+      <div id="modalButton">
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ngo-<%= ngo.id %>">
+          <%= image_tag(ngo.photo,height: '65') %>
+        </button>
+        <br>
+      </div>
 
-    <div>
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel">
-                <%= ngo.name %>
-              </h4>
-            </div>
-            <div class="modal-body">
-              <%= image_tag (ngo.photo) %>
-              <br>
-              <%= ngo.description %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">
-                <%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %>
-              </button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
+      <div>
+        <!-- Modal -->
+        <div class="modal fade" id="ngo-<%= ngo.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                  <%= ngo.name %>
+                </h4>
+              </div>
+              <div class="modal-body">
+                <%= image_tag (ngo.photo) %>
+                  <br>
+                  <%= ngo.description %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <%= link_to 'More Info' , "www.worldanimalprotection.com", target: '_blank' %>
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Continue Booking</button>
+              </div>
             </div>
           </div>
           <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
       </div>
-    </div>
-    <!-- /.modal -->
-    <br>
     <% end %>
   </div>
+  <!-- /.modal -->
 </div>
+</div>
+
 
 
 <div class="show-location-part-with-map">
