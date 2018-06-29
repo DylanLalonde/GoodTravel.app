@@ -10,11 +10,12 @@ input#booking_start_date {
 
 .form-booking-titles h1{
   font-size: 1.5em;
-
   margin-bottom: 30px;
-
 }
 
+.booking-form-btn{
+  width: 100%;
+}
 
 .form-group.string.optional.booking_start_date {
   display: flex;
