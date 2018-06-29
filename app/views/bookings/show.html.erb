@@ -40,12 +40,14 @@
           <div class="ngo-image">
             <%= cl_image_tag (@booking.ngo.photo) %>
           </div>
+          <div>
           <h5>Your booking has donated
             <%= @booking.donation.amount %> to
               <%= @booking.ngo.name %>!</h5>
           <h5>
             <%= @booking.ngo.name %> has received
               <%= @totaldonations %> since joining GoodTravel! </h5>
+          </div>
         </div>
 
         <div class="location-information">

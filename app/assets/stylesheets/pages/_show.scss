@@ -319,3 +319,9 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+
+.show-hour-part-design {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
