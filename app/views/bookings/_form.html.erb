@@ -11,6 +11,7 @@
         <%= simple_form_for [@experience, @booking] do |f| %>
         <%#= f.input :start_date, as: :string, label: "Starts",required: false, input_html: {class: "datepicker booking-calendar-form"} %>
         <%= f.input :start_date, as: :string, required: false, label: "Starts", input_html: {class: "datepicker booking-calendar-form"} %>
+
         <%#= f.input :end_date, as: :string, required: false, label: "Ends", input_html: {class: "datepicker booking-time-form"}%>
         <h5> Preferred Tour Time: </h5>
         <%= f.input :start_time, label: "start time", collection: ["08:00","14:00"] %>
@@ -31,6 +32,7 @@
           <br>
 
           <%= f.button :submit, "Book", class: "btn btn-success btn-lg" %>
+
           <% end %>
         </div>
       </div>
