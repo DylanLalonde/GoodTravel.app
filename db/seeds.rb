@@ -31,12 +31,12 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #travellers_user
-  carla = User.create!(first_name:"Carla", last_name:"Smith", role:"Traveller", email:"carla@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508838/goodtravel.app/Carla.png")
+  jasmine = User.create!(first_name:"Jasmine", last_name:"Smith", role:"Traveller", email:"jasmine@test.com", password:"123123", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508838/goodtravel.app/Carla.png")
   feiko = User.create!(first_name:"Feiko", last_name:"Boerstra", role:"Traveller", email:"feiko@test.com", password:"123456", credit:500, photo:"https://res.cloudinary.com/dp7cn9j0d/image/upload/v1529508842/goodtravel.app/the-fiek.png")
 #end
 
 #traveller
-  travellercarla = TravellerInfo.create!(user: carla)
+  travellerjasmine = TravellerInfo.create!(user: jasmine)
   travellerfeiko = TravellerInfo.create!(user: feiko)
 #end
 
@@ -70,7 +70,7 @@ amsterdam = Location.create!(name:"amsterdam")
 #end
 
 #bookings
-  carlasbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellercarla, status:"pending", amount_cents:"1", ngo: sea_sheperd, experience: canaltour)
+  jasminesbooking = Booking.create!(referrer_info: referrerbarbara, traveller_info: travellerjasmine, status:"pending", amount_cents:"1", ngo: sea_sheperd, experience: canaltour)
 #end
 
 puts "Seedling is visible"
