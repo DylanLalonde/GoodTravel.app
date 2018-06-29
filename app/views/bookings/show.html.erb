@@ -1,4 +1,4 @@
-<% content_for :meta_title, "#{@booking.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<%# content_for :meta_title, "#{@booking.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 
 
 <div class="container">
@@ -45,11 +45,11 @@
           </div>
           <div>
           <h5>Your booking has donated
-            <%= @booking.donation.amount %> to
+            <%= @booking.donation.amount %> euros to
               <%= @booking.ngo.name %>!</h5>
           <h5>
             <%= @booking.ngo.name %> has received
-              <%= @totaldonations %> since joining GoodTravel! </h5>
+              <%= @totaldonations %> euros since joining GoodTravel! </h5>
           </div>
         </div>
 
