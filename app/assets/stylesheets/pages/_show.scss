@@ -146,6 +146,12 @@ hr {
   padding-right: 40px;
 }
 
+// TOUR INFORMATION
+label.form-control-label.select.optional{
+  display: none;
+}
+
+
 // FLATPICKR - CALENDAR INFO
 .show-calendar-info {
   padding-top: 20px;

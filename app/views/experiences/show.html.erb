@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@experience.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @experience.lgdescription %>
+
+
 <div class="show-header-button">
   <%= link_to 'Back to results', experiences_path(@experience), class: "btn btn-link" %>
 </div>
@@ -13,19 +17,19 @@
   </div>
   <div class="show-tour-frequency-infor">
 
-    <i class="far fa-clock"></i> Tour Duration:
+    <i class="far fa-clock"></i> Tour Duration: 1 hour
     <%# <%= @experience.time %>
-      <br>
-      <br>
+    <br>
+    <i class="fas fa-sync-alt"></i> Frequency:
+    <%= simple_form_for(@experience) do |f| %>
 
+    <%= f.input :start_time, label: "start time", collection: ["08:00","14:00"] %>
+    <% end %>
+    <%# <%= @experience.frequency %>
 
-      <i class="fas fa-sync-alt"></i> Frequency:
-      <%= simple_form_for(@experience) do |f| %>
-        <%= f.input :start_time, collection: ["08:00","14:00"] %>
-          <% end %>
-            <br>
-            <i class="far fa-credit-card"></i> Price :
-            <%= humanized_money_with_symbol(@experience.price) %>
+    <br>
+    <i class="far fa-credit-card"></i> Price :
+    <%= humanized_money_with_symbol(@experience.price) %>
   </div>
 
 
