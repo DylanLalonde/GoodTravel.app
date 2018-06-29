@@ -28,7 +28,11 @@ class PaymentsController < ApplicationController
 
     @order.update(payment: charge.to_json, state: "paid")
 
-    BookingMailer.creation_confirmation(@booking, current_user).deliver_now
+    begin
+      BookingMailer.creation_confirmation(@booking, current_user).deliver_now
+    rescue => e
+      Rails.logger.error("Sending new payment email failed: #{e.message}")
+    end
 
     @booking.createdonation
     @booking.createearning
